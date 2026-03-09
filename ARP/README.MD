@@ -1,99 +1,115 @@
-# Reactive SDN Switch con P4 y Flow Cache
+# Escenario P4 – Manejo básico de ARP con controlador
 
-Este proyecto implementa un switch SDN reactivo utilizando P4 (Data Plane) y Python (Control Plane). El sistema gestiona el tráfico entre hosts instalando reglas de flujo bajo demanda (*Packet-In*) y eliminándolas automáticamente cuando dejan de usarse (*Idle Timeout*).
+## Warning
 
-## 🏗 Arquitectura del Escenario
+El flooding esta mal hecho (no da error pero esta mal hecho, confia). En DSCP lo he arreglado
 
-La topología emulada en Mininet consta de dos hosts conectados a través de dos switches en serie:
+## Descripción general
+
+Este proyecto implementa un escenario sencillo en **P4_16** para el manejo de tráfico **ARP** utilizando un **controlador externo en Python** a través de **P4Runtime**.  
+El objetivo principal es mostrar cómo un plano de datos programable puede delegar cierta lógica (en este caso, el aprendizaje y la resolución ARP) al plano de control, manteniendo el programa P4 lo más simple posible.
+
+El escenario está pensado para ejecutarse sobre **BMv2 (v1model)** y se apoya en un controlador que procesa paquetes ARP enviados al CPU del switch y responde de forma adecuada.
+
+---
+
+## Estructura del proyecto
 
 ```text
-h1 (10.0.0.1) <--> [p1] s1 [p2] <----> [p2] s2 [p1] <--> h2 (10.0.0.2)
-```
-
-### Componentes Clave
-
-1. **Data Plane (`first.p4`):**
-* Define headers para Ethernet, IPv4, PacketIn y PacketOut.
-* Utiliza una tabla `flow_cache` con soporte para **Idle Timeout** (detección de inactividad).
-* Si un paquete no coincide con ninguna regla, se envía al controlador (Packet-In).
-* Maneja la clonación de paquetes hacia el puerto CPU (510).
-
-
-2. **Control Plane (`micontrolador.py`):**
-* Escrito en Python 3 usando `p4runtime_lib` y `asyncio`.
-* Procesa mensajes **Packet-In**: Calcula el puerto de salida y la MAC destino.
-* Instala reglas de flujo (**Flow Rules**) dinámicamente.
-* Gestiona **Packet-Out**: Reinyecta el primer paquete del flujo a la red.
-* Gestiona **Idle Notifications**: Recibe avisos del switch cuando una regla caduca y la elimina de la memoria para mantener la tabla limpia.
-
-
+ARP/
+├── arp_tonto.p4              # Programa P4 del switch
+├── micontrolador.py          # Controlador P4Runtime en Python
+├── topology.json             # Topología del escenario
+├── Makefile                  # Automatización de compilación y ejecución
+├── build/                    # Archivos generados (JSON y P4Info)
+├── logs/                     # Logs del switch y P4Runtime
+└── pcaps/                    # Capturas de tráfico por interfaz
+````
 
 ---
 
-## La "Trampa" ARP (Static ARP Entries)
+## Funcionamiento del programa P4 (`arp_tonto.p4`)
 
-Para simplificar el código P4 y centrarnos en el routing L3/L2, se ha implementado una solución estática para la resolución de direcciones (ARP).
+El programa P4 implementa un comportamiento mínimo en el plano de datos:
 
-**El Problema:**
-Al estar `h1` y `h2` en la misma subred (`10.0.0.0/24`), Linux intenta resolver la MAC del destino enviando peticiones ARP Broadcast. Como nuestro código P4 en `MyIngress` descarta paquetes que no sean IPv4 o PacketOut, las peticiones ARP se perderían y el Ping fallaría.
+* Define los encabezados necesarios para Ethernet y ARP.
+* Identifica paquetes ARP en el pipeline de parsing.
+* Reenvía los paquetes ARP al **puerto CPU** (control plane) en lugar de resolverlos completamente en el switch.
+* Para el resto del tráfico, el comportamiento es básico (forwarding simple o descarte, según la configuración).
 
-**La Solución (En `topology.json`):**
-Se han inyectado entradas ARP estáticas en los hosts para "engañarlos" y forzar el envío inmediato del tráfico hacia el switch sin preguntar.
-
-* **En h1:** `arp -s 10.0.0.2 08:00:00:00:01:00`
-* *Traducción:* "H1, si quieres hablar con H2, no preguntes. Envía el paquete a la MAC `...01:00` (que corresponde al puerto de entrada de S1)".
-
-
-* **En h2:** `arp -s 10.0.0.1 08:00:00:00:02:00`
-
-De esta forma, el paquete entra al pipeline P4 como un paquete IPv4 válido unicast desde el primer momento.
+La idea central es que el switch **no mantiene una tabla ARP compleja**, sino que delega esa responsabilidad al controlador.
 
 ---
 
-## Instrucciones de Ejecución
+## Funcionamiento del controlador (`micontrolador.py`)
 
-### 1. Compilación y Arranque de la Red
+El controlador está implementado en Python y utiliza la API de **P4Runtime**. Sus funciones principales son:
 
-Este comando compila el código P4, genera los archivos JSON/P4Info y levanta la topología en Mininet.
+1. **Conexión al switch**
+   Se conecta al switch BMv2 usando gRPC y carga el archivo `p4info` y el JSON compilado.
 
-```bash
-make
+2. **Recepción de paquetes ARP**
 
-```
+   * Escucha los paquetes enviados al CPU por el switch.
+   * Analiza los paquetes ARP usando **Scapy**.
 
-### 2. Iniciar el Controlador
+3. **Aprendizaje ARP**
 
-En una nueva terminal, ejecuta el controlador. Este script se conectará a los switches s1 y s2 vía gRPC.
+   * Mantiene una estructura interna que asocia direcciones IP con direcciones MAC y puertos.
+   * Aprende esta información a partir de los paquetes ARP recibidos.
 
-```bash
-./micontrolador.py
+4. **Respuesta a solicitudes ARP**
 
-```
+   * Cuando recibe un ARP Request para una IP conocida, genera un ARP Reply.
+   * Envía el ARP Reply de vuelta al switch para que sea reenviado al host correspondiente.
 
-### 3. Prueba de Conectividad (Ping)
+5. **Registro y depuración**
 
-En la consola de Mininet, lanza un ping.
-
-```bash
-mininet> h1 ping h2
-
-```
-
-**Comportamiento esperado:**
-
-1. **Primer Paquete:** El controlador recibe un `Packet-In`. Instala la regla en s1 y s2 (unidireccional).
-2. **Siguientes Paquetes:** Fluyen directamente por el hardware (Data Plane) gracias a la regla instalada.
-3. **Timeout:** Si detienes el ping y esperas unos segundos (configurado a 3s en el código), verás en el log del controlador cómo se eliminan las reglas por inactividad (`IdleTimeoutNotification`).
----
-## 📂 Estructura del Proyecto
-
-* `first.p4`: Código fuente P4 (Ingress, Egress, Parser).
-* `micontrolador.py`: Lógica del controlador (Manejo de reglas, timeouts y decoding de metadatos).
-* `topology.json`: Definición de la red y comandos de configuración de hosts (ARP estático).
-* `Makefile`: Scripts de automatización para compilar y ejecutar.
+   * Guarda información de eventos y tráfico en logs.
+   * Permite analizar el comportamiento del escenario mediante los archivos `.pcap`.
 
 ---
-## ⚙️ Detalles Técnicos Adicionales
 
-* **CPU Port:** 510. Usado como interfaz virtual entre el switch y el controlador.
-* **Clone Session ID:** 67. Usado para duplicar paquetes hacia la CPU.
+## Topología
+
+La topología definida en `topology.json` consiste en:
+
+* Dos switches P4.
+* Varios hosts conectados a los switches.
+* Enlaces simples para facilitar el seguimiento del tráfico ARP.
+
+Este diseño permite observar claramente el intercambio ARP y la intervención del controlador.
+
+---
+
+## Ejecución del escenario
+
+De forma general, el flujo de ejecución es el siguiente:
+
+1. Compilar el programa P4 (`arp_tonto.p4`) para BMv2.
+2. Levantar la topología definida.
+3. Iniciar el controlador (`micontrolador.py`).
+4. Generar tráfico ARP desde los hosts (por ejemplo, usando `ping`).
+5. Analizar los resultados mediante logs y capturas `.pcap`.
+
+El `Makefile` automatiza gran parte de estos pasos.
+
+---
+
+## Objetivo didáctico
+
+Este escenario está pensado con fines educativos y demuestra:
+
+* Separación clara entre **plano de datos (P4)** y **plano de control (Python)**.
+* Uso de **P4Runtime** para el manejo de paquetes excepcionales.
+* Implementación de un ARP “tonto” en el switch y una lógica más rica en el controlador.
+
+No busca ser una implementación óptima de ARP, sino un ejemplo claro y fácil de entender.
+
+---
+
+## Notas finales
+
+* El código puede extenderse fácilmente para soportar más protocolos o reglas de forwarding.
+* Las capturas en `pcaps/` son útiles para validar el correcto funcionamiento del escenario.
+* Este enfoque es común en entornos SDN donde el control se centraliza y el switch se mantiene simple.
