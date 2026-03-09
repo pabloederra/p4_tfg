@@ -1,99 +1,159 @@
-# Reactive SDN Switch con P4 y Flow Cache
+README.MD
+# Escenario P4 – Clasificación y marcado DSCP con controlador
 
-Este proyecto implementa un switch SDN reactivo utilizando P4 (Data Plane) y Python (Control Plane). El sistema gestiona el tráfico entre hosts instalando reglas de flujo bajo demanda (*Packet-In*) y eliminándolas automáticamente cuando dejan de usarse (*Idle Timeout*).
+## WARNING
 
-## 🏗 Arquitectura del Escenario
+Me falta poner que el marcado del tipo ipv4 sea cuando un pacquete entra por el puerto 1
 
-La topología emulada en Mininet consta de dos hosts conectados a través de dos switches en serie:
+## Descripción general
+
+Este proyecto implementa un escenario en **P4_16** orientado a la **clasificación y tratamiento del campo DSCP** del encabezado IP, utilizando un **controlador externo en Python** mediante **P4Runtime**.  
+A diferencia del escenario anterior centrado en ARP, este caso se enfoca en **tráfico IP** y en cómo aplicar políticas de red (QoS / diferenciación de tráfico) desde el plano de control.
+
+El escenario se ejecuta sobre **BMv2 (v1model)** y combina lógica sencilla en el plano de datos con decisiones de mayor nivel tomadas por el controlador.
+
+---
+
+## Estructura del proyecto
 
 ```text
-h1 (10.0.0.1) <--> [p1] s1 [p2] <----> [p2] s2 [p1] <--> h2 (10.0.0.2)
-```
-
-### Componentes Clave
-
-1. **Data Plane (`first.p4`):**
-* Define headers para Ethernet, IPv4, PacketIn y PacketOut.
-* Utiliza una tabla `flow_cache` con soporte para **Idle Timeout** (detección de inactividad).
-* Si un paquete no coincide con ninguna regla, se envía al controlador (Packet-In).
-* Maneja la clonación de paquetes hacia el puerto CPU (510).
-
-
-2. **Control Plane (`micontrolador.py`):**
-* Escrito en Python 3 usando `p4runtime_lib` y `asyncio`.
-* Procesa mensajes **Packet-In**: Calcula el puerto de salida y la MAC destino.
-* Instala reglas de flujo (**Flow Rules**) dinámicamente.
-* Gestiona **Packet-Out**: Reinyecta el primer paquete del flujo a la red.
-* Gestiona **Idle Notifications**: Recibe avisos del switch cuando una regla caduca y la elimina de la memoria para mantener la tabla limpia.
-
-
+DSCP/
+├── dscp.p4                   # Programa P4 para el tratamiento DSCP
+├── micontrolador.py          # Controlador P4Runtime en Python
+├── topology.json             # Definición de la topología
+├── Makefile                  # Automatización de compilación y ejecución
+├── build/                    # Archivos P4 compilados (JSON y P4Info)
+├── logs/                     # Logs de switches y P4Runtime
+└── pcaps/                    # Capturas de tráfico por interfaz
+````
 
 ---
 
-## La "Trampa" ARP (Static ARP Entries)
+## Funcionamiento del programa P4 (`dscp.p4`)
 
-Para simplificar el código P4 y centrarnos en el routing L3/L2, se ha implementado una solución estática para la resolución de direcciones (ARP).
+El programa P4 implementa la lógica básica para el procesamiento de paquetes IP:
 
-**El Problema:**
-Al estar `h1` y `h2` en la misma subred (`10.0.0.0/24`), Linux intenta resolver la MAC del destino enviando peticiones ARP Broadcast. Como nuestro código P4 en `MyIngress` descarta paquetes que no sean IPv4 o PacketOut, las peticiones ARP se perderían y el Ping fallaría.
+* Define encabezados Ethernet e IP.
+* Extrae el campo **DSCP** del encabezado IP.
+* Clasifica los paquetes en función del valor DSCP.
+* Aplica acciones simples como:
 
-**La Solución (En `topology.json`):**
-Se han inyectado entradas ARP estáticas en los hosts para "engañarlos" y forzar el envío inmediato del tráfico hacia el switch sin preguntar.
+  * Reenvío por un puerto determinado.
+  * Modificación del campo DSCP (según reglas instaladas).
+* Permite que el controlador instale dinámicamente las reglas de clasificación mediante tablas P4.
 
-* **En h1:** `arp -s 10.0.0.2 08:00:00:00:01:00`
-* *Traducción:* "H1, si quieres hablar con H2, no preguntes. Envía el paquete a la MAC `...01:00` (que corresponde al puerto de entrada de S1)".
-
-
-* **En h2:** `arp -s 10.0.0.1 08:00:00:00:02:00`
-
-De esta forma, el paquete entra al pipeline P4 como un paquete IPv4 válido unicast desde el primer momento.
+El switch actúa como un **elemento de forwarding y marcado**, mientras que la política concreta depende del controlador.
 
 ---
 
-## Instrucciones de Ejecución
+## Funcionamiento del controlador (`micontrolador.py`)
 
-### 1. Compilación y Arranque de la Red
+El controlador en Python cumple las siguientes funciones:
 
-Este comando compila el código P4, genera los archivos JSON/P4Info y levanta la topología en Mininet.
+1. **Inicialización del switch**
 
-```bash
-make
+   * Conexión al switch BMv2 vía gRPC.
+   * Carga del `p4info` y del JSON generado.
 
-```
+2. **Instalación de reglas DSCP**
 
-### 2. Iniciar el Controlador
+   * Inserta entradas en las tablas P4 para:
 
-En una nueva terminal, ejecuta el controlador. Este script se conectará a los switches s1 y s2 vía gRPC.
+     * Reconocer determinados valores DSCP.
+     * Asociar dichos valores a acciones específicas (forwarding o remarking).
 
-```bash
-./micontrolador.py
+3. **Gestión centralizada de políticas**
 
-```
+   * La lógica de decisión (qué DSCP tratar de qué manera) se mantiene en el plano de control.
+   * Facilita modificar el comportamiento de la red sin recompilar el programa P4.
 
-### 3. Prueba de Conectividad (Ping)
+4. **Monitoreo y depuración**
 
-En la consola de Mininet, lanza un ping.
-
-```bash
-mininet> h1 ping h2
-
-```
-
-**Comportamiento esperado:**
-
-1. **Primer Paquete:** El controlador recibe un `Packet-In`. Instala la regla en s1 y s2 (unidireccional).
-2. **Siguientes Paquetes:** Fluyen directamente por el hardware (Data Plane) gracias a la regla instalada.
-3. **Timeout:** Si detienes el ping y esperas unos segundos (configurado a 3s en el código), verás en el log del controlador cómo se eliminan las reglas por inactividad (`IdleTimeoutNotification`).
----
-## 📂 Estructura del Proyecto
-
-* `first.p4`: Código fuente P4 (Ingress, Egress, Parser).
-* `micontrolador.py`: Lógica del controlador (Manejo de reglas, timeouts y decoding de metadatos).
-* `topology.json`: Definición de la red y comandos de configuración de hosts (ARP estático).
-* `Makefile`: Scripts de automatización para compilar y ejecutar.
+   * Registro de interacciones P4Runtime.
+   * Soporte para análisis posterior mediante logs y capturas PCAP.
 
 ---
-## ⚙️ Detalles Técnicos Adicionales
 
-* **CPU Port:** 510. Usado como interfaz virtual entre el switch y el controlador.
-* **Clone Session ID:** 67. Usado para duplicar paquetes hacia la CPU.
+## Topología
+
+La topología definida en `topology.json` incluye:
+
+* Dos switches P4.
+* Hosts conectados a cada switch.
+* Enlaces simples que permiten observar cómo el tráfico con distintos valores DSCP atraviesa la red.
+
+Esta topología es adecuada para verificar políticas de clasificación y forwarding basadas en DSCP.
+
+---
+
+## Cambios respecto al escenario ARP
+
+En comparación con el escenario anterior (ARP con controlador), este proyecto introduce varios cambios conceptuales y técnicos:
+
+### 1. Protocolo tratado
+
+* **Escenario ARP**:
+  Se centra en paquetes ARP y en su resolución mediante el controlador.
+* **Escenario DSCP**:
+  Trabaja sobre paquetes **IP**, específicamente sobre el campo DSCP del encabezado.
+
+### 2. Rol del controlador
+
+* **ARP**:
+  El controlador procesa paquetes ARP enviados al CPU, aprende direcciones y genera respuestas ARP.
+* **DSCP**:
+  El controlador **no responde paquetes**, sino que instala **reglas proactivas** para clasificar y tratar el tráfico.
+
+### 3. Plano de datos
+
+* **ARP**:
+  El switch es deliberadamente “tonto” y reenvía ARP al controlador.
+* **DSCP**:
+  El switch realiza clasificación y acciones directamente en el pipeline, usando reglas cargadas dinámicamente.
+
+### 4. Objetivo funcional
+
+* **ARP**:
+  Resolver direcciones IP–MAC y demostrar manejo de paquetes excepcionales.
+* **DSCP**:
+  Demostrar **QoS, diferenciación de tráfico y políticas de red** basadas en campos IP.
+
+### 5. Interacción con P4Runtime
+
+* **ARP**:
+  Predomina el uso de `PacketIn` y `PacketOut`.
+* **DSCP**:
+  Predomina la inserción y modificación de **entradas de tablas P4**.
+
+---
+
+## Ejecución del escenario
+
+El flujo general es:
+
+1. Compilación del programa `dscp.p4`.
+2. Despliegue de la topología.
+3. Inicio del controlador.
+4. Generación de tráfico IP con distintos valores DSCP.
+5. Verificación del comportamiento mediante PCAPs y logs.
+
+El `Makefile` automatiza estos pasos.
+
+---
+
+## Objetivo didáctico
+
+Este escenario permite entender:
+
+* Cómo usar P4 para clasificar tráfico IP.
+* Cómo delegar políticas de red al plano de control.
+* Diferencias entre control **reactivo** (ARP) y **proactivo** (DSCP).
+* Uso práctico de P4Runtime para gestionar QoS de forma centralizada.
+
+---
+
+## Notas finales
+
+* El escenario puede extenderse para colas, prioridades o integración con traffic shaping.
+* Las capturas en `pcaps/` permiten validar el marcado y forwarding DSCP.
+* Junto con el escenario ARP, ofrece una visión progresiva del diseño SDN con P4.
