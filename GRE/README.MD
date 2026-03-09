@@ -1,99 +1,203 @@
-# Reactive SDN Switch con P4 y Flow Cache
+# Escenario P4 – Tunelización y desencapsulado GRE con controlador
 
-Este proyecto implementa un switch SDN reactivo utilizando P4 (Data Plane) y Python (Control Plane). El sistema gestiona el tráfico entre hosts instalando reglas de flujo bajo demanda (*Packet-In*) y eliminándolas automáticamente cuando dejan de usarse (*Idle Timeout*).
+## Descripción general
 
-## 🏗 Arquitectura del Escenario
+Este proyecto implementa un escenario en **P4_16** que introduce **tunelización GRE (Generic Routing Encapsulation)** entre switches programables, utilizando un **controlador externo en Python** mediante **P4Runtime**.  
 
-La topología emulada en Mininet consta de dos hosts conectados a través de dos switches en serie:
+El objetivo principal es demostrar cómo un switch P4 puede:
+- **Encapsular tráfico IP dentro de un túnel GRE**
+- **Desencapsular tráfico GRE entrante**
+- Tomar decisiones de forwarding basadas tanto en el encabezado externo como en el interno
+
+Este escenario se apoya en **BMv2 (v1model)** y amplía significativamente las funcionalidades vistas en los escenarios anteriores (ARP y DSCP).
+
+---
+
+## Estructura del proyecto
 
 ```text
-h1 (10.0.0.1) <--> [p1] s1 [p2] <----> [p2] s2 [p1] <--> h2 (10.0.0.2)
-```
-
-### Componentes Clave
-
-1. **Data Plane (`first.p4`):**
-* Define headers para Ethernet, IPv4, PacketIn y PacketOut.
-* Utiliza una tabla `flow_cache` con soporte para **Idle Timeout** (detección de inactividad).
-* Si un paquete no coincide con ninguna regla, se envía al controlador (Packet-In).
-* Maneja la clonación de paquetes hacia el puerto CPU (510).
-
-
-2. **Control Plane (`micontrolador.py`):**
-* Escrito en Python 3 usando `p4runtime_lib` y `asyncio`.
-* Procesa mensajes **Packet-In**: Calcula el puerto de salida y la MAC destino.
-* Instala reglas de flujo (**Flow Rules**) dinámicamente.
-* Gestiona **Packet-Out**: Reinyecta el primer paquete del flujo a la red.
-* Gestiona **Idle Notifications**: Recibe avisos del switch cuando una regla caduca y la elimina de la memoria para mantener la tabla limpia.
-
-
+GRE/
+├── gre.p4                    # Programa P4 con soporte GRE
+├── micontrolador.py          # Controlador P4Runtime en Python
+├── topology.json             # Definición de la topología
+├── Makefile                  # Automatización de compilación y ejecución
+├── build/                    # Archivos P4 compilados (JSON y P4Info)
+├── logs/                     # Logs de switches y P4Runtime
+└── pcaps/                    # Capturas de tráfico por interfaz
+````
 
 ---
 
-## La "Trampa" ARP (Static ARP Entries)
+## Funcionamiento del programa P4 (`gre.p4`)
 
-Para simplificar el código P4 y centrarnos en el routing L3/L2, se ha implementado una solución estática para la resolución de direcciones (ARP).
+El programa P4 introduce una pipeline más compleja que en los escenarios anteriores:
 
-**El Problema:**
-Al estar `h1` y `h2` en la misma subred (`10.0.0.0/24`), Linux intenta resolver la MAC del destino enviando peticiones ARP Broadcast. Como nuestro código P4 en `MyIngress` descarta paquetes que no sean IPv4 o PacketOut, las peticiones ARP se perderían y el Ping fallaría.
+### Encabezados soportados
 
-**La Solución (En `topology.json`):**
-Se han inyectado entradas ARP estáticas en los hosts para "engañarlos" y forzar el envío inmediato del tráfico hacia el switch sin preguntar.
+* Ethernet
+* IP externo
+* GRE
+* IP interno (payload del túnel)
 
-* **En h1:** `arp -s 10.0.0.2 08:00:00:00:01:00`
-* *Traducción:* "H1, si quieres hablar con H2, no preguntes. Envía el paquete a la MAC `...01:00` (que corresponde al puerto de entrada de S1)".
+### Parsing
 
+* El parser distingue entre:
 
-* **En h2:** `arp -s 10.0.0.1 08:00:00:00:02:00`
+  * Paquetes IP normales
+  * Paquetes GRE
+* Si se detecta GRE, se extraen:
 
-De esta forma, el paquete entra al pipeline P4 como un paquete IPv4 válido unicast desde el primer momento.
+  * Encabezado GRE
+  * Encabezado IP interno encapsulado
+
+### Pipeline de procesamiento
+
+El switch puede operar en dos modos lógicos:
+
+#### 1. Encapsulación (ingreso al túnel)
+
+* Paquetes IP “normales” que cumplen ciertas condiciones:
+
+  * Se encapsulan dentro de un nuevo encabezado IP + GRE.
+* Se construye:
+
+  * IP externo (origen/destino del túnel)
+  * Encabezado GRE
+* El paquete encapsulado se reenvía hacia el switch remoto del túnel.
+
+#### 2. Desencapsulación (egreso del túnel)
+
+* Paquetes GRE entrantes:
+
+  * Se elimina el encabezado IP externo.
+  * Se elimina el encabezado GRE.
+* El paquete IP interno resultante se reinyecta al pipeline para su forwarding normal.
+
+### Deparser
+
+* Reconstruye correctamente el paquete según haya sido encapsulado o desencapsulado.
+
+---
+
+## Funcionamiento del controlador (`micontrolador.py`)
+
+El controlador cumple un rol **proactivo**, configurando el comportamiento del túnel:
+
+1. **Inicialización**
+
+   * Conexión a los switches BMv2 mediante gRPC.
+   * Carga del `p4info` y del JSON compilado.
+
+2. **Configuración del túnel GRE**
+
+   * Instalación de reglas para:
+
+     * Identificar tráfico que debe encapsularse.
+     * Definir direcciones IP externas del túnel.
+     * Seleccionar puertos de salida del túnel.
+
+3. **Reglas de desencapsulado**
+
+   * Configura tablas que reconocen paquetes GRE entrantes.
+   * Asocia acciones de desencapsulación y forwarding del tráfico interno.
+
+4. **Gestión centralizada**
+
+   * Toda la lógica de qué tráfico entra o sale del túnel reside en el controlador.
+   * El programa P4 actúa como un motor genérico de encapsulación/desencapsulación.
 
 ---
 
-## Instrucciones de Ejecución
+## Topología
 
-### 1. Compilación y Arranque de la Red
+La topología definida en `topology.json` incluye:
 
-Este comando compila el código P4, genera los archivos JSON/P4Info y levanta la topología en Mininet.
+* Dos switches P4 que actúan como extremos del túnel GRE.
+* Hosts conectados a cada extremo.
+* Enlaces directos entre switches que representan el “core” o red intermedia.
 
-```bash
-make
+Esto permite observar claramente:
 
-```
-
-### 2. Iniciar el Controlador
-
-En una nueva terminal, ejecuta el controlador. Este script se conectará a los switches s1 y s2 vía gRPC.
-
-```bash
-./micontrolador.py
-
-```
-
-### 3. Prueba de Conectividad (Ping)
-
-En la consola de Mininet, lanza un ping.
-
-```bash
-mininet> h1 ping h2
-
-```
-
-**Comportamiento esperado:**
-
-1. **Primer Paquete:** El controlador recibe un `Packet-In`. Instala la regla en s1 y s2 (unidireccional).
-2. **Siguientes Paquetes:** Fluyen directamente por el hardware (Data Plane) gracias a la regla instalada.
-3. **Timeout:** Si detienes el ping y esperas unos segundos (configurado a 3s en el código), verás en el log del controlador cómo se eliminan las reglas por inactividad (`IdleTimeoutNotification`).
----
-## 📂 Estructura del Proyecto
-
-* `first.p4`: Código fuente P4 (Ingress, Egress, Parser).
-* `micontrolador.py`: Lógica del controlador (Manejo de reglas, timeouts y decoding de metadatos).
-* `topology.json`: Definición de la red y comandos de configuración de hosts (ARP estático).
-* `Makefile`: Scripts de automatización para compilar y ejecutar.
+* Tráfico original del host
+* Tráfico encapsulado GRE entre switches
+* Tráfico desencapsulado en el extremo remoto
 
 ---
-## ⚙️ Detalles Técnicos Adicionales
 
-* **CPU Port:** 510. Usado como interfaz virtual entre el switch y el controlador.
-* **Clone Session ID:** 67. Usado para duplicar paquetes hacia la CPU.
+## Cambios respecto a los escenarios anteriores
+
+Este escenario introduce nuevas capacidades clave en comparación con ARP y DSCP:
+
+### 1. Complejidad del parsing
+
+* **ARP / DSCP**:
+  Parsing simple (Ethernet + ARP o IP).
+* **GRE**:
+  Parsing jerárquico y condicional (Ethernet → IP → GRE → IP interno).
+
+### 2. Manipulación profunda del paquete
+
+* **ARP**: Reenvío de paquetes al controlador.
+* **DSCP**: Modificación de un campo del encabezado IP.
+* **GRE**:
+
+  * Inserción y eliminación de múltiples encabezados.
+  * Manejo de paquetes “anidados”.
+
+### 3. Rol del switch
+
+* **ARP**: Switch reactivo, dependiente del controlador.
+* **DSCP**: Switch clasificador y marcador.
+* **GRE**: Switch como **endpoint de túnel**, similar a un router o gateway.
+
+### 4. Uso de P4Runtime
+
+* **ARP**: PacketIn / PacketOut.
+* **DSCP**: Inserción de reglas de clasificación.
+* **GRE**:
+
+  * Instalación de reglas de encapsulación.
+  * Configuración de parámetros del túnel (IPs, puertos).
+
+### 5. Objetivo funcional
+
+* **ARP**: Resolución de direcciones.
+* **DSCP**: QoS y diferenciación de tráfico.
+* **GRE**: **Virtualización de la red y creación de overlays**.
+
+---
+
+## Ejecución del escenario
+
+El flujo general es:
+
+1. Compilación del programa `gre.p4`.
+2. Despliegue de la topología.
+3. Inicio del controlador.
+4. Generación de tráfico IP entre hosts.
+5. Observación del encapsulado GRE entre switches.
+6. Verificación mediante archivos PCAP y logs.
+
+El `Makefile` automatiza los pasos principales.
+
+---
+
+## Objetivo didáctico
+
+Este escenario permite comprender:
+
+* Cómo implementar **túneles GRE en P4**.
+* Manipulación avanzada de paquetes en el plano de datos.
+* Separación clara entre:
+
+  * Lógica genérica en P4
+  * Políticas concretas en el controlador
+* Evolución desde funciones básicas (ARP) hasta mecanismos avanzados de red (overlays).
+
+---
+
+## Notas finales
+
+* El escenario puede extenderse para VXLAN u otros protocolos de encapsulación.
+* Las capturas en `pcaps/` son clave para validar el encapsulado y desencapsulado.
+* Junto con ARP y DSCP, este escenario completa una progresión clara en complejidad y capacidades de P4.
