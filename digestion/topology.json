@@ -1,0 +1,153 @@
+{
+    "hosts": {
+        "h1": {
+            "ip": "10.0.0.1/24",
+            "mac": "08:00:00:00:01:11",
+            "commands": [
+                "route add default gw 10.0.0.254 dev eth0"
+            ]
+        },
+        "h2": {
+            "ip": "10.0.0.2/24",
+            "mac": "08:00:00:00:02:22",
+            "commands": [
+                "route add default gw 10.0.0.254 dev eth0"
+            ]
+        },
+        "h3": {
+            "ip": "10.0.10.3/24",
+            "mac": "08:00:00:00:03:33",
+            "commands": [
+                "route add default gw 10.0.10.254 dev eth0"
+            ]
+        },
+        "h4": {
+            "ip": "10.0.10.4/24",
+            "mac": "08:00:00:00:04:44",
+            "commands": [
+                "route add default gw 10.0.10.254 dev eth0"
+            ]
+        },
+        "h5": {
+            "ip": "10.0.0.254/24",
+            "mac": "08:00:00:00:05:55",
+            "commands": [
+                "ip addr add 192.168.0.1/24 dev h5-eth1",
+                "ip link set h5-eth1 address 18:00:00:00:05:55",
+                "ip link set h5-eth1 up",
+                "sysctl -w net.ipv4.ip_forward=1",
+                "ip route add 10.0.10.0/24 via 192.168.0.2 dev h5-eth1"
+            ]
+        },
+        "h6": {
+            "ip": "10.0.10.254/24",
+            "mac": "08:00:00:00:06:66",
+            "commands": [
+                "ip addr add 192.168.0.2/24 dev h6-eth1",
+                "ip link set h6-eth1 address 18:00:00:00:06:66",
+                "ip link set h6-eth1 up",
+                "sysctl -w net.ipv4.ip_forward=1",
+                "ip route add 10.0.0.0/24 via 192.168.0.1 dev h6-eth1"
+            ]
+        }
+    },
+    "switches": {
+        "s1": {
+            "cpu_port": "510",
+            "json_path": "build/switch.json"
+        },
+        "s2": {
+            "cpu_port": "510",
+            "json_path": "build/router.json"
+        },
+        "s3": {
+            "cpu_port": "510",
+            "json_path": "build/switch.json"
+        },
+        "s4": {
+            "cpu_port": "510",
+            "json_path": "build/router.json"
+        },
+        "s5": {
+            "cpu_port": "510",
+            "json_path": "build/switch.json"
+        },
+        "s6": {
+            "cpu_port": "510",
+            "json_path": "build/tonto.json"
+        },
+        "s7": {
+            "cpu_port": "510",
+            "json_path": "build/tonto.json"
+        }
+    },
+    "links": [
+        [
+            "h1",
+            "s1-p1"
+        ],
+        [
+            "s1-p121",
+            "s2-p111"
+        ],
+        [
+            "s1-p123",
+            "s2-p113"
+        ],
+        [
+            "s2-p131",
+            "s3-p121"
+        ],[
+            "s2-p133",
+            "s3-p123"
+        ],
+        [
+            "s2-p1",
+            "h5"
+        ],
+        [
+            "h2",
+            "s7-p1"
+        ],
+        [
+            "h3",
+            "s7-p2"
+        ],
+        [
+            "s7-p3",
+            "s3-p1"
+        ],
+        [
+            "s3-p141",
+            "s4-p131"
+        ],
+        [
+            "s3-p143",
+            "s4-p133"
+        ],
+        [
+            "s4-p151",
+            "s5-p141"
+        ],
+        [
+            "s4-p153",
+            "s5-p143"
+        ],
+        [
+            "s4-p1",
+            "h6"
+        ],
+        [
+            "h4",
+            "s5-p1"
+        ],
+        [
+            "h5",
+            "s6-p1"
+        ],
+        [
+            "h6",
+            "s6-p2"
+        ]
+    ]
+}

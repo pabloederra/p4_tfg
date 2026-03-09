@@ -1,0 +1,30 @@
+# Opción híbrida: Base con Thrift (behavioral-model) + compilador copiado
+# Etapa 1: Obtener compilador
+FROM p4lang/p4c:latest AS compiler
+
+# Etapa 2: Imagen final basada en behavioral-model (tiene Thrift)
+FROM p4lang/behavioral-model:latest
+
+# Copiar compilador p4c desde la etapa 1
+COPY --from=compiler /usr/local/bin/p4c* /usr/local/bin/
+COPY --from=compiler /usr/local/share/p4c /usr/local/share/p4c
+
+# Asegurar dependencias de runtime para p4c (libgc, libgmp, etc.)
+# behavioral-model es ubuntu/debian based? suele ser ubuntu 20.04 o 22.04.
+# Paquetes necesarios para NAT, DHCP, GRE, etc.
+RUN apt-get update && apt-get install -y \
+    iproute2 iputils-ping tcpdump nano \
+    iptables isc-dhcp-server \
+    && apt-get clean
+
+# Habilitar forwarding en el contenedor
+RUN echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
+
+# Directorio persistente para programas P4, p4info, p4.json, scripts, logs
+RUN mkdir -p /lab/p4 /lab/config /lab/logs
+VOLUME ["/lab"]
+
+WORKDIR /lab
+
+CMD ["/bin/bash"]
+# simple_switch_grpc --interface 1@<INT1> --interface 2@<INT2> --interface 3@<INT3> lab/p4/<P4PROGRAM>.json --log-file lab/logs/<LOGFILE>.log

@@ -1,0 +1,2340 @@
+Calling target program-options parser
+Adding interface s4-eth1 as port 1
+[06:09:55.196] [bmv2] [D] [thread 51120] Adding interface s4-eth1 as port 1
+Adding interface s4-eth2 as port 2
+[06:09:55.229] [bmv2] [D] [thread 51120] Adding interface s4-eth2 as port 2
+Adding interface s4-eth3 as port 3
+[06:09:55.250] [bmv2] [D] [thread 51120] Adding interface s4-eth3 as port 3
+Server listening on 0.0.0.0:50054
+[06:09:55.333] [bmv2] [I] [thread 51120] Starting Thrift server on port 9093
+[06:09:55.334] [bmv2] [I] [thread 51120] Thrift server was started
+[06:10:00.727] [bmv2] [W] [thread 51256] [P4Runtime] p4::tmp::P4DeviceConfig is deprecated
+[06:10:00.758] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_drop_packet': MyIngress.drop_packet - 
+[06:10:00.758] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_switch304': switch304 - 
+[06:10:00.758] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_switch309': switch309 - 
+[06:10:00.758] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_switch310': switch310 - 
+[06:10:00.758] [bmv2] [D] [thread 51256] Set default default entry for table 'switch_0_table': switch_0_case_1 - 
+[06:10:00.758] [bmv2] [D] [thread 51256] Entry 0 added to table 'switch_0_table'
+[06:10:00.758] [bmv2] [D] [thread 51256] Dumping entry 0
+Match key:
+* scalars.switch_0_key: EXACT     01
+Action entry: switch_0_case - 
+
+[06:10:00.758] [bmv2] [D] [thread 51256] Entry 1 added to table 'switch_0_table'
+[06:10:00.758] [bmv2] [D] [thread 51256] Dumping entry 1
+Match key:
+* scalars.switch_0_key: EXACT     02
+Action entry: switch_0_case_0 - 
+
+[06:10:00.758] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_switch312': switch312 - 
+[06:10:00.758] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_flooding': MyIngress.flooding - 
+[06:10:00.758] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_switch317': switch317 - 
+[06:10:00.758] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_send_to_controller_with_details': MyIngress.send_to_controller_with_details - 
+[06:10:00.758] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_switch324': switch324 - 
+[06:10:00.758] [bmv2] [D] [thread 51256] Set default default entry for table 'MyIngress.marked_ip': MyIngress.marking - 3e9,
+[06:10:00.758] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_marking': MyIngress.marking - 
+[06:10:00.758] [bmv2] [D] [thread 51256] Set default default entry for table 'MyIngress.switch_id': MyIngress.flow_unknown - 
+[06:10:00.761] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_drop_packet_0': MyEgress.drop_packet - 
+[06:10:00.761] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_switch370': switch370 - 
+[06:10:00.761] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_prepend_packet_in_hdr': MyEgress.prepend_packet_in_hdr - 
+[06:10:00.761] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_switch376': switch376 - 
+[06:10:00.761] [bmv2] [D] [thread 51256] Set default default entry for table 'switch_1_table': switch_1_case_3 - 
+[06:10:00.761] [bmv2] [D] [thread 51256] Entry 0 added to table 'switch_1_table'
+[06:10:00.761] [bmv2] [D] [thread 51256] Dumping entry 0
+Match key:
+* scalars.switch_1_key: EXACT     01
+Action entry: switch_1_case - 
+
+[06:10:00.761] [bmv2] [D] [thread 51256] Entry 1 added to table 'switch_1_table'
+[06:10:00.761] [bmv2] [D] [thread 51256] Dumping entry 1
+Match key:
+* scalars.switch_1_key: EXACT     02
+Action entry: switch_1_case_0 - 
+
+[06:10:00.761] [bmv2] [D] [thread 51256] Entry 2 added to table 'switch_1_table'
+[06:10:00.761] [bmv2] [D] [thread 51256] Dumping entry 2
+Match key:
+* scalars.switch_1_key: EXACT     06
+Action entry: switch_1_case_1 - 
+
+[06:10:00.761] [bmv2] [D] [thread 51256] Entry 3 added to table 'switch_1_table'
+[06:10:00.761] [bmv2] [D] [thread 51256] Dumping entry 3
+Match key:
+* scalars.switch_1_key: EXACT     11
+Action entry: switch_1_case_2 - 
+
+[06:10:00.761] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_switch378': switch378 - 
+[06:10:00.761] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_switch381': switch381 - 
+[06:10:00.761] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_switch384': switch384 - 
+[06:10:00.761] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_switch387': switch387 - 
+[06:10:00.761] [bmv2] [D] [thread 51256] Set default default entry for table 'tbl_switch390': switch390 - 
+[06:10:00.763] [bmv2] [D] [thread 51256] simple_switch target has been notified of a config swap
+[06:10:00.764] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Processing packet received on port 1
+[06:10:00.764] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Parser 'parser': start
+[06:10:00.764] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.764] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:00.764] [bmv2] [T] [thread 51265] [0.0] [cxt 0] Bytes parsed: 0
+[06:10:00.764] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.764] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.764] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.765] [bmv2] [E] [thread 51265] [0.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.765] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Parser 'parser': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.765] [bmv2] [T] [thread 51265] [0.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.765] [bmv2] [T] [thread 51265] [0.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Looking up key:
+
+[06:10:00.765] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.765] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.765] [bmv2] [T] [thread 51265] [0.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.765] [bmv2] [T] [thread 51265] [0.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.765] [bmv2] [T] [thread 51265] [0.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.765] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Looking up key:
+
+[06:10:00.765] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.765] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.765] [bmv2] [T] [thread 51265] [0.0] [cxt 0] Action switch304
+[06:10:00.765] [bmv2] [T] [thread 51265] [0.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.765] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Egress port is 511
+[06:10:00.765] [bmv2] [D] [thread 51265] [0.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Processing packet received on port 2
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Parser 'parser': start
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:00.765] [bmv2] [T] [thread 51265] [1.0] [cxt 0] Bytes parsed: 0
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.765] [bmv2] [E] [thread 51265] [1.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Parser 'parser': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.765] [bmv2] [T] [thread 51265] [1.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.765] [bmv2] [T] [thread 51265] [1.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Looking up key:
+
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.765] [bmv2] [T] [thread 51265] [1.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.765] [bmv2] [T] [thread 51265] [1.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.765] [bmv2] [T] [thread 51265] [1.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Looking up key:
+
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.765] [bmv2] [T] [thread 51265] [1.0] [cxt 0] Action switch304
+[06:10:00.765] [bmv2] [T] [thread 51265] [1.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Egress port is 511
+[06:10:00.765] [bmv2] [D] [thread 51265] [1.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Processing packet received on port 3
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Parser 'parser': start
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Parser state 'start': key is 0003
+[06:10:00.765] [bmv2] [T] [thread 51265] [2.0] [cxt 0] Bytes parsed: 0
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.765] [bmv2] [E] [thread 51265] [2.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Parser 'parser': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.765] [bmv2] [T] [thread 51265] [2.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.765] [bmv2] [T] [thread 51265] [2.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Looking up key:
+
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.765] [bmv2] [T] [thread 51265] [2.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.765] [bmv2] [T] [thread 51265] [2.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.765] [bmv2] [T] [thread 51265] [2.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Looking up key:
+
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.765] [bmv2] [T] [thread 51265] [2.0] [cxt 0] Action switch304
+[06:10:00.765] [bmv2] [T] [thread 51265] [2.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Egress port is 511
+[06:10:00.765] [bmv2] [D] [thread 51265] [2.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Processing packet received on port 1
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Parser 'parser': start
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:00.765] [bmv2] [T] [thread 51265] [3.0] [cxt 0] Bytes parsed: 0
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.765] [bmv2] [E] [thread 51265] [3.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Parser 'parser': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.765] [bmv2] [T] [thread 51265] [3.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.765] [bmv2] [T] [thread 51265] [3.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Looking up key:
+
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.765] [bmv2] [T] [thread 51265] [3.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.765] [bmv2] [T] [thread 51265] [3.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.765] [bmv2] [T] [thread 51265] [3.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Looking up key:
+
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.765] [bmv2] [T] [thread 51265] [3.0] [cxt 0] Action switch304
+[06:10:00.765] [bmv2] [T] [thread 51265] [3.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Egress port is 511
+[06:10:00.765] [bmv2] [D] [thread 51265] [3.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Processing packet received on port 2
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Parser 'parser': start
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:00.765] [bmv2] [T] [thread 51265] [4.0] [cxt 0] Bytes parsed: 0
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.765] [bmv2] [E] [thread 51265] [4.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Parser 'parser': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.765] [bmv2] [T] [thread 51265] [4.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.765] [bmv2] [T] [thread 51265] [4.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Looking up key:
+
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.765] [bmv2] [T] [thread 51265] [4.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.765] [bmv2] [T] [thread 51265] [4.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.765] [bmv2] [T] [thread 51265] [4.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Looking up key:
+
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.765] [bmv2] [T] [thread 51265] [4.0] [cxt 0] Action switch304
+[06:10:00.765] [bmv2] [T] [thread 51265] [4.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Egress port is 511
+[06:10:00.765] [bmv2] [D] [thread 51265] [4.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Processing packet received on port 3
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Parser 'parser': start
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Parser state 'start': key is 0003
+[06:10:00.765] [bmv2] [T] [thread 51265] [5.0] [cxt 0] Bytes parsed: 0
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.765] [bmv2] [E] [thread 51265] [5.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Parser 'parser': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.765] [bmv2] [T] [thread 51265] [5.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.765] [bmv2] [T] [thread 51265] [5.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Looking up key:
+
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.765] [bmv2] [T] [thread 51265] [5.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.765] [bmv2] [T] [thread 51265] [5.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.765] [bmv2] [T] [thread 51265] [5.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Looking up key:
+
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.765] [bmv2] [T] [thread 51265] [5.0] [cxt 0] Action switch304
+[06:10:00.765] [bmv2] [T] [thread 51265] [5.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Egress port is 511
+[06:10:00.765] [bmv2] [D] [thread 51265] [5.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Processing packet received on port 1
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Parser 'parser': start
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:00.765] [bmv2] [T] [thread 51265] [6.0] [cxt 0] Bytes parsed: 0
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.765] [bmv2] [E] [thread 51265] [6.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Parser 'parser': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.765] [bmv2] [T] [thread 51265] [6.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.765] [bmv2] [T] [thread 51265] [6.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Looking up key:
+
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.765] [bmv2] [T] [thread 51265] [6.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.765] [bmv2] [T] [thread 51265] [6.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.765] [bmv2] [T] [thread 51265] [6.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Looking up key:
+
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.765] [bmv2] [T] [thread 51265] [6.0] [cxt 0] Action switch304
+[06:10:00.765] [bmv2] [T] [thread 51265] [6.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Egress port is 511
+[06:10:00.765] [bmv2] [D] [thread 51265] [6.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.765] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Processing packet received on port 2
+[06:10:00.765] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Parser 'parser': start
+[06:10:00.765] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.765] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:00.765] [bmv2] [T] [thread 51265] [7.0] [cxt 0] Bytes parsed: 0
+[06:10:00.765] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.765] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.765] [bmv2] [E] [thread 51265] [7.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.765] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Parser 'parser': end
+[06:10:00.765] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.765] [bmv2] [T] [thread 51265] [7.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.766] [bmv2] [T] [thread 51265] [7.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.766] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Looking up key:
+
+[06:10:00.766] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.766] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.766] [bmv2] [T] [thread 51265] [7.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.766] [bmv2] [T] [thread 51265] [7.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.766] [bmv2] [T] [thread 51265] [7.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.766] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Looking up key:
+
+[06:10:00.766] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.766] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.766] [bmv2] [T] [thread 51265] [7.0] [cxt 0] Action switch304
+[06:10:00.766] [bmv2] [T] [thread 51265] [7.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.766] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.766] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Egress port is 511
+[06:10:00.766] [bmv2] [D] [thread 51265] [7.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Processing packet received on port 3
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Parser 'parser': start
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Parser state 'start': key is 0003
+[06:10:00.767] [bmv2] [T] [thread 51265] [8.0] [cxt 0] Bytes parsed: 0
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.767] [bmv2] [E] [thread 51265] [8.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Parser 'parser': end
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.767] [bmv2] [T] [thread 51265] [8.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.767] [bmv2] [T] [thread 51265] [8.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Looking up key:
+
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.767] [bmv2] [T] [thread 51265] [8.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.767] [bmv2] [T] [thread 51265] [8.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.767] [bmv2] [T] [thread 51265] [8.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Looking up key:
+
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.767] [bmv2] [T] [thread 51265] [8.0] [cxt 0] Action switch304
+[06:10:00.767] [bmv2] [T] [thread 51265] [8.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Egress port is 511
+[06:10:00.767] [bmv2] [D] [thread 51265] [8.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Processing packet received on port 1
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Parser 'parser': start
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:00.767] [bmv2] [T] [thread 51265] [9.0] [cxt 0] Bytes parsed: 0
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.767] [bmv2] [E] [thread 51265] [9.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Parser 'parser': end
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.767] [bmv2] [T] [thread 51265] [9.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.767] [bmv2] [T] [thread 51265] [9.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Looking up key:
+
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.767] [bmv2] [T] [thread 51265] [9.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.767] [bmv2] [T] [thread 51265] [9.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.767] [bmv2] [T] [thread 51265] [9.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Looking up key:
+
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.767] [bmv2] [T] [thread 51265] [9.0] [cxt 0] Action switch304
+[06:10:00.767] [bmv2] [T] [thread 51265] [9.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Egress port is 511
+[06:10:00.767] [bmv2] [D] [thread 51265] [9.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Processing packet received on port 2
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Parser 'parser': start
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:00.767] [bmv2] [T] [thread 51265] [10.0] [cxt 0] Bytes parsed: 0
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.767] [bmv2] [E] [thread 51265] [10.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Parser 'parser': end
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.767] [bmv2] [T] [thread 51265] [10.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.767] [bmv2] [T] [thread 51265] [10.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Looking up key:
+
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.767] [bmv2] [T] [thread 51265] [10.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.767] [bmv2] [T] [thread 51265] [10.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.767] [bmv2] [T] [thread 51265] [10.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Looking up key:
+
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.767] [bmv2] [T] [thread 51265] [10.0] [cxt 0] Action switch304
+[06:10:00.767] [bmv2] [T] [thread 51265] [10.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Egress port is 511
+[06:10:00.767] [bmv2] [D] [thread 51265] [10.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Processing packet received on port 3
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Parser 'parser': start
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Parser state 'start': key is 0003
+[06:10:00.767] [bmv2] [T] [thread 51265] [11.0] [cxt 0] Bytes parsed: 0
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.767] [bmv2] [E] [thread 51265] [11.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Parser 'parser': end
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.767] [bmv2] [T] [thread 51265] [11.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.767] [bmv2] [T] [thread 51265] [11.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Looking up key:
+
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.767] [bmv2] [T] [thread 51265] [11.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.767] [bmv2] [T] [thread 51265] [11.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.767] [bmv2] [T] [thread 51265] [11.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Looking up key:
+
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.767] [bmv2] [T] [thread 51265] [11.0] [cxt 0] Action switch304
+[06:10:00.767] [bmv2] [T] [thread 51265] [11.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Egress port is 511
+[06:10:00.767] [bmv2] [D] [thread 51265] [11.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.767] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Processing packet received on port 1
+[06:10:00.767] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Parser 'parser': start
+[06:10:00.767] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.767] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:00.767] [bmv2] [T] [thread 51265] [12.0] [cxt 0] Bytes parsed: 0
+[06:10:00.767] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.767] [bmv2] [E] [thread 51265] [12.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.767] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Parser 'parser': end
+[06:10:00.767] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.767] [bmv2] [T] [thread 51265] [12.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.767] [bmv2] [T] [thread 51265] [12.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.767] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Looking up key:
+
+[06:10:00.768] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.768] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.768] [bmv2] [T] [thread 51265] [12.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.768] [bmv2] [T] [thread 51265] [12.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.768] [bmv2] [T] [thread 51265] [12.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.768] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Looking up key:
+
+[06:10:00.768] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.768] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.768] [bmv2] [T] [thread 51265] [12.0] [cxt 0] Action switch304
+[06:10:00.768] [bmv2] [T] [thread 51265] [12.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.768] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.768] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Egress port is 511
+[06:10:00.768] [bmv2] [D] [thread 51265] [12.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Processing packet received on port 2
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Parser 'parser': start
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:00.768] [bmv2] [T] [thread 51265] [13.0] [cxt 0] Bytes parsed: 0
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.768] [bmv2] [E] [thread 51265] [13.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Parser 'parser': end
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.768] [bmv2] [T] [thread 51265] [13.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.768] [bmv2] [T] [thread 51265] [13.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Looking up key:
+
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.768] [bmv2] [T] [thread 51265] [13.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.768] [bmv2] [T] [thread 51265] [13.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.768] [bmv2] [T] [thread 51265] [13.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Looking up key:
+
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.768] [bmv2] [T] [thread 51265] [13.0] [cxt 0] Action switch304
+[06:10:00.768] [bmv2] [T] [thread 51265] [13.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Egress port is 511
+[06:10:00.768] [bmv2] [D] [thread 51265] [13.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Processing packet received on port 1
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Parser 'parser': start
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:00.768] [bmv2] [T] [thread 51265] [14.0] [cxt 0] Bytes parsed: 0
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.768] [bmv2] [E] [thread 51265] [14.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Parser 'parser': end
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.768] [bmv2] [T] [thread 51265] [14.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.768] [bmv2] [T] [thread 51265] [14.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Looking up key:
+
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.768] [bmv2] [T] [thread 51265] [14.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.768] [bmv2] [T] [thread 51265] [14.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.768] [bmv2] [T] [thread 51265] [14.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Looking up key:
+
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.768] [bmv2] [T] [thread 51265] [14.0] [cxt 0] Action switch304
+[06:10:00.768] [bmv2] [T] [thread 51265] [14.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Egress port is 511
+[06:10:00.768] [bmv2] [D] [thread 51265] [14.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.768] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Processing packet received on port 2
+[06:10:00.768] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Parser 'parser': start
+[06:10:00.768] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.768] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:00.768] [bmv2] [T] [thread 51265] [15.0] [cxt 0] Bytes parsed: 0
+[06:10:00.768] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.768] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.768] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.768] [bmv2] [E] [thread 51265] [15.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.768] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Parser 'parser': end
+[06:10:00.768] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.768] [bmv2] [T] [thread 51265] [15.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.768] [bmv2] [T] [thread 51265] [15.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.768] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Looking up key:
+
+[06:10:00.768] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.768] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.768] [bmv2] [T] [thread 51265] [15.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.768] [bmv2] [T] [thread 51265] [15.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.768] [bmv2] [T] [thread 51265] [15.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.768] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Looking up key:
+
+[06:10:00.768] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.769] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.769] [bmv2] [T] [thread 51265] [15.0] [cxt 0] Action switch304
+[06:10:00.769] [bmv2] [T] [thread 51265] [15.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.769] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.769] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Egress port is 511
+[06:10:00.769] [bmv2] [D] [thread 51265] [15.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Processing packet received on port 1
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Parser 'parser': start
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:00.769] [bmv2] [T] [thread 51265] [16.0] [cxt 0] Bytes parsed: 0
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.769] [bmv2] [E] [thread 51265] [16.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Parser 'parser': end
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.769] [bmv2] [T] [thread 51265] [16.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.769] [bmv2] [T] [thread 51265] [16.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Looking up key:
+
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.769] [bmv2] [T] [thread 51265] [16.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.769] [bmv2] [T] [thread 51265] [16.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.769] [bmv2] [T] [thread 51265] [16.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Looking up key:
+
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.769] [bmv2] [T] [thread 51265] [16.0] [cxt 0] Action switch304
+[06:10:00.769] [bmv2] [T] [thread 51265] [16.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Egress port is 511
+[06:10:00.769] [bmv2] [D] [thread 51265] [16.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Processing packet received on port 2
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Parser 'parser': start
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:00.769] [bmv2] [T] [thread 51265] [17.0] [cxt 0] Bytes parsed: 0
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.769] [bmv2] [E] [thread 51265] [17.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Parser 'parser': end
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.769] [bmv2] [T] [thread 51265] [17.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.769] [bmv2] [T] [thread 51265] [17.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Looking up key:
+
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.769] [bmv2] [T] [thread 51265] [17.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.769] [bmv2] [T] [thread 51265] [17.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.769] [bmv2] [T] [thread 51265] [17.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Looking up key:
+
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.769] [bmv2] [T] [thread 51265] [17.0] [cxt 0] Action switch304
+[06:10:00.769] [bmv2] [T] [thread 51265] [17.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Egress port is 511
+[06:10:00.769] [bmv2] [D] [thread 51265] [17.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Processing packet received on port 1
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Parser 'parser': start
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:00.769] [bmv2] [T] [thread 51265] [18.0] [cxt 0] Bytes parsed: 0
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.769] [bmv2] [E] [thread 51265] [18.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Parser 'parser': end
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.769] [bmv2] [T] [thread 51265] [18.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.769] [bmv2] [T] [thread 51265] [18.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Looking up key:
+
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.769] [bmv2] [T] [thread 51265] [18.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.769] [bmv2] [T] [thread 51265] [18.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.769] [bmv2] [T] [thread 51265] [18.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Looking up key:
+
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.769] [bmv2] [T] [thread 51265] [18.0] [cxt 0] Action switch304
+[06:10:00.769] [bmv2] [T] [thread 51265] [18.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Egress port is 511
+[06:10:00.769] [bmv2] [D] [thread 51265] [18.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Processing packet received on port 2
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Parser 'parser': start
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:00.771] [bmv2] [T] [thread 51265] [19.0] [cxt 0] Bytes parsed: 0
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.771] [bmv2] [E] [thread 51265] [19.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Parser 'parser': end
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.771] [bmv2] [T] [thread 51265] [19.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.771] [bmv2] [T] [thread 51265] [19.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Looking up key:
+
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.771] [bmv2] [T] [thread 51265] [19.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.771] [bmv2] [T] [thread 51265] [19.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.771] [bmv2] [T] [thread 51265] [19.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Looking up key:
+
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.771] [bmv2] [T] [thread 51265] [19.0] [cxt 0] Action switch304
+[06:10:00.771] [bmv2] [T] [thread 51265] [19.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Egress port is 511
+[06:10:00.771] [bmv2] [D] [thread 51265] [19.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Processing packet received on port 1
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Parser 'parser': start
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:00.771] [bmv2] [T] [thread 51265] [20.0] [cxt 0] Bytes parsed: 0
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.771] [bmv2] [E] [thread 51265] [20.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Parser 'parser': end
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.771] [bmv2] [T] [thread 51265] [20.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.771] [bmv2] [T] [thread 51265] [20.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Looking up key:
+
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.771] [bmv2] [T] [thread 51265] [20.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.771] [bmv2] [T] [thread 51265] [20.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.771] [bmv2] [T] [thread 51265] [20.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Looking up key:
+
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.771] [bmv2] [T] [thread 51265] [20.0] [cxt 0] Action switch304
+[06:10:00.771] [bmv2] [T] [thread 51265] [20.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Egress port is 511
+[06:10:00.771] [bmv2] [D] [thread 51265] [20.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Processing packet received on port 1
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Parser 'parser': start
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:00.771] [bmv2] [T] [thread 51265] [21.0] [cxt 0] Bytes parsed: 0
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.771] [bmv2] [E] [thread 51265] [21.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Parser 'parser': end
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.771] [bmv2] [T] [thread 51265] [21.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.771] [bmv2] [T] [thread 51265] [21.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Looking up key:
+
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.771] [bmv2] [T] [thread 51265] [21.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.771] [bmv2] [T] [thread 51265] [21.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.771] [bmv2] [T] [thread 51265] [21.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Looking up key:
+
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.771] [bmv2] [T] [thread 51265] [21.0] [cxt 0] Action switch304
+[06:10:00.771] [bmv2] [T] [thread 51265] [21.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Egress port is 511
+[06:10:00.771] [bmv2] [D] [thread 51265] [21.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Processing packet received on port 1
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Parser 'parser': start
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:00.771] [bmv2] [T] [thread 51265] [22.0] [cxt 0] Bytes parsed: 0
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.771] [bmv2] [E] [thread 51265] [22.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Parser 'parser': end
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.771] [bmv2] [T] [thread 51265] [22.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.771] [bmv2] [T] [thread 51265] [22.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Looking up key:
+
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.771] [bmv2] [T] [thread 51265] [22.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.771] [bmv2] [T] [thread 51265] [22.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.771] [bmv2] [T] [thread 51265] [22.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Looking up key:
+
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.771] [bmv2] [T] [thread 51265] [22.0] [cxt 0] Action switch304
+[06:10:00.771] [bmv2] [T] [thread 51265] [22.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Egress port is 511
+[06:10:00.771] [bmv2] [D] [thread 51265] [22.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Processing packet received on port 1
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Parser 'parser': start
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:00.944] [bmv2] [T] [thread 51265] [23.0] [cxt 0] Bytes parsed: 0
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Extracting header 'ethernet'
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:00.944] [bmv2] [E] [thread 51265] [23.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Parser 'parser': end
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Pipeline 'ingress': start
+[06:10:00.944] [bmv2] [T] [thread 51265] [23.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:00.944] [bmv2] [T] [thread 51265] [23.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Looking up key:
+
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:00.944] [bmv2] [T] [thread 51265] [23.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:00.944] [bmv2] [T] [thread 51265] [23.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:00.944] [bmv2] [T] [thread 51265] [23.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Looking up key:
+
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Action entry is switch304 - 
+[06:10:00.944] [bmv2] [T] [thread 51265] [23.0] [cxt 0] Action switch304
+[06:10:00.944] [bmv2] [T] [thread 51265] [23.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Pipeline 'ingress': end
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Egress port is 511
+[06:10:00.944] [bmv2] [D] [thread 51265] [23.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:00.971] [bmv2] [D] [thread 51256] mgrp node created for mgid 32835
+[06:10:00.971] [bmv2] [D] [thread 51256] node created for rid 1
+[06:10:00.971] [bmv2] [D] [thread 51256] node associated with mgid 32835
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Processing packet received on port 3
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Parser 'parser': start
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Parser state 'start': key is 0003
+[06:10:01.213] [bmv2] [T] [thread 51265] [24.0] [cxt 0] Bytes parsed: 0
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Extracting header 'ethernet'
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:01.213] [bmv2] [E] [thread 51265] [24.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Parser 'parser': end
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Pipeline 'ingress': start
+[06:10:01.213] [bmv2] [T] [thread 51265] [24.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:01.213] [bmv2] [T] [thread 51265] [24.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Looking up key:
+
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:01.213] [bmv2] [T] [thread 51265] [24.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:01.213] [bmv2] [T] [thread 51265] [24.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:01.213] [bmv2] [T] [thread 51265] [24.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Looking up key:
+
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Action entry is switch304 - 
+[06:10:01.213] [bmv2] [T] [thread 51265] [24.0] [cxt 0] Action switch304
+[06:10:01.213] [bmv2] [T] [thread 51265] [24.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Pipeline 'ingress': end
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Egress port is 511
+[06:10:01.213] [bmv2] [D] [thread 51265] [24.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Processing packet received on port 2
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Parser 'parser': start
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:01.213] [bmv2] [T] [thread 51265] [25.0] [cxt 0] Bytes parsed: 0
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Extracting header 'ethernet'
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:01.213] [bmv2] [E] [thread 51265] [25.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Parser 'parser': end
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Pipeline 'ingress': start
+[06:10:01.213] [bmv2] [T] [thread 51265] [25.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:01.213] [bmv2] [T] [thread 51265] [25.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Looking up key:
+
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:01.213] [bmv2] [T] [thread 51265] [25.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:01.213] [bmv2] [T] [thread 51265] [25.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:01.213] [bmv2] [T] [thread 51265] [25.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Looking up key:
+
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Action entry is switch304 - 
+[06:10:01.213] [bmv2] [T] [thread 51265] [25.0] [cxt 0] Action switch304
+[06:10:01.213] [bmv2] [T] [thread 51265] [25.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Pipeline 'ingress': end
+[06:10:01.213] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Egress port is 511
+[06:10:01.214] [bmv2] [D] [thread 51265] [25.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Processing packet received on port 2
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Parser 'parser': start
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:01.214] [bmv2] [T] [thread 51265] [26.0] [cxt 0] Bytes parsed: 0
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Extracting header 'ethernet'
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:01.214] [bmv2] [E] [thread 51265] [26.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Parser 'parser': end
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Pipeline 'ingress': start
+[06:10:01.214] [bmv2] [T] [thread 51265] [26.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:01.214] [bmv2] [T] [thread 51265] [26.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Looking up key:
+
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:01.214] [bmv2] [T] [thread 51265] [26.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:01.214] [bmv2] [T] [thread 51265] [26.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:01.214] [bmv2] [T] [thread 51265] [26.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Looking up key:
+
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Action entry is switch304 - 
+[06:10:01.214] [bmv2] [T] [thread 51265] [26.0] [cxt 0] Action switch304
+[06:10:01.214] [bmv2] [T] [thread 51265] [26.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Pipeline 'ingress': end
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Egress port is 511
+[06:10:01.214] [bmv2] [D] [thread 51265] [26.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Processing packet received on port 1
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Parser 'parser': start
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:01.456] [bmv2] [T] [thread 51265] [27.0] [cxt 0] Bytes parsed: 0
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Extracting header 'ethernet'
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:01.456] [bmv2] [E] [thread 51265] [27.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Parser 'parser': end
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Pipeline 'ingress': start
+[06:10:01.456] [bmv2] [T] [thread 51265] [27.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:01.456] [bmv2] [T] [thread 51265] [27.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Looking up key:
+
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:01.456] [bmv2] [T] [thread 51265] [27.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:01.456] [bmv2] [T] [thread 51265] [27.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:01.456] [bmv2] [T] [thread 51265] [27.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Looking up key:
+
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Action entry is switch304 - 
+[06:10:01.456] [bmv2] [T] [thread 51265] [27.0] [cxt 0] Action switch304
+[06:10:01.456] [bmv2] [T] [thread 51265] [27.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Pipeline 'ingress': end
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Egress port is 511
+[06:10:01.456] [bmv2] [D] [thread 51265] [27.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Processing packet received on port 2
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Parser 'parser': start
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:05.421] [bmv2] [T] [thread 51265] [28.0] [cxt 0] Bytes parsed: 0
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Extracting header 'ethernet'
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:05.421] [bmv2] [E] [thread 51265] [28.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Parser 'parser': end
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Pipeline 'ingress': start
+[06:10:05.421] [bmv2] [T] [thread 51265] [28.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:05.421] [bmv2] [T] [thread 51265] [28.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Looking up key:
+
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:05.421] [bmv2] [T] [thread 51265] [28.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:05.421] [bmv2] [T] [thread 51265] [28.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:05.421] [bmv2] [T] [thread 51265] [28.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Looking up key:
+
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Action entry is switch304 - 
+[06:10:05.421] [bmv2] [T] [thread 51265] [28.0] [cxt 0] Action switch304
+[06:10:05.421] [bmv2] [T] [thread 51265] [28.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Pipeline 'ingress': end
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Egress port is 511
+[06:10:05.421] [bmv2] [D] [thread 51265] [28.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Processing packet received on port 1
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Parser 'parser': start
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:05.933] [bmv2] [T] [thread 51265] [29.0] [cxt 0] Bytes parsed: 0
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Extracting header 'ethernet'
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:05.933] [bmv2] [E] [thread 51265] [29.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Parser 'parser': end
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Pipeline 'ingress': start
+[06:10:05.933] [bmv2] [T] [thread 51265] [29.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:05.933] [bmv2] [T] [thread 51265] [29.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Looking up key:
+
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:05.933] [bmv2] [T] [thread 51265] [29.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:05.933] [bmv2] [T] [thread 51265] [29.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:05.933] [bmv2] [T] [thread 51265] [29.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Looking up key:
+
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Action entry is switch304 - 
+[06:10:05.933] [bmv2] [T] [thread 51265] [29.0] [cxt 0] Action switch304
+[06:10:05.933] [bmv2] [T] [thread 51265] [29.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Pipeline 'ingress': end
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Egress port is 511
+[06:10:05.933] [bmv2] [D] [thread 51265] [29.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:06.448] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Processing packet received on port 2
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Parser 'parser': start
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:06.449] [bmv2] [T] [thread 51265] [30.0] [cxt 0] Bytes parsed: 0
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Extracting header 'ethernet'
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:06.449] [bmv2] [E] [thread 51265] [30.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Parser 'parser': end
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Pipeline 'ingress': start
+[06:10:06.449] [bmv2] [T] [thread 51265] [30.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:06.449] [bmv2] [T] [thread 51265] [30.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Looking up key:
+
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:06.449] [bmv2] [T] [thread 51265] [30.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:06.449] [bmv2] [T] [thread 51265] [30.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:06.449] [bmv2] [T] [thread 51265] [30.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Looking up key:
+
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Action entry is switch304 - 
+[06:10:06.449] [bmv2] [T] [thread 51265] [30.0] [cxt 0] Action switch304
+[06:10:06.449] [bmv2] [T] [thread 51265] [30.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Pipeline 'ingress': end
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Egress port is 511
+[06:10:06.449] [bmv2] [D] [thread 51265] [30.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:07.471] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Processing packet received on port 3
+[06:10:07.471] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Parser 'parser': start
+[06:10:07.471] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:07.471] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Parser state 'start': key is 0003
+[06:10:07.471] [bmv2] [T] [thread 51265] [31.0] [cxt 0] Bytes parsed: 0
+[06:10:07.471] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:07.471] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Extracting header 'ethernet'
+[06:10:07.471] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:07.471] [bmv2] [E] [thread 51265] [31.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:07.471] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Parser 'parser': end
+[06:10:07.471] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Pipeline 'ingress': start
+[06:10:07.471] [bmv2] [T] [thread 51265] [31.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:07.471] [bmv2] [T] [thread 51265] [31.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:07.471] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Looking up key:
+
+[06:10:07.472] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:07.472] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:07.472] [bmv2] [T] [thread 51265] [31.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:07.472] [bmv2] [T] [thread 51265] [31.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:07.472] [bmv2] [T] [thread 51265] [31.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:07.472] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Looking up key:
+
+[06:10:07.472] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:07.472] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Action entry is switch304 - 
+[06:10:07.472] [bmv2] [T] [thread 51265] [31.0] [cxt 0] Action switch304
+[06:10:07.472] [bmv2] [T] [thread 51265] [31.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:07.472] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Pipeline 'ingress': end
+[06:10:07.472] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Egress port is 511
+[06:10:07.472] [bmv2] [D] [thread 51265] [31.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Processing packet received on port 1
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Parser 'parser': start
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:07.472] [bmv2] [T] [thread 51265] [32.0] [cxt 0] Bytes parsed: 0
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Extracting header 'ethernet'
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:07.472] [bmv2] [E] [thread 51265] [32.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Parser 'parser': end
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Pipeline 'ingress': start
+[06:10:07.472] [bmv2] [T] [thread 51265] [32.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:07.472] [bmv2] [T] [thread 51265] [32.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Looking up key:
+
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:07.472] [bmv2] [T] [thread 51265] [32.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:07.472] [bmv2] [T] [thread 51265] [32.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:07.472] [bmv2] [T] [thread 51265] [32.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Looking up key:
+
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Action entry is switch304 - 
+[06:10:07.472] [bmv2] [T] [thread 51265] [32.0] [cxt 0] Action switch304
+[06:10:07.472] [bmv2] [T] [thread 51265] [32.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Pipeline 'ingress': end
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Egress port is 511
+[06:10:07.472] [bmv2] [D] [thread 51265] [32.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Processing packet received on port 1
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Parser 'parser': start
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:08.946] [bmv2] [T] [thread 51265] [33.0] [cxt 0] Bytes parsed: 0
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Extracting header 'ethernet'
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:08.946] [bmv2] [E] [thread 51265] [33.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Parser 'parser': end
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Pipeline 'ingress': start
+[06:10:08.946] [bmv2] [T] [thread 51265] [33.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:08.946] [bmv2] [T] [thread 51265] [33.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Looking up key:
+
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:08.946] [bmv2] [T] [thread 51265] [33.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:08.946] [bmv2] [T] [thread 51265] [33.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:08.946] [bmv2] [T] [thread 51265] [33.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Looking up key:
+
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Action entry is switch304 - 
+[06:10:08.946] [bmv2] [T] [thread 51265] [33.0] [cxt 0] Action switch304
+[06:10:08.946] [bmv2] [T] [thread 51265] [33.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Pipeline 'ingress': end
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Egress port is 511
+[06:10:08.946] [bmv2] [D] [thread 51265] [33.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Processing packet received on port 2
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Parser 'parser': start
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:09.212] [bmv2] [T] [thread 51265] [34.0] [cxt 0] Bytes parsed: 0
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Extracting header 'ethernet'
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:09.212] [bmv2] [E] [thread 51265] [34.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Parser 'parser': end
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Pipeline 'ingress': start
+[06:10:09.212] [bmv2] [T] [thread 51265] [34.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:09.212] [bmv2] [T] [thread 51265] [34.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Looking up key:
+
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:09.212] [bmv2] [T] [thread 51265] [34.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:09.212] [bmv2] [T] [thread 51265] [34.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:09.212] [bmv2] [T] [thread 51265] [34.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Looking up key:
+
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Action entry is switch304 - 
+[06:10:09.212] [bmv2] [T] [thread 51265] [34.0] [cxt 0] Action switch304
+[06:10:09.212] [bmv2] [T] [thread 51265] [34.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Pipeline 'ingress': end
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Egress port is 511
+[06:10:09.212] [bmv2] [D] [thread 51265] [34.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Processing packet received on port 3
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Parser 'parser': start
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Parser state 'start': key is 0003
+[06:10:09.212] [bmv2] [T] [thread 51265] [35.0] [cxt 0] Bytes parsed: 0
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Extracting header 'ethernet'
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:09.212] [bmv2] [E] [thread 51265] [35.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Parser 'parser': end
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Pipeline 'ingress': start
+[06:10:09.212] [bmv2] [T] [thread 51265] [35.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:09.212] [bmv2] [T] [thread 51265] [35.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Looking up key:
+
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:09.212] [bmv2] [T] [thread 51265] [35.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:09.212] [bmv2] [T] [thread 51265] [35.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:09.212] [bmv2] [T] [thread 51265] [35.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Looking up key:
+
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Action entry is switch304 - 
+[06:10:09.212] [bmv2] [T] [thread 51265] [35.0] [cxt 0] Action switch304
+[06:10:09.212] [bmv2] [T] [thread 51265] [35.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Pipeline 'ingress': end
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Egress port is 511
+[06:10:09.212] [bmv2] [D] [thread 51265] [35.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:09.212] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Processing packet received on port 2
+[06:10:09.212] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Parser 'parser': start
+[06:10:09.212] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:09.212] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:09.212] [bmv2] [T] [thread 51265] [36.0] [cxt 0] Bytes parsed: 0
+[06:10:09.212] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:09.212] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Extracting header 'ethernet'
+[06:10:09.212] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:09.212] [bmv2] [E] [thread 51265] [36.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:09.212] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Parser 'parser': end
+[06:10:09.212] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Pipeline 'ingress': start
+[06:10:09.212] [bmv2] [T] [thread 51265] [36.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:09.212] [bmv2] [T] [thread 51265] [36.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:09.212] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Looking up key:
+
+[06:10:09.212] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:09.212] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:09.212] [bmv2] [T] [thread 51265] [36.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:09.212] [bmv2] [T] [thread 51265] [36.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:09.213] [bmv2] [T] [thread 51265] [36.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:09.213] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Looking up key:
+
+[06:10:09.213] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:09.213] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Action entry is switch304 - 
+[06:10:09.213] [bmv2] [T] [thread 51265] [36.0] [cxt 0] Action switch304
+[06:10:09.213] [bmv2] [T] [thread 51265] [36.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:09.213] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Pipeline 'ingress': end
+[06:10:09.213] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Egress port is 511
+[06:10:09.213] [bmv2] [D] [thread 51265] [36.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Processing packet received on port 1
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Parser 'parser': start
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:09.458] [bmv2] [T] [thread 51265] [37.0] [cxt 0] Bytes parsed: 0
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Extracting header 'ethernet'
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:09.458] [bmv2] [E] [thread 51265] [37.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Parser 'parser': end
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Pipeline 'ingress': start
+[06:10:09.458] [bmv2] [T] [thread 51265] [37.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:09.458] [bmv2] [T] [thread 51265] [37.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Looking up key:
+
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:09.458] [bmv2] [T] [thread 51265] [37.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:09.458] [bmv2] [T] [thread 51265] [37.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:09.458] [bmv2] [T] [thread 51265] [37.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Looking up key:
+
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Action entry is switch304 - 
+[06:10:09.458] [bmv2] [T] [thread 51265] [37.0] [cxt 0] Action switch304
+[06:10:09.458] [bmv2] [T] [thread 51265] [37.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Pipeline 'ingress': end
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Egress port is 511
+[06:10:09.458] [bmv2] [D] [thread 51265] [37.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Processing packet received on port 2
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Parser 'parser': start
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:19.757] [bmv2] [T] [thread 51265] [38.0] [cxt 0] Bytes parsed: 0
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Extracting header 'ethernet'
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:19.757] [bmv2] [E] [thread 51265] [38.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Parser 'parser': end
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Pipeline 'ingress': start
+[06:10:19.757] [bmv2] [T] [thread 51265] [38.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:19.757] [bmv2] [T] [thread 51265] [38.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Looking up key:
+
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:19.757] [bmv2] [T] [thread 51265] [38.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:19.757] [bmv2] [T] [thread 51265] [38.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:19.757] [bmv2] [T] [thread 51265] [38.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Looking up key:
+
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Action entry is switch304 - 
+[06:10:19.757] [bmv2] [T] [thread 51265] [38.0] [cxt 0] Action switch304
+[06:10:19.757] [bmv2] [T] [thread 51265] [38.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Pipeline 'ingress': end
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Egress port is 511
+[06:10:19.757] [bmv2] [D] [thread 51265] [38.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Processing packet received on port 1
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Parser 'parser': start
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:21.805] [bmv2] [T] [thread 51265] [39.0] [cxt 0] Bytes parsed: 0
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Extracting header 'ethernet'
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:21.805] [bmv2] [E] [thread 51265] [39.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Parser 'parser': end
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Pipeline 'ingress': start
+[06:10:21.805] [bmv2] [T] [thread 51265] [39.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:21.805] [bmv2] [T] [thread 51265] [39.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Looking up key:
+
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:21.805] [bmv2] [T] [thread 51265] [39.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:21.805] [bmv2] [T] [thread 51265] [39.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:21.805] [bmv2] [T] [thread 51265] [39.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Looking up key:
+
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Action entry is switch304 - 
+[06:10:21.805] [bmv2] [T] [thread 51265] [39.0] [cxt 0] Action switch304
+[06:10:21.805] [bmv2] [T] [thread 51265] [39.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Pipeline 'ingress': end
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Egress port is 511
+[06:10:21.805] [bmv2] [D] [thread 51265] [39.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Processing packet received on port 2
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Parser 'parser': start
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:23.341] [bmv2] [T] [thread 51265] [40.0] [cxt 0] Bytes parsed: 0
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Extracting header 'ethernet'
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:23.341] [bmv2] [E] [thread 51265] [40.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Parser 'parser': end
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Pipeline 'ingress': start
+[06:10:23.341] [bmv2] [T] [thread 51265] [40.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:23.341] [bmv2] [T] [thread 51265] [40.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Looking up key:
+
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:23.341] [bmv2] [T] [thread 51265] [40.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:23.341] [bmv2] [T] [thread 51265] [40.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:23.341] [bmv2] [T] [thread 51265] [40.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Looking up key:
+
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Action entry is switch304 - 
+[06:10:23.341] [bmv2] [T] [thread 51265] [40.0] [cxt 0] Action switch304
+[06:10:23.341] [bmv2] [T] [thread 51265] [40.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Pipeline 'ingress': end
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Egress port is 511
+[06:10:23.341] [bmv2] [D] [thread 51265] [40.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Processing packet received on port 1
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Parser 'parser': start
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:24.877] [bmv2] [T] [thread 51265] [41.0] [cxt 0] Bytes parsed: 0
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Extracting header 'ethernet'
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:24.877] [bmv2] [E] [thread 51265] [41.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Parser 'parser': end
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Pipeline 'ingress': start
+[06:10:24.877] [bmv2] [T] [thread 51265] [41.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:24.877] [bmv2] [T] [thread 51265] [41.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Looking up key:
+
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:24.877] [bmv2] [T] [thread 51265] [41.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:24.877] [bmv2] [T] [thread 51265] [41.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:24.877] [bmv2] [T] [thread 51265] [41.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Looking up key:
+
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Action entry is switch304 - 
+[06:10:24.877] [bmv2] [T] [thread 51265] [41.0] [cxt 0] Action switch304
+[06:10:24.877] [bmv2] [T] [thread 51265] [41.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Pipeline 'ingress': end
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Egress port is 511
+[06:10:24.877] [bmv2] [D] [thread 51265] [41.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Processing packet received on port 1
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Parser 'parser': start
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:24.946] [bmv2] [T] [thread 51265] [42.0] [cxt 0] Bytes parsed: 0
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Extracting header 'ethernet'
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:24.946] [bmv2] [E] [thread 51265] [42.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Parser 'parser': end
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Pipeline 'ingress': start
+[06:10:24.946] [bmv2] [T] [thread 51265] [42.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:24.946] [bmv2] [T] [thread 51265] [42.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Looking up key:
+
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:24.946] [bmv2] [T] [thread 51265] [42.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:24.946] [bmv2] [T] [thread 51265] [42.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:24.946] [bmv2] [T] [thread 51265] [42.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Looking up key:
+
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Action entry is switch304 - 
+[06:10:24.946] [bmv2] [T] [thread 51265] [42.0] [cxt 0] Action switch304
+[06:10:24.946] [bmv2] [T] [thread 51265] [42.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Pipeline 'ingress': end
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Egress port is 511
+[06:10:24.946] [bmv2] [D] [thread 51265] [42.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:25.214] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Processing packet received on port 2
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Parser 'parser': start
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:25.215] [bmv2] [T] [thread 51265] [43.0] [cxt 0] Bytes parsed: 0
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Extracting header 'ethernet'
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:25.215] [bmv2] [E] [thread 51265] [43.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Parser 'parser': end
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Pipeline 'ingress': start
+[06:10:25.215] [bmv2] [T] [thread 51265] [43.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:25.215] [bmv2] [T] [thread 51265] [43.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Looking up key:
+
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:25.215] [bmv2] [T] [thread 51265] [43.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:25.215] [bmv2] [T] [thread 51265] [43.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:25.215] [bmv2] [T] [thread 51265] [43.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Looking up key:
+
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Action entry is switch304 - 
+[06:10:25.215] [bmv2] [T] [thread 51265] [43.0] [cxt 0] Action switch304
+[06:10:25.215] [bmv2] [T] [thread 51265] [43.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Pipeline 'ingress': end
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Egress port is 511
+[06:10:25.215] [bmv2] [D] [thread 51265] [43.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Processing packet received on port 3
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Parser 'parser': start
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Parser state 'start': key is 0003
+[06:10:25.215] [bmv2] [T] [thread 51265] [44.0] [cxt 0] Bytes parsed: 0
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Extracting header 'ethernet'
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:25.215] [bmv2] [E] [thread 51265] [44.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Parser 'parser': end
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Pipeline 'ingress': start
+[06:10:25.215] [bmv2] [T] [thread 51265] [44.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:25.215] [bmv2] [T] [thread 51265] [44.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Looking up key:
+
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:25.215] [bmv2] [T] [thread 51265] [44.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:25.215] [bmv2] [T] [thread 51265] [44.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:25.215] [bmv2] [T] [thread 51265] [44.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Looking up key:
+
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Action entry is switch304 - 
+[06:10:25.215] [bmv2] [T] [thread 51265] [44.0] [cxt 0] Action switch304
+[06:10:25.215] [bmv2] [T] [thread 51265] [44.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Pipeline 'ingress': end
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Egress port is 511
+[06:10:25.215] [bmv2] [D] [thread 51265] [44.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Processing packet received on port 2
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Parser 'parser': start
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:25.215] [bmv2] [T] [thread 51265] [45.0] [cxt 0] Bytes parsed: 0
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Extracting header 'ethernet'
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:25.215] [bmv2] [E] [thread 51265] [45.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Parser 'parser': end
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Pipeline 'ingress': start
+[06:10:25.215] [bmv2] [T] [thread 51265] [45.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:25.215] [bmv2] [T] [thread 51265] [45.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Looking up key:
+
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:25.215] [bmv2] [T] [thread 51265] [45.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:25.215] [bmv2] [T] [thread 51265] [45.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:25.215] [bmv2] [T] [thread 51265] [45.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Looking up key:
+
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Action entry is switch304 - 
+[06:10:25.215] [bmv2] [T] [thread 51265] [45.0] [cxt 0] Action switch304
+[06:10:25.215] [bmv2] [T] [thread 51265] [45.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Pipeline 'ingress': end
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Egress port is 511
+[06:10:25.215] [bmv2] [D] [thread 51265] [45.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:25.389] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Processing packet received on port 3
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Parser 'parser': start
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Parser state 'start': key is 0003
+[06:10:25.390] [bmv2] [T] [thread 51265] [46.0] [cxt 0] Bytes parsed: 0
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Extracting header 'ethernet'
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:25.390] [bmv2] [E] [thread 51265] [46.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Parser 'parser': end
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Pipeline 'ingress': start
+[06:10:25.390] [bmv2] [T] [thread 51265] [46.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:25.390] [bmv2] [T] [thread 51265] [46.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Looking up key:
+
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:25.390] [bmv2] [T] [thread 51265] [46.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:25.390] [bmv2] [T] [thread 51265] [46.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:25.390] [bmv2] [T] [thread 51265] [46.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Looking up key:
+
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Action entry is switch304 - 
+[06:10:25.390] [bmv2] [T] [thread 51265] [46.0] [cxt 0] Action switch304
+[06:10:25.390] [bmv2] [T] [thread 51265] [46.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Pipeline 'ingress': end
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Egress port is 511
+[06:10:25.390] [bmv2] [D] [thread 51265] [46.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Processing packet received on port 1
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Parser 'parser': start
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:25.458] [bmv2] [T] [thread 51265] [47.0] [cxt 0] Bytes parsed: 0
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Extracting header 'ethernet'
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:25.458] [bmv2] [E] [thread 51265] [47.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Parser 'parser': end
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Pipeline 'ingress': start
+[06:10:25.458] [bmv2] [T] [thread 51265] [47.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:25.458] [bmv2] [T] [thread 51265] [47.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Looking up key:
+
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:25.458] [bmv2] [T] [thread 51265] [47.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:25.458] [bmv2] [T] [thread 51265] [47.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:25.458] [bmv2] [T] [thread 51265] [47.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Looking up key:
+
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Action entry is switch304 - 
+[06:10:25.458] [bmv2] [T] [thread 51265] [47.0] [cxt 0] Action switch304
+[06:10:25.458] [bmv2] [T] [thread 51265] [47.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Pipeline 'ingress': end
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Egress port is 511
+[06:10:25.458] [bmv2] [D] [thread 51265] [47.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Processing packet received on port 2
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Parser 'parser': start
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:47.406] [bmv2] [T] [thread 51265] [48.0] [cxt 0] Bytes parsed: 0
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Extracting header 'ethernet'
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:47.406] [bmv2] [E] [thread 51265] [48.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Parser 'parser': end
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Pipeline 'ingress': start
+[06:10:47.406] [bmv2] [T] [thread 51265] [48.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:47.406] [bmv2] [T] [thread 51265] [48.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Looking up key:
+
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:47.406] [bmv2] [T] [thread 51265] [48.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:47.406] [bmv2] [T] [thread 51265] [48.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:47.406] [bmv2] [T] [thread 51265] [48.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Looking up key:
+
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Action entry is switch304 - 
+[06:10:47.406] [bmv2] [T] [thread 51265] [48.0] [cxt 0] Action switch304
+[06:10:47.406] [bmv2] [T] [thread 51265] [48.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Pipeline 'ingress': end
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Egress port is 511
+[06:10:47.406] [bmv2] [D] [thread 51265] [48.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:53.038] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Processing packet received on port 1
+[06:10:53.038] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Parser 'parser': start
+[06:10:53.038] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:53.038] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:53.038] [bmv2] [T] [thread 51265] [49.0] [cxt 0] Bytes parsed: 0
+[06:10:53.038] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:53.038] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Extracting header 'ethernet'
+[06:10:53.038] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:53.038] [bmv2] [E] [thread 51265] [49.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:53.038] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Parser 'parser': end
+[06:10:53.038] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Pipeline 'ingress': start
+[06:10:53.038] [bmv2] [T] [thread 51265] [49.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:53.038] [bmv2] [T] [thread 51265] [49.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:53.038] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Looking up key:
+
+[06:10:53.038] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:53.038] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:53.039] [bmv2] [T] [thread 51265] [49.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:53.039] [bmv2] [T] [thread 51265] [49.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:53.039] [bmv2] [T] [thread 51265] [49.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:53.039] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Looking up key:
+
+[06:10:53.039] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:53.039] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Action entry is switch304 - 
+[06:10:53.039] [bmv2] [T] [thread 51265] [49.0] [cxt 0] Action switch304
+[06:10:53.039] [bmv2] [T] [thread 51265] [49.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:53.039] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Pipeline 'ingress': end
+[06:10:53.039] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Egress port is 511
+[06:10:53.039] [bmv2] [D] [thread 51265] [49.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:56.948] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Processing packet received on port 1
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Parser 'parser': start
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:56.949] [bmv2] [T] [thread 51265] [50.0] [cxt 0] Bytes parsed: 0
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Extracting header 'ethernet'
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:56.949] [bmv2] [E] [thread 51265] [50.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Parser 'parser': end
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Pipeline 'ingress': start
+[06:10:56.949] [bmv2] [T] [thread 51265] [50.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:56.949] [bmv2] [T] [thread 51265] [50.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Looking up key:
+
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:56.949] [bmv2] [T] [thread 51265] [50.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:56.949] [bmv2] [T] [thread 51265] [50.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:56.949] [bmv2] [T] [thread 51265] [50.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Looking up key:
+
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Action entry is switch304 - 
+[06:10:56.949] [bmv2] [T] [thread 51265] [50.0] [cxt 0] Action switch304
+[06:10:56.949] [bmv2] [T] [thread 51265] [50.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Pipeline 'ingress': end
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Egress port is 511
+[06:10:56.949] [bmv2] [D] [thread 51265] [50.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Processing packet received on port 3
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Parser 'parser': start
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Parser state 'start': key is 0003
+[06:10:57.215] [bmv2] [T] [thread 51265] [51.0] [cxt 0] Bytes parsed: 0
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Extracting header 'ethernet'
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:57.215] [bmv2] [E] [thread 51265] [51.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Parser 'parser': end
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Pipeline 'ingress': start
+[06:10:57.215] [bmv2] [T] [thread 51265] [51.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:57.215] [bmv2] [T] [thread 51265] [51.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Looking up key:
+
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:57.215] [bmv2] [T] [thread 51265] [51.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:57.215] [bmv2] [T] [thread 51265] [51.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:57.215] [bmv2] [T] [thread 51265] [51.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Looking up key:
+
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Action entry is switch304 - 
+[06:10:57.215] [bmv2] [T] [thread 51265] [51.0] [cxt 0] Action switch304
+[06:10:57.215] [bmv2] [T] [thread 51265] [51.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Pipeline 'ingress': end
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Egress port is 511
+[06:10:57.215] [bmv2] [D] [thread 51265] [51.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Processing packet received on port 2
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Parser 'parser': start
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:57.215] [bmv2] [T] [thread 51265] [52.0] [cxt 0] Bytes parsed: 0
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Extracting header 'ethernet'
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:57.215] [bmv2] [E] [thread 51265] [52.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Parser 'parser': end
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Pipeline 'ingress': start
+[06:10:57.215] [bmv2] [T] [thread 51265] [52.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:57.215] [bmv2] [T] [thread 51265] [52.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Looking up key:
+
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:57.215] [bmv2] [T] [thread 51265] [52.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:57.215] [bmv2] [T] [thread 51265] [52.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:57.215] [bmv2] [T] [thread 51265] [52.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Looking up key:
+
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Action entry is switch304 - 
+[06:10:57.215] [bmv2] [T] [thread 51265] [52.0] [cxt 0] Action switch304
+[06:10:57.215] [bmv2] [T] [thread 51265] [52.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Pipeline 'ingress': end
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Egress port is 511
+[06:10:57.215] [bmv2] [D] [thread 51265] [52.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Processing packet received on port 2
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Parser 'parser': start
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:57.215] [bmv2] [T] [thread 51265] [53.0] [cxt 0] Bytes parsed: 0
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Extracting header 'ethernet'
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:57.215] [bmv2] [E] [thread 51265] [53.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Parser 'parser': end
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Pipeline 'ingress': start
+[06:10:57.215] [bmv2] [T] [thread 51265] [53.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:57.215] [bmv2] [T] [thread 51265] [53.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Looking up key:
+
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:57.215] [bmv2] [T] [thread 51265] [53.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:57.215] [bmv2] [T] [thread 51265] [53.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:57.215] [bmv2] [T] [thread 51265] [53.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Looking up key:
+
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Action entry is switch304 - 
+[06:10:57.215] [bmv2] [T] [thread 51265] [53.0] [cxt 0] Action switch304
+[06:10:57.215] [bmv2] [T] [thread 51265] [53.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Pipeline 'ingress': end
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Egress port is 511
+[06:10:57.215] [bmv2] [D] [thread 51265] [53.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:57.464] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Processing packet received on port 1
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Parser 'parser': start
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:57.465] [bmv2] [T] [thread 51265] [54.0] [cxt 0] Bytes parsed: 0
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Extracting header 'ethernet'
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:57.465] [bmv2] [E] [thread 51265] [54.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Parser 'parser': end
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Pipeline 'ingress': start
+[06:10:57.465] [bmv2] [T] [thread 51265] [54.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:57.465] [bmv2] [T] [thread 51265] [54.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Looking up key:
+
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:57.465] [bmv2] [T] [thread 51265] [54.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:57.465] [bmv2] [T] [thread 51265] [54.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:57.465] [bmv2] [T] [thread 51265] [54.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Looking up key:
+
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Action entry is switch304 - 
+[06:10:57.465] [bmv2] [T] [thread 51265] [54.0] [cxt 0] Action switch304
+[06:10:57.465] [bmv2] [T] [thread 51265] [54.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Pipeline 'ingress': end
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Egress port is 511
+[06:10:57.465] [bmv2] [D] [thread 51265] [54.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Processing packet received on port 1
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Parser 'parser': start
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Parser state 'start': key is 0001
+[06:10:59.182] [bmv2] [T] [thread 51265] [55.0] [cxt 0] Bytes parsed: 0
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Extracting header 'ethernet'
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:59.182] [bmv2] [E] [thread 51265] [55.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Parser 'parser': end
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Pipeline 'ingress': start
+[06:10:59.182] [bmv2] [T] [thread 51265] [55.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:59.182] [bmv2] [T] [thread 51265] [55.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Looking up key:
+
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:59.182] [bmv2] [T] [thread 51265] [55.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:59.182] [bmv2] [T] [thread 51265] [55.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:59.182] [bmv2] [T] [thread 51265] [55.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Looking up key:
+
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Action entry is switch304 - 
+[06:10:59.182] [bmv2] [T] [thread 51265] [55.0] [cxt 0] Action switch304
+[06:10:59.182] [bmv2] [T] [thread 51265] [55.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Pipeline 'ingress': end
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Egress port is 511
+[06:10:59.182] [bmv2] [D] [thread 51265] [55.0] [cxt 0] Dropping packet at the end of ingress
+[06:10:59.182] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Processing packet received on port 2
+[06:10:59.182] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Parser 'parser': start
+[06:10:59.182] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:10:59.182] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Parser state 'start': key is 0002
+[06:10:59.182] [bmv2] [T] [thread 51265] [56.0] [cxt 0] Bytes parsed: 0
+[06:10:59.182] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:10:59.182] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Extracting header 'ethernet'
+[06:10:59.182] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:10:59.182] [bmv2] [E] [thread 51265] [56.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:10:59.182] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Parser 'parser': end
+[06:10:59.182] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Pipeline 'ingress': start
+[06:10:59.182] [bmv2] [T] [thread 51265] [56.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:10:59.182] [bmv2] [T] [thread 51265] [56.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:10:59.182] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Looking up key:
+
+[06:10:59.182] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:10:59.182] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:10:59.182] [bmv2] [T] [thread 51265] [56.0] [cxt 0] Action MyIngress.drop_packet
+[06:10:59.182] [bmv2] [T] [thread 51265] [56.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:10:59.183] [bmv2] [T] [thread 51265] [56.0] [cxt 0] Applying table 'tbl_switch304'
+[06:10:59.183] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Looking up key:
+
+[06:10:59.183] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Table 'tbl_switch304': miss
+[06:10:59.183] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Action entry is switch304 - 
+[06:10:59.183] [bmv2] [T] [thread 51265] [56.0] [cxt 0] Action switch304
+[06:10:59.183] [bmv2] [T] [thread 51265] [56.0] [cxt 0] switch.p4(304) Primitive exit
+[06:10:59.183] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Pipeline 'ingress': end
+[06:10:59.183] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Egress port is 511
+[06:10:59.183] [bmv2] [D] [thread 51265] [56.0] [cxt 0] Dropping packet at the end of ingress
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Processing packet received on port 3
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Parser 'parser': start
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Parser state 'start': key is 0003
+[06:11:03.278] [bmv2] [T] [thread 51265] [57.0] [cxt 0] Bytes parsed: 0
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Extracting header 'ethernet'
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:11:03.278] [bmv2] [E] [thread 51265] [57.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Parser 'parser': end
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Pipeline 'ingress': start
+[06:11:03.278] [bmv2] [T] [thread 51265] [57.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:11:03.278] [bmv2] [T] [thread 51265] [57.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Looking up key:
+
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:11:03.278] [bmv2] [T] [thread 51265] [57.0] [cxt 0] Action MyIngress.drop_packet
+[06:11:03.278] [bmv2] [T] [thread 51265] [57.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:11:03.278] [bmv2] [T] [thread 51265] [57.0] [cxt 0] Applying table 'tbl_switch304'
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Looking up key:
+
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Table 'tbl_switch304': miss
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Action entry is switch304 - 
+[06:11:03.278] [bmv2] [T] [thread 51265] [57.0] [cxt 0] Action switch304
+[06:11:03.278] [bmv2] [T] [thread 51265] [57.0] [cxt 0] switch.p4(304) Primitive exit
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Pipeline 'ingress': end
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Egress port is 511
+[06:11:03.278] [bmv2] [D] [thread 51265] [57.0] [cxt 0] Dropping packet at the end of ingress
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Processing packet received on port 2
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Parser 'parser': start
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Parser state 'start': key is 0002
+[06:11:44.238] [bmv2] [T] [thread 51265] [58.0] [cxt 0] Bytes parsed: 0
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Extracting header 'ethernet'
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:11:44.238] [bmv2] [E] [thread 51265] [58.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Parser 'parser': end
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Pipeline 'ingress': start
+[06:11:44.238] [bmv2] [T] [thread 51265] [58.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:11:44.238] [bmv2] [T] [thread 51265] [58.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Looking up key:
+
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:11:44.238] [bmv2] [T] [thread 51265] [58.0] [cxt 0] Action MyIngress.drop_packet
+[06:11:44.238] [bmv2] [T] [thread 51265] [58.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:11:44.238] [bmv2] [T] [thread 51265] [58.0] [cxt 0] Applying table 'tbl_switch304'
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Looking up key:
+
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Table 'tbl_switch304': miss
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Action entry is switch304 - 
+[06:11:44.238] [bmv2] [T] [thread 51265] [58.0] [cxt 0] Action switch304
+[06:11:44.238] [bmv2] [T] [thread 51265] [58.0] [cxt 0] switch.p4(304) Primitive exit
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Pipeline 'ingress': end
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Egress port is 511
+[06:11:44.238] [bmv2] [D] [thread 51265] [58.0] [cxt 0] Dropping packet at the end of ingress
+[06:11:56.525] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Processing packet received on port 1
+[06:11:56.525] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Parser 'parser': start
+[06:11:56.525] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:11:56.525] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Parser state 'start': key is 0001
+[06:11:56.525] [bmv2] [T] [thread 51265] [59.0] [cxt 0] Bytes parsed: 0
+[06:11:56.525] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:11:56.525] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Extracting header 'ethernet'
+[06:11:56.525] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:11:56.525] [bmv2] [E] [thread 51265] [59.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:11:56.525] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Parser 'parser': end
+[06:11:56.525] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Pipeline 'ingress': start
+[06:11:56.525] [bmv2] [T] [thread 51265] [59.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:11:56.525] [bmv2] [T] [thread 51265] [59.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:11:56.525] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Looking up key:
+
+[06:11:56.525] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:11:56.525] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:11:56.525] [bmv2] [T] [thread 51265] [59.0] [cxt 0] Action MyIngress.drop_packet
+[06:11:56.525] [bmv2] [T] [thread 51265] [59.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:11:56.526] [bmv2] [T] [thread 51265] [59.0] [cxt 0] Applying table 'tbl_switch304'
+[06:11:56.526] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Looking up key:
+
+[06:11:56.526] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Table 'tbl_switch304': miss
+[06:11:56.526] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Action entry is switch304 - 
+[06:11:56.526] [bmv2] [T] [thread 51265] [59.0] [cxt 0] Action switch304
+[06:11:56.526] [bmv2] [T] [thread 51265] [59.0] [cxt 0] switch.p4(304) Primitive exit
+[06:11:56.526] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Pipeline 'ingress': end
+[06:11:56.526] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Egress port is 511
+[06:11:56.526] [bmv2] [D] [thread 51265] [59.0] [cxt 0] Dropping packet at the end of ingress
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Processing packet received on port 1
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Parser 'parser': start
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Parser state 'start': key is 0001
+[06:12:00.950] [bmv2] [T] [thread 51265] [60.0] [cxt 0] Bytes parsed: 0
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Extracting header 'ethernet'
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:12:00.950] [bmv2] [E] [thread 51265] [60.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Parser 'parser': end
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Pipeline 'ingress': start
+[06:12:00.950] [bmv2] [T] [thread 51265] [60.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:12:00.950] [bmv2] [T] [thread 51265] [60.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Looking up key:
+
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:12:00.950] [bmv2] [T] [thread 51265] [60.0] [cxt 0] Action MyIngress.drop_packet
+[06:12:00.950] [bmv2] [T] [thread 51265] [60.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:12:00.950] [bmv2] [T] [thread 51265] [60.0] [cxt 0] Applying table 'tbl_switch304'
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Looking up key:
+
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Table 'tbl_switch304': miss
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Action entry is switch304 - 
+[06:12:00.950] [bmv2] [T] [thread 51265] [60.0] [cxt 0] Action switch304
+[06:12:00.950] [bmv2] [T] [thread 51265] [60.0] [cxt 0] switch.p4(304) Primitive exit
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Pipeline 'ingress': end
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Egress port is 511
+[06:12:00.950] [bmv2] [D] [thread 51265] [60.0] [cxt 0] Dropping packet at the end of ingress
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Processing packet received on port 3
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Parser 'parser': start
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Parser state 'start': key is 0003
+[06:12:01.220] [bmv2] [T] [thread 51265] [61.0] [cxt 0] Bytes parsed: 0
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Extracting header 'ethernet'
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:12:01.220] [bmv2] [E] [thread 51265] [61.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Parser 'parser': end
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Pipeline 'ingress': start
+[06:12:01.220] [bmv2] [T] [thread 51265] [61.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:12:01.220] [bmv2] [T] [thread 51265] [61.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Looking up key:
+
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:12:01.220] [bmv2] [T] [thread 51265] [61.0] [cxt 0] Action MyIngress.drop_packet
+[06:12:01.220] [bmv2] [T] [thread 51265] [61.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:12:01.220] [bmv2] [T] [thread 51265] [61.0] [cxt 0] Applying table 'tbl_switch304'
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Looking up key:
+
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Table 'tbl_switch304': miss
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Action entry is switch304 - 
+[06:12:01.220] [bmv2] [T] [thread 51265] [61.0] [cxt 0] Action switch304
+[06:12:01.220] [bmv2] [T] [thread 51265] [61.0] [cxt 0] switch.p4(304) Primitive exit
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Pipeline 'ingress': end
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Egress port is 511
+[06:12:01.220] [bmv2] [D] [thread 51265] [61.0] [cxt 0] Dropping packet at the end of ingress
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Processing packet received on port 2
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Parser 'parser': start
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Parser state 'start': key is 0002
+[06:12:01.220] [bmv2] [T] [thread 51265] [62.0] [cxt 0] Bytes parsed: 0
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Extracting header 'ethernet'
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:12:01.220] [bmv2] [E] [thread 51265] [62.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Parser 'parser': end
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Pipeline 'ingress': start
+[06:12:01.220] [bmv2] [T] [thread 51265] [62.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:12:01.220] [bmv2] [T] [thread 51265] [62.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Looking up key:
+
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:12:01.220] [bmv2] [T] [thread 51265] [62.0] [cxt 0] Action MyIngress.drop_packet
+[06:12:01.220] [bmv2] [T] [thread 51265] [62.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:12:01.220] [bmv2] [T] [thread 51265] [62.0] [cxt 0] Applying table 'tbl_switch304'
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Looking up key:
+
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Table 'tbl_switch304': miss
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Action entry is switch304 - 
+[06:12:01.220] [bmv2] [T] [thread 51265] [62.0] [cxt 0] Action switch304
+[06:12:01.220] [bmv2] [T] [thread 51265] [62.0] [cxt 0] switch.p4(304) Primitive exit
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Pipeline 'ingress': end
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Egress port is 511
+[06:12:01.220] [bmv2] [D] [thread 51265] [62.0] [cxt 0] Dropping packet at the end of ingress
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Processing packet received on port 2
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Parser 'parser': start
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Parser state 'start': key is 0002
+[06:12:01.220] [bmv2] [T] [thread 51265] [63.0] [cxt 0] Bytes parsed: 0
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Extracting header 'ethernet'
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:12:01.220] [bmv2] [E] [thread 51265] [63.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Parser 'parser': end
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Pipeline 'ingress': start
+[06:12:01.220] [bmv2] [T] [thread 51265] [63.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:12:01.220] [bmv2] [T] [thread 51265] [63.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Looking up key:
+
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:12:01.220] [bmv2] [T] [thread 51265] [63.0] [cxt 0] Action MyIngress.drop_packet
+[06:12:01.220] [bmv2] [T] [thread 51265] [63.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:12:01.220] [bmv2] [T] [thread 51265] [63.0] [cxt 0] Applying table 'tbl_switch304'
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Looking up key:
+
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Table 'tbl_switch304': miss
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Action entry is switch304 - 
+[06:12:01.220] [bmv2] [T] [thread 51265] [63.0] [cxt 0] Action switch304
+[06:12:01.220] [bmv2] [T] [thread 51265] [63.0] [cxt 0] switch.p4(304) Primitive exit
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Pipeline 'ingress': end
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Egress port is 511
+[06:12:01.220] [bmv2] [D] [thread 51265] [63.0] [cxt 0] Dropping packet at the end of ingress
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Processing packet received on port 1
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Parser 'parser': start
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Parser state 'start': key is 0001
+[06:12:01.461] [bmv2] [T] [thread 51265] [64.0] [cxt 0] Bytes parsed: 0
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Extracting header 'ethernet'
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:12:01.461] [bmv2] [E] [thread 51265] [64.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Parser 'parser': end
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Pipeline 'ingress': start
+[06:12:01.461] [bmv2] [T] [thread 51265] [64.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:12:01.461] [bmv2] [T] [thread 51265] [64.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Looking up key:
+
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:12:01.461] [bmv2] [T] [thread 51265] [64.0] [cxt 0] Action MyIngress.drop_packet
+[06:12:01.461] [bmv2] [T] [thread 51265] [64.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:12:01.461] [bmv2] [T] [thread 51265] [64.0] [cxt 0] Applying table 'tbl_switch304'
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Looking up key:
+
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Table 'tbl_switch304': miss
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Action entry is switch304 - 
+[06:12:01.461] [bmv2] [T] [thread 51265] [64.0] [cxt 0] Action switch304
+[06:12:01.461] [bmv2] [T] [thread 51265] [64.0] [cxt 0] switch.p4(304) Primitive exit
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Pipeline 'ingress': end
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Egress port is 511
+[06:12:01.461] [bmv2] [D] [thread 51265] [64.0] [cxt 0] Dropping packet at the end of ingress
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Processing packet received on port 1
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Parser 'parser': start
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Parser state 'start': key is 0001
+[06:12:08.814] [bmv2] [T] [thread 51265] [65.0] [cxt 0] Bytes parsed: 0
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Extracting header 'ethernet'
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:12:08.814] [bmv2] [E] [thread 51265] [65.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Parser 'parser': end
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Pipeline 'ingress': start
+[06:12:08.814] [bmv2] [T] [thread 51265] [65.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:12:08.814] [bmv2] [T] [thread 51265] [65.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Looking up key:
+
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:12:08.814] [bmv2] [T] [thread 51265] [65.0] [cxt 0] Action MyIngress.drop_packet
+[06:12:08.814] [bmv2] [T] [thread 51265] [65.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:12:08.814] [bmv2] [T] [thread 51265] [65.0] [cxt 0] Applying table 'tbl_switch304'
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Looking up key:
+
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Table 'tbl_switch304': miss
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Action entry is switch304 - 
+[06:12:08.814] [bmv2] [T] [thread 51265] [65.0] [cxt 0] Action switch304
+[06:12:08.814] [bmv2] [T] [thread 51265] [65.0] [cxt 0] switch.p4(304) Primitive exit
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Pipeline 'ingress': end
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Egress port is 511
+[06:12:08.814] [bmv2] [D] [thread 51265] [65.0] [cxt 0] Dropping packet at the end of ingress
+[06:12:12.909] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Processing packet received on port 2
+[06:12:12.909] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Parser 'parser': start
+[06:12:12.909] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:12:12.909] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Parser state 'start': key is 0002
+[06:12:12.909] [bmv2] [T] [thread 51265] [66.0] [cxt 0] Bytes parsed: 0
+[06:12:12.909] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:12:12.909] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Extracting header 'ethernet'
+[06:12:12.909] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:12:12.909] [bmv2] [E] [thread 51265] [66.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:12:12.909] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Parser 'parser': end
+[06:12:12.909] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Pipeline 'ingress': start
+[06:12:12.909] [bmv2] [T] [thread 51265] [66.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:12:12.909] [bmv2] [T] [thread 51265] [66.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:12:12.909] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Looking up key:
+
+[06:12:12.909] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:12:12.909] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:12:12.909] [bmv2] [T] [thread 51265] [66.0] [cxt 0] Action MyIngress.drop_packet
+[06:12:12.909] [bmv2] [T] [thread 51265] [66.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:12:12.909] [bmv2] [T] [thread 51265] [66.0] [cxt 0] Applying table 'tbl_switch304'
+[06:12:12.910] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Looking up key:
+
+[06:12:12.910] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Table 'tbl_switch304': miss
+[06:12:12.910] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Action entry is switch304 - 
+[06:12:12.910] [bmv2] [T] [thread 51265] [66.0] [cxt 0] Action switch304
+[06:12:12.910] [bmv2] [T] [thread 51265] [66.0] [cxt 0] switch.p4(304) Primitive exit
+[06:12:12.910] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Pipeline 'ingress': end
+[06:12:12.910] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Egress port is 511
+[06:12:12.910] [bmv2] [D] [thread 51265] [66.0] [cxt 0] Dropping packet at the end of ingress
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Processing packet received on port 3
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Parser 'parser': start
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Parser state 'start': key is 0003
+[06:12:17.006] [bmv2] [T] [thread 51265] [67.0] [cxt 0] Bytes parsed: 0
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Extracting header 'ethernet'
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:12:17.006] [bmv2] [E] [thread 51265] [67.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Parser 'parser': end
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Pipeline 'ingress': start
+[06:12:17.006] [bmv2] [T] [thread 51265] [67.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:12:17.006] [bmv2] [T] [thread 51265] [67.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Looking up key:
+
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:12:17.006] [bmv2] [T] [thread 51265] [67.0] [cxt 0] Action MyIngress.drop_packet
+[06:12:17.006] [bmv2] [T] [thread 51265] [67.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:12:17.006] [bmv2] [T] [thread 51265] [67.0] [cxt 0] Applying table 'tbl_switch304'
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Looking up key:
+
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Table 'tbl_switch304': miss
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Action entry is switch304 - 
+[06:12:17.006] [bmv2] [T] [thread 51265] [67.0] [cxt 0] Action switch304
+[06:12:17.006] [bmv2] [T] [thread 51265] [67.0] [cxt 0] switch.p4(304) Primitive exit
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Pipeline 'ingress': end
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Egress port is 511
+[06:12:17.006] [bmv2] [D] [thread 51265] [67.0] [cxt 0] Dropping packet at the end of ingress
+[06:13:34.830] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Processing packet received on port 2
+[06:13:34.830] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Parser 'parser': start
+[06:13:34.830] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:13:34.830] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Parser state 'start': key is 0002
+[06:13:34.830] [bmv2] [T] [thread 51265] [68.0] [cxt 0] Bytes parsed: 0
+[06:13:34.830] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:13:34.830] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Extracting header 'ethernet'
+[06:13:34.830] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:13:34.830] [bmv2] [E] [thread 51265] [68.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:13:34.830] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Parser 'parser': end
+[06:13:34.830] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Pipeline 'ingress': start
+[06:13:34.830] [bmv2] [T] [thread 51265] [68.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:13:34.830] [bmv2] [T] [thread 51265] [68.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:13:34.830] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Looking up key:
+
+[06:13:34.830] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:13:34.830] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:13:34.830] [bmv2] [T] [thread 51265] [68.0] [cxt 0] Action MyIngress.drop_packet
+[06:13:34.830] [bmv2] [T] [thread 51265] [68.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:13:34.830] [bmv2] [T] [thread 51265] [68.0] [cxt 0] Applying table 'tbl_switch304'
+[06:13:34.830] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Looking up key:
+
+[06:13:34.830] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Table 'tbl_switch304': miss
+[06:13:34.831] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Action entry is switch304 - 
+[06:13:34.831] [bmv2] [T] [thread 51265] [68.0] [cxt 0] Action switch304
+[06:13:34.831] [bmv2] [T] [thread 51265] [68.0] [cxt 0] switch.p4(304) Primitive exit
+[06:13:34.831] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Pipeline 'ingress': end
+[06:13:34.831] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Egress port is 511
+[06:13:34.831] [bmv2] [D] [thread 51265] [68.0] [cxt 0] Dropping packet at the end of ingress
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Processing packet received on port 1
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Parser 'parser': start
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Parser state 'start': key is 0001
+[06:13:59.406] [bmv2] [T] [thread 51265] [69.0] [cxt 0] Bytes parsed: 0
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Extracting header 'ethernet'
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:13:59.406] [bmv2] [E] [thread 51265] [69.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Parser 'parser': end
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Pipeline 'ingress': start
+[06:13:59.406] [bmv2] [T] [thread 51265] [69.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:13:59.406] [bmv2] [T] [thread 51265] [69.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Looking up key:
+
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:13:59.406] [bmv2] [T] [thread 51265] [69.0] [cxt 0] Action MyIngress.drop_packet
+[06:13:59.406] [bmv2] [T] [thread 51265] [69.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:13:59.406] [bmv2] [T] [thread 51265] [69.0] [cxt 0] Applying table 'tbl_switch304'
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Looking up key:
+
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Table 'tbl_switch304': miss
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Action entry is switch304 - 
+[06:13:59.406] [bmv2] [T] [thread 51265] [69.0] [cxt 0] Action switch304
+[06:13:59.406] [bmv2] [T] [thread 51265] [69.0] [cxt 0] switch.p4(304) Primitive exit
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Pipeline 'ingress': end
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Egress port is 511
+[06:13:59.406] [bmv2] [D] [thread 51265] [69.0] [cxt 0] Dropping packet at the end of ingress
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Processing packet received on port 1
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Parser 'parser': start
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Parser state 'start': key is 0001
+[06:14:08.952] [bmv2] [T] [thread 51265] [70.0] [cxt 0] Bytes parsed: 0
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Extracting header 'ethernet'
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:14:08.952] [bmv2] [E] [thread 51265] [70.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Parser 'parser': end
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Pipeline 'ingress': start
+[06:14:08.952] [bmv2] [T] [thread 51265] [70.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:14:08.952] [bmv2] [T] [thread 51265] [70.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Looking up key:
+
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:14:08.952] [bmv2] [T] [thread 51265] [70.0] [cxt 0] Action MyIngress.drop_packet
+[06:14:08.952] [bmv2] [T] [thread 51265] [70.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:14:08.952] [bmv2] [T] [thread 51265] [70.0] [cxt 0] Applying table 'tbl_switch304'
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Looking up key:
+
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Table 'tbl_switch304': miss
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Action entry is switch304 - 
+[06:14:08.952] [bmv2] [T] [thread 51265] [70.0] [cxt 0] Action switch304
+[06:14:08.952] [bmv2] [T] [thread 51265] [70.0] [cxt 0] switch.p4(304) Primitive exit
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Pipeline 'ingress': end
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Egress port is 511
+[06:14:08.952] [bmv2] [D] [thread 51265] [70.0] [cxt 0] Dropping packet at the end of ingress
+[06:14:09.222] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Processing packet received on port 3
+[06:14:09.222] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Parser 'parser': start
+[06:14:09.222] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:14:09.222] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Parser state 'start': key is 0003
+[06:14:09.222] [bmv2] [T] [thread 51265] [71.0] [cxt 0] Bytes parsed: 0
+[06:14:09.222] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:14:09.222] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Extracting header 'ethernet'
+[06:14:09.222] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:14:09.222] [bmv2] [E] [thread 51265] [71.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:14:09.222] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Parser 'parser': end
+[06:14:09.222] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Pipeline 'ingress': start
+[06:14:09.222] [bmv2] [T] [thread 51265] [71.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:14:09.222] [bmv2] [T] [thread 51265] [71.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:14:09.222] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Looking up key:
+
+[06:14:09.222] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:14:09.222] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:14:09.222] [bmv2] [T] [thread 51265] [71.0] [cxt 0] Action MyIngress.drop_packet
+[06:14:09.222] [bmv2] [T] [thread 51265] [71.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:14:09.222] [bmv2] [T] [thread 51265] [71.0] [cxt 0] Applying table 'tbl_switch304'
+[06:14:09.223] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Looking up key:
+
+[06:14:09.223] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Table 'tbl_switch304': miss
+[06:14:09.223] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Action entry is switch304 - 
+[06:14:09.223] [bmv2] [T] [thread 51265] [71.0] [cxt 0] Action switch304
+[06:14:09.223] [bmv2] [T] [thread 51265] [71.0] [cxt 0] switch.p4(304) Primitive exit
+[06:14:09.223] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Pipeline 'ingress': end
+[06:14:09.223] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Egress port is 511
+[06:14:09.223] [bmv2] [D] [thread 51265] [71.0] [cxt 0] Dropping packet at the end of ingress
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Processing packet received on port 2
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Parser 'parser': start
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Parser state 'start': key is 0002
+[06:14:09.223] [bmv2] [T] [thread 51265] [72.0] [cxt 0] Bytes parsed: 0
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Extracting header 'ethernet'
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:14:09.223] [bmv2] [E] [thread 51265] [72.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Parser 'parser': end
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Pipeline 'ingress': start
+[06:14:09.223] [bmv2] [T] [thread 51265] [72.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:14:09.223] [bmv2] [T] [thread 51265] [72.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Looking up key:
+
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:14:09.223] [bmv2] [T] [thread 51265] [72.0] [cxt 0] Action MyIngress.drop_packet
+[06:14:09.223] [bmv2] [T] [thread 51265] [72.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:14:09.223] [bmv2] [T] [thread 51265] [72.0] [cxt 0] Applying table 'tbl_switch304'
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Looking up key:
+
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Table 'tbl_switch304': miss
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Action entry is switch304 - 
+[06:14:09.223] [bmv2] [T] [thread 51265] [72.0] [cxt 0] Action switch304
+[06:14:09.223] [bmv2] [T] [thread 51265] [72.0] [cxt 0] switch.p4(304) Primitive exit
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Pipeline 'ingress': end
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Egress port is 511
+[06:14:09.223] [bmv2] [D] [thread 51265] [72.0] [cxt 0] Dropping packet at the end of ingress
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Processing packet received on port 2
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Parser 'parser': start
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Parser state 'start': key is 0002
+[06:14:09.223] [bmv2] [T] [thread 51265] [73.0] [cxt 0] Bytes parsed: 0
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Extracting header 'ethernet'
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:14:09.223] [bmv2] [E] [thread 51265] [73.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Parser 'parser': end
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Pipeline 'ingress': start
+[06:14:09.223] [bmv2] [T] [thread 51265] [73.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:14:09.223] [bmv2] [T] [thread 51265] [73.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Looking up key:
+
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:14:09.223] [bmv2] [T] [thread 51265] [73.0] [cxt 0] Action MyIngress.drop_packet
+[06:14:09.223] [bmv2] [T] [thread 51265] [73.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:14:09.223] [bmv2] [T] [thread 51265] [73.0] [cxt 0] Applying table 'tbl_switch304'
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Looking up key:
+
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Table 'tbl_switch304': miss
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Action entry is switch304 - 
+[06:14:09.223] [bmv2] [T] [thread 51265] [73.0] [cxt 0] Action switch304
+[06:14:09.223] [bmv2] [T] [thread 51265] [73.0] [cxt 0] switch.p4(304) Primitive exit
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Pipeline 'ingress': end
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Egress port is 511
+[06:14:09.223] [bmv2] [D] [thread 51265] [73.0] [cxt 0] Dropping packet at the end of ingress
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Processing packet received on port 1
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Parser 'parser': start
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Parser state 'start': key is 0001
+[06:14:09.463] [bmv2] [T] [thread 51265] [74.0] [cxt 0] Bytes parsed: 0
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Extracting header 'ethernet'
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:14:09.463] [bmv2] [E] [thread 51265] [74.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Parser 'parser': end
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Pipeline 'ingress': start
+[06:14:09.463] [bmv2] [T] [thread 51265] [74.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:14:09.463] [bmv2] [T] [thread 51265] [74.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Looking up key:
+
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:14:09.463] [bmv2] [T] [thread 51265] [74.0] [cxt 0] Action MyIngress.drop_packet
+[06:14:09.463] [bmv2] [T] [thread 51265] [74.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:14:09.463] [bmv2] [T] [thread 51265] [74.0] [cxt 0] Applying table 'tbl_switch304'
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Looking up key:
+
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Table 'tbl_switch304': miss
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Action entry is switch304 - 
+[06:14:09.463] [bmv2] [T] [thread 51265] [74.0] [cxt 0] Action switch304
+[06:14:09.463] [bmv2] [T] [thread 51265] [74.0] [cxt 0] switch.p4(304) Primitive exit
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Pipeline 'ingress': end
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Egress port is 511
+[06:14:09.463] [bmv2] [D] [thread 51265] [74.0] [cxt 0] Dropping packet at the end of ingress
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Processing packet received on port 1
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Parser 'parser': start
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Parser state 'start': key is 0001
+[06:14:19.887] [bmv2] [T] [thread 51265] [75.0] [cxt 0] Bytes parsed: 0
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Extracting header 'ethernet'
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:14:19.887] [bmv2] [E] [thread 51265] [75.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Parser 'parser': end
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Pipeline 'ingress': start
+[06:14:19.887] [bmv2] [T] [thread 51265] [75.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:14:19.887] [bmv2] [T] [thread 51265] [75.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Looking up key:
+
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:14:19.887] [bmv2] [T] [thread 51265] [75.0] [cxt 0] Action MyIngress.drop_packet
+[06:14:19.887] [bmv2] [T] [thread 51265] [75.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:14:19.887] [bmv2] [T] [thread 51265] [75.0] [cxt 0] Applying table 'tbl_switch304'
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Looking up key:
+
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Table 'tbl_switch304': miss
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Action entry is switch304 - 
+[06:14:19.887] [bmv2] [T] [thread 51265] [75.0] [cxt 0] Action switch304
+[06:14:19.887] [bmv2] [T] [thread 51265] [75.0] [cxt 0] switch.p4(304) Primitive exit
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Pipeline 'ingress': end
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Egress port is 511
+[06:14:19.887] [bmv2] [D] [thread 51265] [75.0] [cxt 0] Dropping packet at the end of ingress
+[06:14:36.269] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Processing packet received on port 2
+[06:14:36.269] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Parser 'parser': start
+[06:14:36.269] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:14:36.269] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Parser state 'start': key is 0002
+[06:14:36.269] [bmv2] [T] [thread 51265] [76.0] [cxt 0] Bytes parsed: 0
+[06:14:36.269] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:14:36.269] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Extracting header 'ethernet'
+[06:14:36.270] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:14:36.270] [bmv2] [E] [thread 51265] [76.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:14:36.270] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Parser 'parser': end
+[06:14:36.270] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Pipeline 'ingress': start
+[06:14:36.270] [bmv2] [T] [thread 51265] [76.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:14:36.270] [bmv2] [T] [thread 51265] [76.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:14:36.270] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Looking up key:
+
+[06:14:36.270] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:14:36.270] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:14:36.270] [bmv2] [T] [thread 51265] [76.0] [cxt 0] Action MyIngress.drop_packet
+[06:14:36.270] [bmv2] [T] [thread 51265] [76.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:14:36.270] [bmv2] [T] [thread 51265] [76.0] [cxt 0] Applying table 'tbl_switch304'
+[06:14:36.270] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Looking up key:
+
+[06:14:36.270] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Table 'tbl_switch304': miss
+[06:14:36.270] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Action entry is switch304 - 
+[06:14:36.270] [bmv2] [T] [thread 51265] [76.0] [cxt 0] Action switch304
+[06:14:36.270] [bmv2] [T] [thread 51265] [76.0] [cxt 0] switch.p4(304) Primitive exit
+[06:14:36.270] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Pipeline 'ingress': end
+[06:14:36.270] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Egress port is 511
+[06:14:36.270] [bmv2] [D] [thread 51265] [76.0] [cxt 0] Dropping packet at the end of ingress
+[06:14:40.366] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Processing packet received on port 3
+[06:14:40.366] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Parser 'parser': start
+[06:14:40.366] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:14:40.366] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Parser state 'start': key is 0003
+[06:14:40.366] [bmv2] [T] [thread 51265] [77.0] [cxt 0] Bytes parsed: 0
+[06:14:40.366] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:14:40.366] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Extracting header 'ethernet'
+[06:14:40.367] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:14:40.367] [bmv2] [E] [thread 51265] [77.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:14:40.367] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Parser 'parser': end
+[06:14:40.367] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Pipeline 'ingress': start
+[06:14:40.367] [bmv2] [T] [thread 51265] [77.0] [cxt 0] switch.p4(302) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:14:40.367] [bmv2] [T] [thread 51265] [77.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:14:40.367] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Looking up key:
+
+[06:14:40.367] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:14:40.367] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:14:40.367] [bmv2] [T] [thread 51265] [77.0] [cxt 0] Action MyIngress.drop_packet
+[06:14:40.367] [bmv2] [T] [thread 51265] [77.0] [cxt 0] switch.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:14:40.367] [bmv2] [T] [thread 51265] [77.0] [cxt 0] Applying table 'tbl_switch304'
+[06:14:40.367] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Looking up key:
+
+[06:14:40.367] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Table 'tbl_switch304': miss
+[06:14:40.367] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Action entry is switch304 - 
+[06:14:40.367] [bmv2] [T] [thread 51265] [77.0] [cxt 0] Action switch304
+[06:14:40.367] [bmv2] [T] [thread 51265] [77.0] [cxt 0] switch.p4(304) Primitive exit
+[06:14:40.367] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Pipeline 'ingress': end
+[06:14:40.367] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Egress port is 511
+[06:14:40.367] [bmv2] [D] [thread 51265] [77.0] [cxt 0] Dropping packet at the end of ingress
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory

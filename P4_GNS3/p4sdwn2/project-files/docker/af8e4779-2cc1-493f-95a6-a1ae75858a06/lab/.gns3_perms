@@ -1,0 +1,7 @@
+644:0:0:/lab/logs/s3.log.txt
+755:0:0:/lab/logs
+755:0:0:/lab/p4
+644:0:0:/lab/.gns3_perms
+770:1000:1000:/lab/config/s3start.sh
+755:0:0:/lab/config
+755:0:0:/lab

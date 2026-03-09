@@ -1,0 +1,191 @@
+
+[2026-01-21 08:52:34.486] /p4.v1.P4Runtime/SetForwardingPipelineConfig
+---
+Message too long (57216 bytes)! Skipping log...
+---
+
+[2026-01-21 08:52:34.524] /p4.v1.P4Runtime/Write
+---
+device_id: 1
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    packet_replication_engine_entry {
+      clone_session_entry {
+        session_id: 67
+        replicas {
+          egress_port: 510
+          instance: 1
+        }
+      }
+    }
+  }
+}
+---
+
+[2026-01-21 08:52:34.874] /p4.v1.P4Runtime/Write
+---
+device_id: 1
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    table_entry {
+      table_id: 41042086
+      match {
+        field_id: 1
+        exact {
+          value: "\001"
+        }
+      }
+      match {
+        field_id: 2
+        exact {
+          value: "\n\000\000\001"
+        }
+      }
+      match {
+        field_id: 3
+        exact {
+          value: "\n\000\000\002"
+        }
+      }
+      action {
+        action {
+          action_id: 33226750
+          params {
+            param_id: 1
+            value: "\000\001"
+          }
+          params {
+            param_id: 2
+            value: "\001"
+          }
+          params {
+            param_id: 3
+            value: "\005"
+          }
+          params {
+            param_id: 4
+            value: "\010\000\000\000\002\""
+          }
+        }
+      }
+      idle_timeout_ns: 3000000000
+    }
+  }
+}
+---
+
+[2026-01-21 08:52:34.876] /p4.v1.P4Runtime/Read
+---
+device_id: 1
+entities {
+  counter_entry {
+    counter_id: 310847153
+    index {
+      index: 2
+    }
+  }
+}
+---
+
+[2026-01-21 08:52:34.877] /p4.v1.P4Runtime/Read
+---
+device_id: 1
+entities {
+  counter_entry {
+    counter_id: 309656651
+    index {
+      index: 2
+    }
+  }
+}
+---
+
+[2026-01-21 08:52:35.887] /p4.v1.P4Runtime/Write
+---
+device_id: 1
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    table_entry {
+      table_id: 41042086
+      match {
+        field_id: 1
+        exact {
+          value: "\001"
+        }
+      }
+      match {
+        field_id: 2
+        exact {
+          value: "\n\000\000\002"
+        }
+      }
+      match {
+        field_id: 3
+        exact {
+          value: "\n\000\000\001"
+        }
+      }
+      action {
+        action {
+          action_id: 33226750
+          params {
+            param_id: 1
+            value: "\000\002"
+          }
+          params {
+            param_id: 2
+            value: "\001"
+          }
+          params {
+            param_id: 3
+            value: "\005"
+          }
+          params {
+            param_id: 4
+            value: "\010\000\000\000\001\021"
+          }
+        }
+      }
+      idle_timeout_ns: 3000000000
+    }
+  }
+}
+---
+
+[2026-01-21 08:52:35.890] /p4.v1.P4Runtime/Read
+---
+device_id: 1
+entities {
+  counter_entry {
+    counter_id: 310847153
+    index {
+      index: 1
+    }
+  }
+}
+---
+
+[2026-01-21 08:52:35.891] /p4.v1.P4Runtime/Read
+---
+device_id: 1
+entities {
+  counter_entry {
+    counter_id: 309656651
+    index {
+      index: 1
+    }
+  }
+}
+---

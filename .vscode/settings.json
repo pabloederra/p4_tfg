@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./P4_GNS3/make_p4sdwn/build_docker/deps/utils"
+    ]
+}

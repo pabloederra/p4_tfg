@@ -1,0 +1,14 @@
+{
+    "switches": {
+        "s1": {
+            "cpu_port": "510",
+            "json_path": "./switch.json",
+            "ip": "192.168.1.1"
+        },
+        "s2": {
+            "cpu_port": "510",
+            "json_path": "./router.json",
+            "ip": "192.168.1.2"
+        }
+    }
+}

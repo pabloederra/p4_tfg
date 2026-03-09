@@ -1,0 +1,209 @@
+
+[2026-01-26 17:32:26.353] /p4.v1.P4Runtime/SetForwardingPipelineConfig
+---
+Message too long (80114 bytes)! Skipping log...
+---
+
+[2026-01-26 17:32:26.502] /p4.v1.P4Runtime/Write
+---
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    packet_replication_engine_entry {
+      clone_session_entry {
+        session_id: 67
+        replicas {
+          egress_port: 510
+          instance: 1
+        }
+      }
+    }
+  }
+}
+---
+
+[2026-01-26 17:32:29.176] /p4.v1.P4Runtime/Write
+---
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    packet_replication_engine_entry {
+      multicast_group_entry {
+        multicast_group_id: 10
+        replicas {
+          egress_port: 1
+          instance: 1
+        }
+        replicas {
+          egress_port: 2
+          instance: 1
+        }
+      }
+    }
+  }
+}
+---
+
+[2026-01-26 17:32:29.178] /p4.v1.P4Runtime/Write
+---
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    table_entry {
+      table_id: 39293585
+      match {
+        field_id: 1
+        exact {
+          value: "\377\377\377\377\377\377"
+        }
+      }
+      action {
+        action {
+          action_id: 28371790
+        }
+      }
+    }
+  }
+}
+---
+
+[2026-01-26 17:32:29.186] /p4.v1.P4Runtime/Read
+---
+entities {
+  table_entry {
+  }
+}
+---
+
+[2026-01-26 17:32:29.196] /p4.v1.P4Runtime/Read
+---
+entities {
+  counter_entry {
+    counter_id: 310847153
+    index {
+    }
+  }
+}
+---
+
+[2026-01-26 17:32:29.198] /p4.v1.P4Runtime/Read
+---
+entities {
+  counter_entry {
+    counter_id: 309656651
+    index {
+    }
+  }
+}
+---
+
+[2026-01-26 17:32:29.241] /p4.v1.P4Runtime/Write
+---
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    table_entry {
+      table_id: 35683209
+      match {
+        field_id: 1
+        exact {
+          value: "\010\000\000\000\002\""
+        }
+      }
+      match {
+        field_id: 2
+        exact {
+          value: "\010\000\000\000\001\021"
+        }
+      }
+      action {
+        action {
+          action_id: 26133003
+          params {
+            param_id: 1
+            value: "\000\001"
+          }
+        }
+      }
+    }
+  }
+}
+---
+
+[2026-01-26 17:32:29.243] /p4.v1.P4Runtime/Write
+---
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    table_entry {
+      table_id: 35683209
+      match {
+        field_id: 1
+        exact {
+          value: "\010\000\000\000\001\021"
+        }
+      }
+      match {
+        field_id: 2
+        exact {
+          value: "\010\000\000\000\002\""
+        }
+      }
+      action {
+        action {
+          action_id: 26133003
+          params {
+            param_id: 1
+            value: "\000\002"
+          }
+        }
+      }
+    }
+  }
+}
+---
+
+[2026-01-26 17:32:29.249] /p4.v1.P4Runtime/Read
+---
+entities {
+  table_entry {
+  }
+}
+---
+
+[2026-01-26 17:32:29.255] /p4.v1.P4Runtime/Read
+---
+entities {
+  counter_entry {
+    counter_id: 310847153
+    index {
+    }
+  }
+}
+---
+
+[2026-01-26 17:32:29.259] /p4.v1.P4Runtime/Read
+---
+entities {
+  counter_entry {
+    counter_id: 309656651
+    index {
+    }
+  }
+}
+---

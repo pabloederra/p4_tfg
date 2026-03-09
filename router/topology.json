@@ -1,0 +1,61 @@
+{
+    "hosts": {
+        "h1": {
+            "ip": "192.168.131.1/24",
+            "mac": "08:00:00:00:01:11",
+            "commands": [
+                "route add default gw 192.168.131.254 dev eth0"
+            ]
+        },
+        "h2": {
+            "ip": "192.168.131.2/24",
+            "mac": "08:00:00:00:02:22",
+            "commands": [
+                "route add default gw 192.168.131.254 dev eth0"
+            ]
+        },
+        "h3": {
+            "ip": "155.210.157.254/24",
+            "mac": "08:00:00:00:03:33",
+            "commands": [
+                "route add default gw 155.210.157.175 dev eth0"
+            ]
+        }
+    },
+    "switches": {
+        "s1": {
+            "cpu_port": "510",
+            "json_path": "build/switch.json"
+        },
+        "s2": {
+            "cpu_port": "510",
+            "json_path": "build/switch.json"
+        },
+        "s3": {
+            "cpu_port": "510",
+            "json_path": "build/router.json"
+        }
+    },
+    "links": [
+        [
+            "h1",
+            "s1-p1"
+        ],
+        [
+            "s1-p2",
+            "s3-p2"
+        ],
+        [
+            "h3",
+            "s3-p1"
+        ],
+        [
+            "s3-p3",
+            "s2-p2"
+        ],
+        [
+            "h2",
+            "s2-p1"
+        ]
+    ]
+}

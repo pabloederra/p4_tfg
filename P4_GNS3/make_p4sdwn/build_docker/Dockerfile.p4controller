@@ -1,0 +1,75 @@
+# Dockerfile.p4controller
+# Controlador P4 runtime + Compilador p4c (Multi-stage Build)
+# Soluciona compatibilidad de Python (usa 3.10 de Ubuntu 22.04) 
+# y mantiene p4c (traído de p4lang/p4c con sus libs Legacy)
+
+# --- Stage 1: Builder (p4c source) ---
+# Usamos la imagen oficial antigua (Ubuntu 20.04) para obtener los binarios y librerías compatibles
+FROM p4lang/p4c:latest AS p4c_src
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Instalamos explícitamente las librerías con las que se compiló p4c (Boost 1.71, Protobuf 17)
+# para asegurar que los archivos .so existan y se puedan copiar.
+RUN apt-get update && apt-get install -y \
+    libboost-iostreams1.71.0 \
+    libboost-program-options1.71.0 \
+    libboost-system1.71.0 \
+    libboost-filesystem1.71.0 \
+    libboost-thread1.71.0 \
+    libprotobuf17 \
+    libgc1c2 \
+    libgmp10 \
+    && apt-get clean
+
+# --- Stage 2: Final Image (Ubuntu 22.04) ---
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Instalamos herramientas base y Python 3.10 (nativo en 22.04)
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    python3-setuptools \
+    git \
+    iproute2 \
+    iputils-ping \
+    tcpdump \
+    nano \
+    curl \
+    net-tools \
+    && apt-get clean
+
+# Instalar librerías de Python requeridas
+# Nota: Python 3.10 incluye asyncio nativo con 'to_thread', solucionando el error previo.
+RUN pip3 install --upgrade pip && \
+    pip3 install grpcio protobuf==3.20.3 p4runtime-shell scapy google
+
+# --- Copiar artefactos de P4C desde el Stage 1 ---
+
+# 1. Copiar binarios del compilador
+COPY --from=p4c_src /usr/local/bin/p4c* /usr/local/bin/
+COPY --from=p4c_src /usr/local/share/p4c /usr/local/share/p4c
+
+# 2. Copiar librerías compartidas legacy (Boost 1.71, etc.) a un directorio propio
+RUN mkdir -p /usr/local/lib/p4c_deps
+COPY --from=p4c_src /usr/lib/x86_64-linux-gnu/libboost_*.so.1.71.0 /usr/local/lib/p4c_deps/
+COPY --from=p4c_src /usr/lib/x86_64-linux-gnu/libgc.so* /usr/local/lib/p4c_deps/
+COPY --from=p4c_src /usr/lib/x86_64-linux-gnu/libgmp.so* /usr/local/lib/p4c_deps/
+COPY --from=p4c_src /usr/lib/x86_64-linux-gnu/libprotobuf.so.17 /usr/local/lib/p4c_deps/
+
+# 3. Configurar el sistema para que encuentre estas librerías antiguas
+#ENV LD_LIBRARY_PATH="/usr/local/lib/p4c_deps:$LD_LIBRARY_PATH"
+RUN echo "/usr/local/lib/p4c_deps" > /etc/ld.so.conf.d/p4c_deps.conf && ldconfig
+
+# --- Configuración del entorno de laboratorio ---
+
+RUN mkdir -p /lab/p4 /lab/config /lab/logs
+COPY ./deps /lab/deps
+ENV PYTHONPATH="/lab/deps/utils:/lab/deps"
+
+WORKDIR /lab
+VOLUME ["/lab"]
+
+CMD ["/bin/bash"]

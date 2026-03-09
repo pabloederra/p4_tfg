@@ -1,0 +1,1097 @@
+Calling target program-options parser
+Adding interface s6-eth1 as port 1
+[06:24:09.401] [bmv2] [D] [thread 5978] Adding interface s6-eth1 as port 1
+Adding interface s6-eth2 as port 2
+[06:24:09.432] [bmv2] [D] [thread 5978] Adding interface s6-eth2 as port 2
+Server listening on 0.0.0.0:50056
+[06:24:09.453] [bmv2] [I] [thread 5978] Starting Thrift server on port 9095
+[06:24:09.454] [bmv2] [I] [thread 5978] Thrift server was started
+[06:24:16.535] [bmv2] [W] [thread 6131] [P4Runtime] p4::tmp::P4DeviceConfig is deprecated
+[06:24:16.553] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_drop_packet': MyIngress.drop_packet - 
+[06:24:16.553] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_tonto266': tonto266 - 
+[06:24:16.553] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_tonto271': tonto271 - 
+[06:24:16.553] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_tonto272': tonto272 - 
+[06:24:16.553] [bmv2] [D] [thread 6131] Set default default entry for table 'switch_0_table': switch_0_case_1 - 
+[06:24:16.554] [bmv2] [D] [thread 6131] Entry 0 added to table 'switch_0_table'
+[06:24:16.554] [bmv2] [D] [thread 6131] Dumping entry 0
+Match key:
+* scalars.switch_0_key: EXACT     01
+Action entry: switch_0_case - 
+
+[06:24:16.554] [bmv2] [D] [thread 6131] Entry 1 added to table 'switch_0_table'
+[06:24:16.554] [bmv2] [D] [thread 6131] Dumping entry 1
+Match key:
+* scalars.switch_0_key: EXACT     02
+Action entry: switch_0_case_0 - 
+
+[06:24:16.554] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_tonto274': tonto274 - 
+[06:24:16.554] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_flooding': MyIngress.flooding - 
+[06:24:16.554] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_tonto279': tonto279 - 
+[06:24:16.554] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_send_to_controller_with_details': MyIngress.send_to_controller_with_details - 
+[06:24:16.554] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_tonto286': tonto286 - 
+[06:24:16.554] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_marking': MyIngress.marking - 
+[06:24:16.554] [bmv2] [D] [thread 6131] Set default default entry for table 'MyIngress.switch_id': MyIngress.flow_unknown - 
+[06:24:16.562] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_drop_packet_0': MyEgress.drop_packet - 
+[06:24:16.563] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_tonto327': tonto327 - 
+[06:24:16.563] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_prepend_packet_in_hdr': MyEgress.prepend_packet_in_hdr - 
+[06:24:16.563] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_tonto333': tonto333 - 
+[06:24:16.563] [bmv2] [D] [thread 6131] Set default default entry for table 'switch_1_table': switch_1_case_3 - 
+[06:24:16.563] [bmv2] [D] [thread 6131] Entry 0 added to table 'switch_1_table'
+[06:24:16.563] [bmv2] [D] [thread 6131] Dumping entry 0
+Match key:
+* scalars.switch_1_key: EXACT     01
+Action entry: switch_1_case - 
+
+[06:24:16.563] [bmv2] [D] [thread 6131] Entry 1 added to table 'switch_1_table'
+[06:24:16.563] [bmv2] [D] [thread 6131] Dumping entry 1
+Match key:
+* scalars.switch_1_key: EXACT     02
+Action entry: switch_1_case_0 - 
+
+[06:24:16.563] [bmv2] [D] [thread 6131] Entry 2 added to table 'switch_1_table'
+[06:24:16.563] [bmv2] [D] [thread 6131] Dumping entry 2
+Match key:
+* scalars.switch_1_key: EXACT     06
+Action entry: switch_1_case_1 - 
+
+[06:24:16.563] [bmv2] [D] [thread 6131] Entry 3 added to table 'switch_1_table'
+[06:24:16.563] [bmv2] [D] [thread 6131] Dumping entry 3
+Match key:
+* scalars.switch_1_key: EXACT     11
+Action entry: switch_1_case_2 - 
+
+[06:24:16.563] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_tonto335': tonto335 - 
+[06:24:16.563] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_tonto338': tonto338 - 
+[06:24:16.563] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_tonto341': tonto341 - 
+[06:24:16.563] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_tonto344': tonto344 - 
+[06:24:16.563] [bmv2] [D] [thread 6131] Set default default entry for table 'tbl_tonto347': tonto347 - 
+[06:24:16.567] [bmv2] [D] [thread 6131] simple_switch target has been notified of a config swap
+[06:24:16.576] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Processing packet received on port 1
+[06:24:16.576] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Parser 'parser': start
+[06:24:16.576] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:16.576] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Parser state 'start': key is 0001
+[06:24:16.576] [bmv2] [T] [thread 6141] [0.0] [cxt 0] Bytes parsed: 0
+[06:24:16.576] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:16.576] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Extracting header 'ethernet'
+[06:24:16.576] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:16.576] [bmv2] [E] [thread 6141] [0.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:16.576] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Parser 'parser': end
+[06:24:16.577] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Pipeline 'ingress': start
+[06:24:16.577] [bmv2] [T] [thread 6141] [0.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:16.577] [bmv2] [T] [thread 6141] [0.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:16.577] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Looking up key:
+
+[06:24:16.577] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:16.577] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:16.577] [bmv2] [T] [thread 6141] [0.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:16.577] [bmv2] [T] [thread 6141] [0.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:16.577] [bmv2] [T] [thread 6141] [0.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:16.577] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Looking up key:
+
+[06:24:16.577] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:16.577] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Action entry is tonto266 - 
+[06:24:16.577] [bmv2] [T] [thread 6141] [0.0] [cxt 0] Action tonto266
+[06:24:16.577] [bmv2] [T] [thread 6141] [0.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:16.577] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Pipeline 'ingress': end
+[06:24:16.577] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Egress port is 511
+[06:24:16.577] [bmv2] [D] [thread 6141] [0.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Processing packet received on port 2
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Parser 'parser': start
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Parser state 'start': key is 0002
+[06:24:16.577] [bmv2] [T] [thread 6141] [1.0] [cxt 0] Bytes parsed: 0
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Extracting header 'ethernet'
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:16.577] [bmv2] [E] [thread 6141] [1.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Parser 'parser': end
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Pipeline 'ingress': start
+[06:24:16.577] [bmv2] [T] [thread 6141] [1.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:16.577] [bmv2] [T] [thread 6141] [1.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Looking up key:
+
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:16.577] [bmv2] [T] [thread 6141] [1.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:16.577] [bmv2] [T] [thread 6141] [1.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:16.577] [bmv2] [T] [thread 6141] [1.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Looking up key:
+
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Action entry is tonto266 - 
+[06:24:16.577] [bmv2] [T] [thread 6141] [1.0] [cxt 0] Action tonto266
+[06:24:16.577] [bmv2] [T] [thread 6141] [1.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Pipeline 'ingress': end
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Egress port is 511
+[06:24:16.577] [bmv2] [D] [thread 6141] [1.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:16.577] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Processing packet received on port 1
+[06:24:16.577] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Parser 'parser': start
+[06:24:16.577] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:16.577] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Parser state 'start': key is 0001
+[06:24:16.577] [bmv2] [T] [thread 6141] [2.0] [cxt 0] Bytes parsed: 0
+[06:24:16.577] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:16.577] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Extracting header 'ethernet'
+[06:24:16.581] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:16.581] [bmv2] [E] [thread 6141] [2.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:16.581] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Parser 'parser': end
+[06:24:16.582] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Pipeline 'ingress': start
+[06:24:16.582] [bmv2] [T] [thread 6141] [2.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:16.582] [bmv2] [T] [thread 6141] [2.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Looking up key:
+
+[06:24:16.582] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:16.582] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:16.582] [bmv2] [T] [thread 6141] [2.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:16.582] [bmv2] [T] [thread 6141] [2.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:16.582] [bmv2] [T] [thread 6141] [2.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:16.582] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Looking up key:
+
+[06:24:16.582] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:16.582] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Action entry is tonto266 - 
+[06:24:16.582] [bmv2] [T] [thread 6141] [2.0] [cxt 0] Action tonto266
+[06:24:16.582] [bmv2] [T] [thread 6141] [2.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:16.582] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Pipeline 'ingress': end
+[06:24:16.582] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Egress port is 511
+[06:24:16.582] [bmv2] [D] [thread 6141] [2.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Processing packet received on port 2
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Parser 'parser': start
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Parser state 'start': key is 0002
+[06:24:16.582] [bmv2] [T] [thread 6141] [3.0] [cxt 0] Bytes parsed: 0
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Extracting header 'ethernet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:16.582] [bmv2] [E] [thread 6141] [3.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Parser 'parser': end
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Pipeline 'ingress': start
+[06:24:16.582] [bmv2] [T] [thread 6141] [3.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:16.582] [bmv2] [T] [thread 6141] [3.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Looking up key:
+
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:16.582] [bmv2] [T] [thread 6141] [3.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:16.582] [bmv2] [T] [thread 6141] [3.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:16.582] [bmv2] [T] [thread 6141] [3.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Looking up key:
+
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Action entry is tonto266 - 
+[06:24:16.582] [bmv2] [T] [thread 6141] [3.0] [cxt 0] Action tonto266
+[06:24:16.582] [bmv2] [T] [thread 6141] [3.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Pipeline 'ingress': end
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Egress port is 511
+[06:24:16.582] [bmv2] [D] [thread 6141] [3.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Processing packet received on port 1
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Parser 'parser': start
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Parser state 'start': key is 0001
+[06:24:16.582] [bmv2] [T] [thread 6141] [4.0] [cxt 0] Bytes parsed: 0
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Extracting header 'ethernet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:16.582] [bmv2] [E] [thread 6141] [4.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Parser 'parser': end
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Pipeline 'ingress': start
+[06:24:16.582] [bmv2] [T] [thread 6141] [4.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:16.582] [bmv2] [T] [thread 6141] [4.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Looking up key:
+
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:16.582] [bmv2] [T] [thread 6141] [4.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:16.582] [bmv2] [T] [thread 6141] [4.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:16.582] [bmv2] [T] [thread 6141] [4.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Looking up key:
+
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Action entry is tonto266 - 
+[06:24:16.582] [bmv2] [T] [thread 6141] [4.0] [cxt 0] Action tonto266
+[06:24:16.582] [bmv2] [T] [thread 6141] [4.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Pipeline 'ingress': end
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Egress port is 511
+[06:24:16.582] [bmv2] [D] [thread 6141] [4.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Processing packet received on port 2
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Parser 'parser': start
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Parser state 'start': key is 0002
+[06:24:16.582] [bmv2] [T] [thread 6141] [5.0] [cxt 0] Bytes parsed: 0
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Extracting header 'ethernet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:16.582] [bmv2] [E] [thread 6141] [5.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Parser 'parser': end
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Pipeline 'ingress': start
+[06:24:16.582] [bmv2] [T] [thread 6141] [5.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:16.582] [bmv2] [T] [thread 6141] [5.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Looking up key:
+
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:16.582] [bmv2] [T] [thread 6141] [5.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:16.582] [bmv2] [T] [thread 6141] [5.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:16.582] [bmv2] [T] [thread 6141] [5.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Looking up key:
+
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Action entry is tonto266 - 
+[06:24:16.582] [bmv2] [T] [thread 6141] [5.0] [cxt 0] Action tonto266
+[06:24:16.582] [bmv2] [T] [thread 6141] [5.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Pipeline 'ingress': end
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Egress port is 511
+[06:24:16.582] [bmv2] [D] [thread 6141] [5.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Processing packet received on port 1
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Parser 'parser': start
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Parser state 'start': key is 0001
+[06:24:16.582] [bmv2] [T] [thread 6141] [6.0] [cxt 0] Bytes parsed: 0
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Extracting header 'ethernet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:16.582] [bmv2] [E] [thread 6141] [6.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Parser 'parser': end
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Pipeline 'ingress': start
+[06:24:16.582] [bmv2] [T] [thread 6141] [6.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:16.582] [bmv2] [T] [thread 6141] [6.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Looking up key:
+
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:16.582] [bmv2] [T] [thread 6141] [6.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:16.582] [bmv2] [T] [thread 6141] [6.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:16.582] [bmv2] [T] [thread 6141] [6.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Looking up key:
+
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Action entry is tonto266 - 
+[06:24:16.582] [bmv2] [T] [thread 6141] [6.0] [cxt 0] Action tonto266
+[06:24:16.582] [bmv2] [T] [thread 6141] [6.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Pipeline 'ingress': end
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Egress port is 511
+[06:24:16.582] [bmv2] [D] [thread 6141] [6.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Processing packet received on port 2
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Parser 'parser': start
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Parser state 'start': key is 0002
+[06:24:16.582] [bmv2] [T] [thread 6141] [7.0] [cxt 0] Bytes parsed: 0
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Extracting header 'ethernet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:16.582] [bmv2] [E] [thread 6141] [7.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Parser 'parser': end
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Pipeline 'ingress': start
+[06:24:16.582] [bmv2] [T] [thread 6141] [7.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:16.582] [bmv2] [T] [thread 6141] [7.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Looking up key:
+
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:16.582] [bmv2] [T] [thread 6141] [7.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:16.582] [bmv2] [T] [thread 6141] [7.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:16.582] [bmv2] [T] [thread 6141] [7.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Looking up key:
+
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Action entry is tonto266 - 
+[06:24:16.582] [bmv2] [T] [thread 6141] [7.0] [cxt 0] Action tonto266
+[06:24:16.582] [bmv2] [T] [thread 6141] [7.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Pipeline 'ingress': end
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Egress port is 511
+[06:24:16.582] [bmv2] [D] [thread 6141] [7.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:16.695] [bmv2] [D] [thread 6131] mgrp node created for mgid 32835
+[06:24:16.698] [bmv2] [D] [thread 6131] node created for rid 1
+[06:24:16.699] [bmv2] [D] [thread 6131] node associated with mgid 32835
+[06:24:16.711] [bmv2] [D] [thread 6134] mgrp node created for mgid 10
+[06:24:16.711] [bmv2] [D] [thread 6134] node created for rid 1
+[06:24:16.711] [bmv2] [D] [thread 6134] node associated with mgid 10
+[06:24:17.409] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Processing packet received on port 1
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Parser 'parser': start
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Parser state 'start': key is 0001
+[06:24:17.410] [bmv2] [T] [thread 6141] [8.0] [cxt 0] Bytes parsed: 0
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Extracting header 'ethernet'
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:17.410] [bmv2] [E] [thread 6141] [8.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Parser 'parser': end
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Pipeline 'ingress': start
+[06:24:17.410] [bmv2] [T] [thread 6141] [8.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:17.410] [bmv2] [T] [thread 6141] [8.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Looking up key:
+
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:17.410] [bmv2] [T] [thread 6141] [8.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:17.410] [bmv2] [T] [thread 6141] [8.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:17.410] [bmv2] [T] [thread 6141] [8.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Looking up key:
+
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Action entry is tonto266 - 
+[06:24:17.410] [bmv2] [T] [thread 6141] [8.0] [cxt 0] Action tonto266
+[06:24:17.410] [bmv2] [T] [thread 6141] [8.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Pipeline 'ingress': end
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Egress port is 511
+[06:24:17.410] [bmv2] [D] [thread 6141] [8.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Processing packet received on port 2
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Parser 'parser': start
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Parser state 'start': key is 0002
+[06:24:19.972] [bmv2] [T] [thread 6141] [9.0] [cxt 0] Bytes parsed: 0
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Extracting header 'ethernet'
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:19.972] [bmv2] [E] [thread 6141] [9.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Parser 'parser': end
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Pipeline 'ingress': start
+[06:24:19.972] [bmv2] [T] [thread 6141] [9.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:19.972] [bmv2] [T] [thread 6141] [9.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Looking up key:
+
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:19.972] [bmv2] [T] [thread 6141] [9.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:19.972] [bmv2] [T] [thread 6141] [9.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:19.972] [bmv2] [T] [thread 6141] [9.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Looking up key:
+
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Action entry is tonto266 - 
+[06:24:19.972] [bmv2] [T] [thread 6141] [9.0] [cxt 0] Action tonto266
+[06:24:19.972] [bmv2] [T] [thread 6141] [9.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Pipeline 'ingress': end
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Egress port is 511
+[06:24:19.972] [bmv2] [D] [thread 6141] [9.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Processing packet received on port 1
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Parser 'parser': start
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Parser state 'start': key is 0001
+[06:24:21.642] [bmv2] [T] [thread 6141] [10.0] [cxt 0] Bytes parsed: 0
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Extracting header 'ethernet'
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:21.642] [bmv2] [E] [thread 6141] [10.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Parser 'parser': end
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Pipeline 'ingress': start
+[06:24:21.642] [bmv2] [T] [thread 6141] [10.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:21.642] [bmv2] [T] [thread 6141] [10.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Looking up key:
+
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:21.642] [bmv2] [T] [thread 6141] [10.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:21.642] [bmv2] [T] [thread 6141] [10.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:21.642] [bmv2] [T] [thread 6141] [10.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Looking up key:
+
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Action entry is tonto266 - 
+[06:24:21.642] [bmv2] [T] [thread 6141] [10.0] [cxt 0] Action tonto266
+[06:24:21.642] [bmv2] [T] [thread 6141] [10.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Pipeline 'ingress': end
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Egress port is 511
+[06:24:21.642] [bmv2] [D] [thread 6141] [10.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Processing packet received on port 2
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Parser 'parser': start
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Parser state 'start': key is 0002
+[06:24:21.832] [bmv2] [T] [thread 6141] [11.0] [cxt 0] Bytes parsed: 0
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Extracting header 'ethernet'
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:21.832] [bmv2] [E] [thread 6141] [11.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Parser 'parser': end
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Pipeline 'ingress': start
+[06:24:21.832] [bmv2] [T] [thread 6141] [11.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:21.832] [bmv2] [T] [thread 6141] [11.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Looking up key:
+
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:21.832] [bmv2] [T] [thread 6141] [11.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:21.832] [bmv2] [T] [thread 6141] [11.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:21.832] [bmv2] [T] [thread 6141] [11.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Looking up key:
+
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Action entry is tonto266 - 
+[06:24:21.832] [bmv2] [T] [thread 6141] [11.0] [cxt 0] Action tonto266
+[06:24:21.832] [bmv2] [T] [thread 6141] [11.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Pipeline 'ingress': end
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Egress port is 511
+[06:24:21.832] [bmv2] [D] [thread 6141] [11.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:31.242] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Processing packet received on port 1
+[06:24:31.242] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Parser 'parser': start
+[06:24:31.242] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:31.242] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Parser state 'start': key is 0001
+[06:24:31.242] [bmv2] [T] [thread 6141] [12.0] [cxt 0] Bytes parsed: 0
+[06:24:31.242] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:31.242] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Extracting header 'ethernet'
+[06:24:31.242] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:31.242] [bmv2] [E] [thread 6141] [12.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:31.242] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Parser 'parser': end
+[06:24:31.242] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Pipeline 'ingress': start
+[06:24:31.243] [bmv2] [T] [thread 6141] [12.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:31.243] [bmv2] [T] [thread 6141] [12.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:31.243] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Looking up key:
+
+[06:24:31.243] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:31.243] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:31.243] [bmv2] [T] [thread 6141] [12.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:31.243] [bmv2] [T] [thread 6141] [12.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:31.243] [bmv2] [T] [thread 6141] [12.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:31.243] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Looking up key:
+
+[06:24:31.243] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:31.243] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Action entry is tonto266 - 
+[06:24:31.243] [bmv2] [T] [thread 6141] [12.0] [cxt 0] Action tonto266
+[06:24:31.243] [bmv2] [T] [thread 6141] [12.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:31.243] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Pipeline 'ingress': end
+[06:24:31.243] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Egress port is 511
+[06:24:31.243] [bmv2] [D] [thread 6141] [12.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Processing packet received on port 2
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Parser 'parser': start
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Parser state 'start': key is 0002
+[06:24:35.842] [bmv2] [T] [thread 6141] [13.0] [cxt 0] Bytes parsed: 0
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Extracting header 'ethernet'
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:35.842] [bmv2] [E] [thread 6141] [13.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Parser 'parser': end
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Pipeline 'ingress': start
+[06:24:35.842] [bmv2] [T] [thread 6141] [13.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:35.842] [bmv2] [T] [thread 6141] [13.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Looking up key:
+
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:35.842] [bmv2] [T] [thread 6141] [13.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:35.842] [bmv2] [T] [thread 6141] [13.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:35.842] [bmv2] [T] [thread 6141] [13.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Looking up key:
+
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Action entry is tonto266 - 
+[06:24:35.842] [bmv2] [T] [thread 6141] [13.0] [cxt 0] Action tonto266
+[06:24:35.842] [bmv2] [T] [thread 6141] [13.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Pipeline 'ingress': end
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Egress port is 511
+[06:24:35.842] [bmv2] [D] [thread 6141] [13.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Processing packet received on port 1
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Parser 'parser': start
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Parser state 'start': key is 0001
+[06:24:37.651] [bmv2] [T] [thread 6141] [14.0] [cxt 0] Bytes parsed: 0
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Extracting header 'ethernet'
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:37.651] [bmv2] [E] [thread 6141] [14.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Parser 'parser': end
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Pipeline 'ingress': start
+[06:24:37.651] [bmv2] [T] [thread 6141] [14.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:37.651] [bmv2] [T] [thread 6141] [14.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Looking up key:
+
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:37.651] [bmv2] [T] [thread 6141] [14.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:37.651] [bmv2] [T] [thread 6141] [14.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:37.651] [bmv2] [T] [thread 6141] [14.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Looking up key:
+
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Action entry is tonto266 - 
+[06:24:37.651] [bmv2] [T] [thread 6141] [14.0] [cxt 0] Action tonto266
+[06:24:37.651] [bmv2] [T] [thread 6141] [14.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Pipeline 'ingress': end
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Egress port is 511
+[06:24:37.651] [bmv2] [D] [thread 6141] [14.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Processing packet received on port 2
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Parser 'parser': start
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Parser state 'start': key is 0002
+[06:24:37.839] [bmv2] [T] [thread 6141] [15.0] [cxt 0] Bytes parsed: 0
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Extracting header 'ethernet'
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:37.839] [bmv2] [E] [thread 6141] [15.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Parser 'parser': end
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Pipeline 'ingress': start
+[06:24:37.839] [bmv2] [T] [thread 6141] [15.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:37.839] [bmv2] [T] [thread 6141] [15.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Looking up key:
+
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:37.839] [bmv2] [T] [thread 6141] [15.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:37.839] [bmv2] [T] [thread 6141] [15.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:37.839] [bmv2] [T] [thread 6141] [15.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Looking up key:
+
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Action entry is tonto266 - 
+[06:24:37.839] [bmv2] [T] [thread 6141] [15.0] [cxt 0] Action tonto266
+[06:24:37.839] [bmv2] [T] [thread 6141] [15.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Pipeline 'ingress': end
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Egress port is 511
+[06:24:37.839] [bmv2] [D] [thread 6141] [15.0] [cxt 0] Dropping packet at the end of ingress
+[06:24:59.394] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Processing packet received on port 1
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Parser 'parser': start
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Parser state 'start': key is 0001
+[06:24:59.395] [bmv2] [T] [thread 6141] [16.0] [cxt 0] Bytes parsed: 0
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Extracting header 'ethernet'
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:24:59.395] [bmv2] [E] [thread 6141] [16.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Parser 'parser': end
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Pipeline 'ingress': start
+[06:24:59.395] [bmv2] [T] [thread 6141] [16.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:24:59.395] [bmv2] [T] [thread 6141] [16.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Looking up key:
+
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:24:59.395] [bmv2] [T] [thread 6141] [16.0] [cxt 0] Action MyIngress.drop_packet
+[06:24:59.395] [bmv2] [T] [thread 6141] [16.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:24:59.395] [bmv2] [T] [thread 6141] [16.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Looking up key:
+
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Action entry is tonto266 - 
+[06:24:59.395] [bmv2] [T] [thread 6141] [16.0] [cxt 0] Action tonto266
+[06:24:59.395] [bmv2] [T] [thread 6141] [16.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Pipeline 'ingress': end
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Egress port is 511
+[06:24:59.395] [bmv2] [D] [thread 6141] [16.0] [cxt 0] Dropping packet at the end of ingress
+[06:25:09.126] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Processing packet received on port 2
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Parser 'parser': start
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Parser state 'start': key is 0002
+[06:25:09.131] [bmv2] [T] [thread 6141] [17.0] [cxt 0] Bytes parsed: 0
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Extracting header 'ethernet'
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:25:09.131] [bmv2] [E] [thread 6141] [17.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Parser 'parser': end
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Pipeline 'ingress': start
+[06:25:09.131] [bmv2] [T] [thread 6141] [17.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:25:09.131] [bmv2] [T] [thread 6141] [17.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Looking up key:
+
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:25:09.131] [bmv2] [T] [thread 6141] [17.0] [cxt 0] Action MyIngress.drop_packet
+[06:25:09.131] [bmv2] [T] [thread 6141] [17.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:25:09.131] [bmv2] [T] [thread 6141] [17.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Looking up key:
+
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Action entry is tonto266 - 
+[06:25:09.131] [bmv2] [T] [thread 6141] [17.0] [cxt 0] Action tonto266
+[06:25:09.131] [bmv2] [T] [thread 6141] [17.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Pipeline 'ingress': end
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Egress port is 511
+[06:25:09.131] [bmv2] [D] [thread 6141] [17.0] [cxt 0] Dropping packet at the end of ingress
+[06:25:09.666] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Processing packet received on port 1
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Parser 'parser': start
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Parser state 'start': key is 0001
+[06:25:09.667] [bmv2] [T] [thread 6141] [18.0] [cxt 0] Bytes parsed: 0
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Extracting header 'ethernet'
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:25:09.667] [bmv2] [E] [thread 6141] [18.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Parser 'parser': end
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Pipeline 'ingress': start
+[06:25:09.667] [bmv2] [T] [thread 6141] [18.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:25:09.667] [bmv2] [T] [thread 6141] [18.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Looking up key:
+
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:25:09.667] [bmv2] [T] [thread 6141] [18.0] [cxt 0] Action MyIngress.drop_packet
+[06:25:09.667] [bmv2] [T] [thread 6141] [18.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:25:09.667] [bmv2] [T] [thread 6141] [18.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Looking up key:
+
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Action entry is tonto266 - 
+[06:25:09.667] [bmv2] [T] [thread 6141] [18.0] [cxt 0] Action tonto266
+[06:25:09.667] [bmv2] [T] [thread 6141] [18.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Pipeline 'ingress': end
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Egress port is 511
+[06:25:09.667] [bmv2] [D] [thread 6141] [18.0] [cxt 0] Dropping packet at the end of ingress
+[06:25:09.833] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Processing packet received on port 2
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Parser 'parser': start
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Parser state 'start': key is 0002
+[06:25:09.834] [bmv2] [T] [thread 6141] [19.0] [cxt 0] Bytes parsed: 0
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Extracting header 'ethernet'
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:25:09.834] [bmv2] [E] [thread 6141] [19.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Parser 'parser': end
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Pipeline 'ingress': start
+[06:25:09.834] [bmv2] [T] [thread 6141] [19.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:25:09.834] [bmv2] [T] [thread 6141] [19.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Looking up key:
+
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:25:09.834] [bmv2] [T] [thread 6141] [19.0] [cxt 0] Action MyIngress.drop_packet
+[06:25:09.834] [bmv2] [T] [thread 6141] [19.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:25:09.834] [bmv2] [T] [thread 6141] [19.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Looking up key:
+
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Action entry is tonto266 - 
+[06:25:09.834] [bmv2] [T] [thread 6141] [19.0] [cxt 0] Action tonto266
+[06:25:09.834] [bmv2] [T] [thread 6141] [19.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Pipeline 'ingress': end
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Egress port is 511
+[06:25:09.834] [bmv2] [D] [thread 6141] [19.0] [cxt 0] Dropping packet at the end of ingress
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Processing packet received on port 1
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Parser 'parser': start
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Parser state 'start': key is 0001
+[06:25:58.274] [bmv2] [T] [thread 6141] [20.0] [cxt 0] Bytes parsed: 0
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Extracting header 'ethernet'
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:25:58.274] [bmv2] [E] [thread 6141] [20.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Parser 'parser': end
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Pipeline 'ingress': start
+[06:25:58.274] [bmv2] [T] [thread 6141] [20.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:25:58.274] [bmv2] [T] [thread 6141] [20.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Looking up key:
+
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:25:58.274] [bmv2] [T] [thread 6141] [20.0] [cxt 0] Action MyIngress.drop_packet
+[06:25:58.274] [bmv2] [T] [thread 6141] [20.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:25:58.274] [bmv2] [T] [thread 6141] [20.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Looking up key:
+
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:25:58.274] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Action entry is tonto266 - 
+[06:25:58.274] [bmv2] [T] [thread 6141] [20.0] [cxt 0] Action tonto266
+[06:25:58.275] [bmv2] [T] [thread 6141] [20.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:25:58.275] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Pipeline 'ingress': end
+[06:25:58.275] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Egress port is 511
+[06:25:58.275] [bmv2] [D] [thread 6141] [20.0] [cxt 0] Dropping packet at the end of ingress
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Processing packet received on port 1
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Parser 'parser': start
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Parser state 'start': key is 0001
+[06:26:13.666] [bmv2] [T] [thread 6141] [21.0] [cxt 0] Bytes parsed: 0
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Extracting header 'ethernet'
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:26:13.666] [bmv2] [E] [thread 6141] [21.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Parser 'parser': end
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Pipeline 'ingress': start
+[06:26:13.666] [bmv2] [T] [thread 6141] [21.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:26:13.666] [bmv2] [T] [thread 6141] [21.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Looking up key:
+
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:26:13.666] [bmv2] [T] [thread 6141] [21.0] [cxt 0] Action MyIngress.drop_packet
+[06:26:13.666] [bmv2] [T] [thread 6141] [21.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:26:13.666] [bmv2] [T] [thread 6141] [21.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Looking up key:
+
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Action entry is tonto266 - 
+[06:26:13.666] [bmv2] [T] [thread 6141] [21.0] [cxt 0] Action tonto266
+[06:26:13.666] [bmv2] [T] [thread 6141] [21.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Pipeline 'ingress': end
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Egress port is 511
+[06:26:13.666] [bmv2] [D] [thread 6141] [21.0] [cxt 0] Dropping packet at the end of ingress
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Processing packet received on port 2
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Parser 'parser': start
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Parser state 'start': key is 0002
+[06:26:13.841] [bmv2] [T] [thread 6141] [22.0] [cxt 0] Bytes parsed: 0
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Extracting header 'ethernet'
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:26:13.841] [bmv2] [E] [thread 6141] [22.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Parser 'parser': end
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Pipeline 'ingress': start
+[06:26:13.841] [bmv2] [T] [thread 6141] [22.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:26:13.841] [bmv2] [T] [thread 6141] [22.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Looking up key:
+
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:26:13.841] [bmv2] [T] [thread 6141] [22.0] [cxt 0] Action MyIngress.drop_packet
+[06:26:13.841] [bmv2] [T] [thread 6141] [22.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:26:13.841] [bmv2] [T] [thread 6141] [22.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Looking up key:
+
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Action entry is tonto266 - 
+[06:26:13.841] [bmv2] [T] [thread 6141] [22.0] [cxt 0] Action tonto266
+[06:26:13.841] [bmv2] [T] [thread 6141] [22.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Pipeline 'ingress': end
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Egress port is 511
+[06:26:13.841] [bmv2] [D] [thread 6141] [22.0] [cxt 0] Dropping packet at the end of ingress
+[06:26:18.754] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Processing packet received on port 2
+[06:26:18.754] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Parser 'parser': start
+[06:26:18.754] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:26:18.754] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Parser state 'start': key is 0002
+[06:26:18.754] [bmv2] [T] [thread 6141] [23.0] [cxt 0] Bytes parsed: 0
+[06:26:18.754] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:26:18.754] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Extracting header 'ethernet'
+[06:26:18.754] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:26:18.755] [bmv2] [E] [thread 6141] [23.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:26:18.755] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Parser 'parser': end
+[06:26:18.755] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Pipeline 'ingress': start
+[06:26:18.755] [bmv2] [T] [thread 6141] [23.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:26:18.755] [bmv2] [T] [thread 6141] [23.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:26:18.755] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Looking up key:
+
+[06:26:18.755] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:26:18.755] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:26:18.755] [bmv2] [T] [thread 6141] [23.0] [cxt 0] Action MyIngress.drop_packet
+[06:26:18.755] [bmv2] [T] [thread 6141] [23.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:26:18.755] [bmv2] [T] [thread 6141] [23.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:26:18.755] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Looking up key:
+
+[06:26:18.755] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:26:18.755] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Action entry is tonto266 - 
+[06:26:18.755] [bmv2] [T] [thread 6141] [23.0] [cxt 0] Action tonto266
+[06:26:18.755] [bmv2] [T] [thread 6141] [23.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:26:18.755] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Pipeline 'ingress': end
+[06:26:18.755] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Egress port is 511
+[06:26:18.755] [bmv2] [D] [thread 6141] [23.0] [cxt 0] Dropping packet at the end of ingress
+[06:28:01.154] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Processing packet received on port 1
+[06:28:01.154] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Parser 'parser': start
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Parser state 'start': key is 0001
+[06:28:01.155] [bmv2] [T] [thread 6141] [24.0] [cxt 0] Bytes parsed: 0
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Extracting header 'ethernet'
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:28:01.155] [bmv2] [E] [thread 6141] [24.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Parser 'parser': end
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Pipeline 'ingress': start
+[06:28:01.155] [bmv2] [T] [thread 6141] [24.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:28:01.155] [bmv2] [T] [thread 6141] [24.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Looking up key:
+
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:28:01.155] [bmv2] [T] [thread 6141] [24.0] [cxt 0] Action MyIngress.drop_packet
+[06:28:01.155] [bmv2] [T] [thread 6141] [24.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:28:01.155] [bmv2] [T] [thread 6141] [24.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Looking up key:
+
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Action entry is tonto266 - 
+[06:28:01.155] [bmv2] [T] [thread 6141] [24.0] [cxt 0] Action tonto266
+[06:28:01.155] [bmv2] [T] [thread 6141] [24.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Pipeline 'ingress': end
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Egress port is 511
+[06:28:01.155] [bmv2] [D] [thread 6141] [24.0] [cxt 0] Dropping packet at the end of ingress
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Processing packet received on port 1
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Parser 'parser': start
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Parser state 'start': key is 0001
+[06:28:21.754] [bmv2] [T] [thread 6141] [25.0] [cxt 0] Bytes parsed: 0
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Extracting header 'ethernet'
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:28:21.754] [bmv2] [E] [thread 6141] [25.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Parser 'parser': end
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Pipeline 'ingress': start
+[06:28:21.754] [bmv2] [T] [thread 6141] [25.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:28:21.754] [bmv2] [T] [thread 6141] [25.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Looking up key:
+
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:28:21.754] [bmv2] [T] [thread 6141] [25.0] [cxt 0] Action MyIngress.drop_packet
+[06:28:21.754] [bmv2] [T] [thread 6141] [25.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:28:21.754] [bmv2] [T] [thread 6141] [25.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Looking up key:
+
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Action entry is tonto266 - 
+[06:28:21.754] [bmv2] [T] [thread 6141] [25.0] [cxt 0] Action tonto266
+[06:28:21.754] [bmv2] [T] [thread 6141] [25.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Pipeline 'ingress': end
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Egress port is 511
+[06:28:21.754] [bmv2] [D] [thread 6141] [25.0] [cxt 0] Dropping packet at the end of ingress
+[06:28:21.837] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Processing packet received on port 2
+[06:28:21.837] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Parser 'parser': start
+[06:28:21.837] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:28:21.837] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Parser state 'start': key is 0002
+[06:28:21.837] [bmv2] [T] [thread 6141] [26.0] [cxt 0] Bytes parsed: 0
+[06:28:21.837] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:28:21.837] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Extracting header 'ethernet'
+[06:28:21.838] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:28:21.838] [bmv2] [E] [thread 6141] [26.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:28:21.838] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Parser 'parser': end
+[06:28:21.838] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Pipeline 'ingress': start
+[06:28:21.838] [bmv2] [T] [thread 6141] [26.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:28:21.838] [bmv2] [T] [thread 6141] [26.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:28:21.838] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Looking up key:
+
+[06:28:21.838] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:28:21.838] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:28:21.838] [bmv2] [T] [thread 6141] [26.0] [cxt 0] Action MyIngress.drop_packet
+[06:28:21.838] [bmv2] [T] [thread 6141] [26.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:28:21.838] [bmv2] [T] [thread 6141] [26.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:28:21.838] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Looking up key:
+
+[06:28:21.838] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:28:21.838] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Action entry is tonto266 - 
+[06:28:21.838] [bmv2] [T] [thread 6141] [26.0] [cxt 0] Action tonto266
+[06:28:21.838] [bmv2] [T] [thread 6141] [26.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:28:21.838] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Pipeline 'ingress': end
+[06:28:21.838] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Egress port is 511
+[06:28:21.838] [bmv2] [D] [thread 6141] [26.0] [cxt 0] Dropping packet at the end of ingress
+[06:28:29.826] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Processing packet received on port 2
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Parser 'parser': start
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Parser state 'start': key is 0002
+[06:28:29.827] [bmv2] [T] [thread 6141] [27.0] [cxt 0] Bytes parsed: 0
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Extracting header 'ethernet'
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:28:29.827] [bmv2] [E] [thread 6141] [27.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Parser 'parser': end
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Pipeline 'ingress': start
+[06:28:29.827] [bmv2] [T] [thread 6141] [27.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:28:29.827] [bmv2] [T] [thread 6141] [27.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Looking up key:
+
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:28:29.827] [bmv2] [T] [thread 6141] [27.0] [cxt 0] Action MyIngress.drop_packet
+[06:28:29.827] [bmv2] [T] [thread 6141] [27.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:28:29.827] [bmv2] [T] [thread 6141] [27.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Looking up key:
+
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Action entry is tonto266 - 
+[06:28:29.827] [bmv2] [T] [thread 6141] [27.0] [cxt 0] Action tonto266
+[06:28:29.827] [bmv2] [T] [thread 6141] [27.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Pipeline 'ingress': end
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Egress port is 511
+[06:28:29.827] [bmv2] [D] [thread 6141] [27.0] [cxt 0] Dropping packet at the end of ingress
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Processing packet received on port 1
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Parser 'parser': start
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Parser state 'start': key is 0001
+[06:32:11.010] [bmv2] [T] [thread 6141] [28.0] [cxt 0] Bytes parsed: 0
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Extracting header 'ethernet'
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:32:11.010] [bmv2] [E] [thread 6141] [28.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Parser 'parser': end
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Pipeline 'ingress': start
+[06:32:11.010] [bmv2] [T] [thread 6141] [28.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:32:11.010] [bmv2] [T] [thread 6141] [28.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Looking up key:
+
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:32:11.010] [bmv2] [T] [thread 6141] [28.0] [cxt 0] Action MyIngress.drop_packet
+[06:32:11.010] [bmv2] [T] [thread 6141] [28.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:32:11.010] [bmv2] [T] [thread 6141] [28.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Looking up key:
+
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:32:11.010] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Action entry is tonto266 - 
+[06:32:11.011] [bmv2] [T] [thread 6141] [28.0] [cxt 0] Action tonto266
+[06:32:11.011] [bmv2] [T] [thread 6141] [28.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:32:11.011] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Pipeline 'ingress': end
+[06:32:11.011] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Egress port is 511
+[06:32:11.011] [bmv2] [D] [thread 6141] [28.0] [cxt 0] Dropping packet at the end of ingress
+[06:32:37.783] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Processing packet received on port 1
+[06:32:37.783] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Parser 'parser': start
+[06:32:37.783] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:32:37.783] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Parser state 'start': key is 0001
+[06:32:37.783] [bmv2] [T] [thread 6141] [29.0] [cxt 0] Bytes parsed: 0
+[06:32:37.783] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:32:37.783] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Extracting header 'ethernet'
+[06:32:37.783] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:32:37.783] [bmv2] [E] [thread 6141] [29.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:32:37.783] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Parser 'parser': end
+[06:32:37.783] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Pipeline 'ingress': start
+[06:32:37.783] [bmv2] [T] [thread 6141] [29.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:32:37.783] [bmv2] [T] [thread 6141] [29.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:32:37.783] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Looking up key:
+
+[06:32:37.784] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:32:37.784] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:32:37.784] [bmv2] [T] [thread 6141] [29.0] [cxt 0] Action MyIngress.drop_packet
+[06:32:37.784] [bmv2] [T] [thread 6141] [29.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:32:37.784] [bmv2] [T] [thread 6141] [29.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:32:37.784] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Looking up key:
+
+[06:32:37.784] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:32:37.784] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Action entry is tonto266 - 
+[06:32:37.784] [bmv2] [T] [thread 6141] [29.0] [cxt 0] Action tonto266
+[06:32:37.784] [bmv2] [T] [thread 6141] [29.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:32:37.784] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Pipeline 'ingress': end
+[06:32:37.784] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Egress port is 511
+[06:32:37.784] [bmv2] [D] [thread 6141] [29.0] [cxt 0] Dropping packet at the end of ingress
+[06:32:37.841] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Processing packet received on port 2
+[06:32:37.841] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Parser 'parser': start
+[06:32:37.841] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:32:37.841] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Parser state 'start': key is 0002
+[06:32:37.842] [bmv2] [T] [thread 6141] [30.0] [cxt 0] Bytes parsed: 0
+[06:32:37.842] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:32:37.842] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Extracting header 'ethernet'
+[06:32:37.842] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:32:37.842] [bmv2] [E] [thread 6141] [30.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:32:37.842] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Parser 'parser': end
+[06:32:37.842] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Pipeline 'ingress': start
+[06:32:37.842] [bmv2] [T] [thread 6141] [30.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:32:37.842] [bmv2] [T] [thread 6141] [30.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:32:37.842] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Looking up key:
+
+[06:32:37.842] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:32:37.842] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:32:37.842] [bmv2] [T] [thread 6141] [30.0] [cxt 0] Action MyIngress.drop_packet
+[06:32:37.842] [bmv2] [T] [thread 6141] [30.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:32:37.842] [bmv2] [T] [thread 6141] [30.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:32:37.842] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Looking up key:
+
+[06:32:37.842] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:32:37.842] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Action entry is tonto266 - 
+[06:32:37.842] [bmv2] [T] [thread 6141] [30.0] [cxt 0] Action tonto266
+[06:32:37.842] [bmv2] [T] [thread 6141] [30.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:32:37.842] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Pipeline 'ingress': end
+[06:32:37.842] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Egress port is 511
+[06:32:37.842] [bmv2] [D] [thread 6141] [30.0] [cxt 0] Dropping packet at the end of ingress
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Processing packet received on port 2
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Parser 'parser': start
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Parser state 'start': key is 0002
+[06:33:28.835] [bmv2] [T] [thread 6141] [31.0] [cxt 0] Bytes parsed: 0
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Extracting header 'ethernet'
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:33:28.835] [bmv2] [E] [thread 6141] [31.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Parser 'parser': end
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Pipeline 'ingress': start
+[06:33:28.835] [bmv2] [T] [thread 6141] [31.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:33:28.835] [bmv2] [T] [thread 6141] [31.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Looking up key:
+
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:33:28.835] [bmv2] [T] [thread 6141] [31.0] [cxt 0] Action MyIngress.drop_packet
+[06:33:28.835] [bmv2] [T] [thread 6141] [31.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:33:28.835] [bmv2] [T] [thread 6141] [31.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Looking up key:
+
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Action entry is tonto266 - 
+[06:33:28.835] [bmv2] [T] [thread 6141] [31.0] [cxt 0] Action tonto266
+[06:33:28.835] [bmv2] [T] [thread 6141] [31.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Pipeline 'ingress': end
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Egress port is 511
+[06:33:28.835] [bmv2] [D] [thread 6141] [31.0] [cxt 0] Dropping packet at the end of ingress
+[06:40:34.819] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Processing packet received on port 1
+[06:40:34.820] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Parser 'parser': start
+[06:40:34.820] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:40:34.820] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Parser state 'start': key is 0001
+[06:40:34.820] [bmv2] [T] [thread 6141] [32.0] [cxt 0] Bytes parsed: 0
+[06:40:34.820] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:40:34.820] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Extracting header 'ethernet'
+[06:40:34.821] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:40:34.821] [bmv2] [E] [thread 6141] [32.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:40:34.821] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Parser 'parser': end
+[06:40:34.821] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Pipeline 'ingress': start
+[06:40:34.821] [bmv2] [T] [thread 6141] [32.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:40:34.821] [bmv2] [T] [thread 6141] [32.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:40:34.821] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Looking up key:
+
+[06:40:34.821] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:40:34.821] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:40:34.821] [bmv2] [T] [thread 6141] [32.0] [cxt 0] Action MyIngress.drop_packet
+[06:40:34.821] [bmv2] [T] [thread 6141] [32.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:40:34.821] [bmv2] [T] [thread 6141] [32.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:40:34.821] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Looking up key:
+
+[06:40:34.821] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:40:34.821] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Action entry is tonto266 - 
+[06:40:34.821] [bmv2] [T] [thread 6141] [32.0] [cxt 0] Action tonto266
+[06:40:34.821] [bmv2] [T] [thread 6141] [32.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:40:34.821] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Pipeline 'ingress': end
+[06:40:34.821] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Egress port is 511
+[06:40:34.821] [bmv2] [D] [thread 6141] [32.0] [cxt 0] Dropping packet at the end of ingress
+[06:41:09.886] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Processing packet received on port 1
+[06:41:09.887] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Parser 'parser': start
+[06:41:09.887] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:41:09.887] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Parser state 'start': key is 0001
+[06:41:09.887] [bmv2] [T] [thread 6141] [33.0] [cxt 0] Bytes parsed: 0
+[06:41:09.887] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:41:09.887] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Extracting header 'ethernet'
+[06:41:09.887] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:41:09.887] [bmv2] [E] [thread 6141] [33.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:41:09.887] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Parser 'parser': end
+[06:41:09.887] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Pipeline 'ingress': start
+[06:41:09.887] [bmv2] [T] [thread 6141] [33.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:41:09.887] [bmv2] [T] [thread 6141] [33.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:41:09.887] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Looking up key:
+
+[06:41:09.887] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:41:09.887] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:41:09.887] [bmv2] [T] [thread 6141] [33.0] [cxt 0] Action MyIngress.drop_packet
+[06:41:09.887] [bmv2] [T] [thread 6141] [33.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:41:09.887] [bmv2] [T] [thread 6141] [33.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:41:09.888] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Looking up key:
+
+[06:41:09.888] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:41:09.888] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Action entry is tonto266 - 
+[06:41:09.888] [bmv2] [T] [thread 6141] [33.0] [cxt 0] Action tonto266
+[06:41:09.888] [bmv2] [T] [thread 6141] [33.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:41:09.888] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Pipeline 'ingress': end
+[06:41:09.888] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Egress port is 511
+[06:41:09.888] [bmv2] [D] [thread 6141] [33.0] [cxt 0] Dropping packet at the end of ingress
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Processing packet received on port 2
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Parser 'parser': start
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Parser 'parser' entering state 'start'
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Parser state 'start': key is 0002
+[06:41:09.888] [bmv2] [T] [thread 6141] [34.0] [cxt 0] Bytes parsed: 0
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Extracting header 'ethernet'
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Parser set: setting field 'scalars.tmp' from expression, new value is 0
+[06:41:09.888] [bmv2] [E] [thread 6141] [34.0] [cxt 0] Exception while parsing: ParserInvalidArgument
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Parser 'parser': end
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Pipeline 'ingress': start
+[06:41:09.888] [bmv2] [T] [thread 6141] [34.0] [cxt 0] tonto.p4(264) Condition "standard_metadata.parser_error != error.NoError" (node_2) is true
+[06:41:09.888] [bmv2] [T] [thread 6141] [34.0] [cxt 0] Applying table 'tbl_drop_packet'
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Looking up key:
+
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Table 'tbl_drop_packet': miss
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Action entry is MyIngress.drop_packet - 
+[06:41:09.888] [bmv2] [T] [thread 6141] [34.0] [cxt 0] Action MyIngress.drop_packet
+[06:41:09.888] [bmv2] [T] [thread 6141] [34.0] [cxt 0] tonto.p4(228) Primitive mark_to_drop(standard_metadata)
+[06:41:09.888] [bmv2] [T] [thread 6141] [34.0] [cxt 0] Applying table 'tbl_tonto266'
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Looking up key:
+
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Table 'tbl_tonto266': miss
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Action entry is tonto266 - 
+[06:41:09.888] [bmv2] [T] [thread 6141] [34.0] [cxt 0] Action tonto266
+[06:41:09.888] [bmv2] [T] [thread 6141] [34.0] [cxt 0] tonto.p4(266) Primitive exit
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Pipeline 'ingress': end
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Egress port is 511
+[06:41:09.888] [bmv2] [D] [thread 6141] [34.0] [cxt 0] Dropping packet at the end of ingress
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory

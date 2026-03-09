@@ -1,0 +1,143 @@
+
+[2026-02-19 11:24:16.589] /p4.v1.P4Runtime/SetForwardingPipelineConfig
+---
+Message too long (78480 bytes)! Skipping log...
+---
+
+[2026-02-19 11:24:16.712] /p4.v1.P4Runtime/Write
+---
+device_id: 6
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    packet_replication_engine_entry {
+      clone_session_entry {
+        session_id: 67
+        replicas {
+          egress_port: 510
+          instance: 1
+        }
+      }
+    }
+  }
+}
+---
+
+[2026-02-19 11:24:16.715] /p4.v1.P4Runtime/Write
+---
+device_id: 6
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    packet_replication_engine_entry {
+      multicast_group_entry {
+        multicast_group_id: 10
+        replicas {
+          egress_port: 1
+          instance: 1
+        }
+        replicas {
+          egress_port: 2
+          instance: 1
+        }
+        replicas {
+          egress_port: 3
+          instance: 1
+        }
+      }
+    }
+  }
+}
+---
+
+[2026-02-19 11:25:26.201] /p4.v1.P4Runtime/Write
+---
+device_id: 6
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    table_entry {
+      table_id: 45753140
+      match {
+        field_id: 1
+        exact {
+          value: "\003\355"
+        }
+      }
+      match {
+        field_id: 2
+        exact {
+          value: "\010\000\000\000\002\""
+        }
+      }
+      match {
+        field_id: 3
+        exact {
+          value: "\010\000\000\000\001\021"
+        }
+      }
+      action {
+        action {
+          action_id: 21910336
+          params {
+            param_id: 1
+            value: "\000\003"
+          }
+        }
+      }
+    }
+  }
+}
+---
+
+[2026-02-19 11:25:26.203] /p4.v1.P4Runtime/Write
+---
+device_id: 6
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    table_entry {
+      table_id: 45753140
+      match {
+        field_id: 1
+        exact {
+          value: "\003\355"
+        }
+      }
+      match {
+        field_id: 2
+        exact {
+          value: "\010\000\000\000\001\021"
+        }
+      }
+      match {
+        field_id: 3
+        exact {
+          value: "\010\000\000\000\002\""
+        }
+      }
+      action {
+        action {
+          action_id: 21910336
+          params {
+            param_id: 1
+            value: "\000\001"
+          }
+        }
+      }
+    }
+  }
+}
+---

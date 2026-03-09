@@ -1,0 +1,9 @@
+644:1000:1000:/lab/logs/s1txt.log
+644:0:0:/lab/logs/s4.log.txt
+644:0:0:/lab/logs/s1.log.txt
+755:0:0:/lab/logs
+755:0:0:/lab/p4
+644:0:0:/lab/.gns3_perms
+770:1000:1000:/lab/config/s4start.sh
+755:0:0:/lab/config
+755:0:0:/lab
