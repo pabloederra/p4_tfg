@@ -1,99 +1,210 @@
-# Reactive SDN Switch con P4 y Flow Cache
+# Proyecto P4 – Conectividad entre Hosts mediante Túneles
 
-Este proyecto implementa un switch SDN reactivo utilizando P4 (Data Plane) y Python (Control Plane). El sistema gestiona el tráfico entre hosts instalando reglas de flujo bajo demanda (*Packet-In*) y eliminándolas automáticamente cuando dejan de usarse (*Idle Timeout*).
+## 1. Descripción general
 
-## 🏗 Arquitectura del Escenario
+Este proyecto implementa una arquitectura de red basada en **P4 (v1model / BMv2)** con el objetivo de proporcionar **conectividad extremo a extremo entre múltiples hosts** distribuidos en varios switches y routers programables.
 
-La topología emulada en Mininet consta de dos hosts conectados a través de dos switches en serie:
+El sistema incluye:
 
-```text
-h1 (10.0.0.1) <--> [p1] s1 [p2] <----> [p2] s2 [p1] <--> h2 (10.0.0.2)
-```
+* Programas P4 diferenciados para **switch** y **router**.
+* Un **controlador en Python** que gestiona reglas de forwarding, aprendizaje y señalización hacia el plano de control.
+* Soporte para **ARP, IPv4 y encapsulación tipo GRE** para crear túneles lógicos entre dominios.
 
-### Componentes Clave
+El enfoque principal del diseño es permitir la comunicación entre hosts a través de una red multi‑salto utilizando:
 
-1. **Data Plane (`first.p4`):**
-* Define headers para Ethernet, IPv4, PacketIn y PacketOut.
-* Utiliza una tabla `flow_cache` con soporte para **Idle Timeout** (detección de inactividad).
-* Si un paquete no coincide con ninguna regla, se envía al controlador (Packet-In).
-* Maneja la clonación de paquetes hacia el puerto CPU (510).
-
-
-2. **Control Plane (`micontrolador.py`):**
-* Escrito en Python 3 usando `p4runtime_lib` y `asyncio`.
-* Procesa mensajes **Packet-In**: Calcula el puerto de salida y la MAC destino.
-* Instala reglas de flujo (**Flow Rules**) dinámicamente.
-* Gestiona **Packet-Out**: Reinyecta el primer paquete del flujo a la red.
-* Gestiona **Idle Notifications**: Recibe avisos del switch cuando una regla caduca y la elimina de la memoria para mantener la tabla limpia.
-
-
+* **Identificación de túneles mediante `tunnel_id` / clave GRE**.
+* **Comunicación switch‑controlador** mediante clonación a CPU.
+* Posible optimización futura usando **digest messages** en lugar de clones.
 
 ---
 
-## La "Trampa" ARP (Static ARP Entries)
+## 2. Arquitectura del repositorio
 
-Para simplificar el código P4 y centrarnos en el routing L3/L2, se ha implementado una solución estática para la resolución de direcciones (ARP).
-
-**El Problema:**
-Al estar `h1` y `h2` en la misma subred (`10.0.0.0/24`), Linux intenta resolver la MAC del destino enviando peticiones ARP Broadcast. Como nuestro código P4 en `MyIngress` descarta paquetes que no sean IPv4 o PacketOut, las peticiones ARP se perderían y el Ping fallaría.
-
-**La Solución (En `topology.json`):**
-Se han inyectado entradas ARP estáticas en los hosts para "engañarlos" y forzar el envío inmediato del tráfico hacia el switch sin preguntar.
-
-* **En h1:** `arp -s 10.0.0.2 08:00:00:00:01:00`
-* *Traducción:* "H1, si quieres hablar con H2, no preguntes. Envía el paquete a la MAC `...01:00` (que corresponde al puerto de entrada de S1)".
-
-
-* **En h2:** `arp -s 10.0.0.1 08:00:00:00:02:00`
-
-De esta forma, el paquete entra al pipeline P4 como un paquete IPv4 válido unicast desde el primer momento.
+```
+pre_gns3/
+│
+├── router.p4            # Lógica de encaminamiento y túneles GRE
+├── switch.p4            # Lógica de switching L2/L3 y acceso a hosts
+├── micontrolador.py     # Controlador P4Runtime
+├── topology.json        # Topología de red (GNS3/BMv2)
+├── build/               # Artefactos compilados (.json, p4info)
+├── logs/                # Logs de ejecución P4Runtime
+└── pcaps/               # Capturas de tráfico por interfaz
+```
 
 ---
 
-## Instrucciones de Ejecución
+## 3. Plano de datos en P4
 
-### 1. Compilación y Arranque de la Red
+El programa `switch.p4` implementa:
 
-Este comando compila el código P4, genera los archivos JSON/P4Info y levanta la topología en Mininet.
+* Procesamiento de **Ethernet, ARP e IPv4**.
+* Reenvío basado en direcciones MAC/IP.
+* Comunicación con el **CPU port (510)** mediante clonación (`clone session 67`).
+* Soporte para múltiples hosts (`NUMBER_OF_HOSTS`).
 
-```bash
-make
+Funcionalidades clave:
 
-```
+* **Aprendizaje de direcciones** asistido por el controlador.
+* Manejo de **ARP broadcast** y resolución distribuida.
+* Forwarding entre puertos de acceso y enlaces hacia routers.
 
-### 2. Iniciar el Controlador
+En esencia, el switch actúa como:
 
-En una nueva terminal, ejecuta el controlador. Este script se conectará a los switches s1 y s2 vía gRPC.
-
-```bash
-./micontrolador.py
-
-```
-
-### 3. Prueba de Conectividad (Ping)
-
-En la consola de Mininet, lanza un ping.
-
-```bash
-mininet> h1 ping h2
-
-```
-
-**Comportamiento esperado:**
-
-1. **Primer Paquete:** El controlador recibe un `Packet-In`. Instala la regla en s1 y s2 (unidireccional).
-2. **Siguientes Paquetes:** Fluyen directamente por el hardware (Data Plane) gracias a la regla instalada.
-3. **Timeout:** Si detienes el ping y esperas unos segundos (configurado a 3s en el código), verás en el log del controlador cómo se eliminan las reglas por inactividad (`IdleTimeoutNotification`).
----
-## 📂 Estructura del Proyecto
-
-* `first.p4`: Código fuente P4 (Ingress, Egress, Parser).
-* `micontrolador.py`: Lógica del controlador (Manejo de reglas, timeouts y decoding de metadatos).
-* `topology.json`: Definición de la red y comandos de configuración de hosts (ARP estático).
-* `Makefile`: Scripts de automatización para compilar y ejecutar.
+> Un puente L2/L3 con capacidad de notificar eventos relevantes al controlador.
 
 ---
-## ⚙️ Detalles Técnicos Adicionales
 
-* **CPU Port:** 510. Usado como interfaz virtual entre el switch y el controlador.
-* **Clone Session ID:** 67. Usado para duplicar paquetes hacia la CPU.
+## 4. Controlador P4Runtime (`micontrolador.py`)
+
+El controlador realiza varias funciones críticas:
+
+### 4.1 Inicialización
+
+* Establece conexión **gRPC P4Runtime** con cada switch.
+* Carga **pipeline P4 compilado**.
+* Define constantes globales:
+
+  * `CPU_PORT = 510`
+  * `CPU_PORT_CLONE_SESSION_ID = 67`
+  * Direcciones MAC de hosts simulados.
+
+### 4.2 Base de datos de conectividad
+
+Se emplean estructuras simplificadas:
+
+* `lookup_table` → alcanzabilidad entre hosts.
+* `broadcast_mcast` → dominios de broadcast.
+* `tabla_id` → asociación **host ↔ tunnel_id**.
+
+Esto sustituye algoritmos reales de routing, manteniendo el proyecto enfocado en:
+
+> **Mecánica de túneles y control P4Runtime**, no en cálculo óptimo de rutas.
+
+### 4.3 Gestión de eventos desde el plano de datos
+
+Actualmente se usa:
+
+**Clonación a CPU → Packet‑In → Procesamiento en controlador**
+
+Para:
+
+* Aprendizaje de MAC/IP.
+* Instalación dinámica de reglas.
+* Manejo de ARP y descubrimiento.
+
+---
+
+## 5. Conectividad entre hosts mediante `tunnel_id`
+
+El mecanismo central del proyecto es:
+
+### 5.1 Identificación lógica
+
+Cada comunicación inter‑dominio usa:
+
+```
+GRE.key  ≙  tunnel_id
+```
+
+Este identificador permite que los routers:
+
+* Sepan **a qué dominio pertenece el paquete**.
+* Determinen **dónde desencapsular**.
+
+### 5.2 Flujo de tráfico
+
+1. Host origen envía paquete IPv4.
+2. Switch local lo reenvía al router de borde.
+3. Router:
+
+   * Consulta tabla de destino.
+   * **Encapsula en GRE con `tunnel_id`** si es remoto.
+4. Red intermedia transporta el paquete encapsulado.
+5. Router remoto:
+
+   * Detecta `tunnel_id`.
+   * **Desencapsula y reinyecta** hacia el switch destino.
+6. Switch entrega al host final.
+
+Resultado:
+
+> Conectividad transparente entre hosts en diferentes segmentos L2.
+
+---
+
+## 6. Clone vs Digest hacia el controlador
+
+### 6.1 Enfoque actual: Clone
+
+Ventajas:
+
+* Implementación sencilla.
+* Compatible con BMv2 sin configuración extra.
+* Permite enviar **paquete completo** al controlador.
+
+Desventajas:
+
+* Alto consumo de ancho de banda CPU.
+* Latencia innecesaria.
+* No escalable en redes grandes.
+
+---
+
+### 6.2 Mejora propuesta: Digest
+
+Uso de:
+
+```
+digest<T>() → notificación ligera al controlador
+```
+
+Beneficios:
+
+* Solo se envían **metadatos relevantes**.
+* Menor carga en CPU y canal gRPC.
+* Escalabilidad realista tipo **data‑center fabrics**.
+
+Arquitectura futura:
+
+1. Switch genera **digest** con info de flujo nuevo.
+2. Controlador instala regla directamente.
+3. **Sin necesidad de clonar paquetes completos**.
+
+Esto alinea el diseño con:
+
+> Buenas prácticas de control en redes programables modernas.
+
+---
+
+## 7. Posibles extensiones del proyecto
+
+* Sustituir tablas estáticas por:
+
+  * **Algoritmos de routing dinámico**.
+  * **Controlador SDN centralizado** con cálculo de caminos.
+* Implementar:
+
+  * **Digest‑based learning** completo.
+  * **ECMP sobre túneles GRE**.
+  * **Aislamiento multi‑tenant mediante `tunnel_id`**.
+* Migración a:
+
+  * **PSA architecture**.
+  * **Tofino / hardware targets**.
+
+---
+
+## 8. Conclusión
+
+El proyecto demuestra cómo P4 permite:
+
+* Construir **planos de datos personalizados**.
+* Implementar **túneles L3 sobre infraestructuras L2/L3 programables**.
+* Integrar **controladores inteligentes** para aprendizaje dinámico.
+
+La transición de **clone → digest** representa el siguiente paso natural hacia:
+
+> **Escalabilidad, eficiencia y diseño SDN realista**.
+
+---
