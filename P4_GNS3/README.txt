@@ -1,3 +1,5 @@
+Hay un archivo /P4_GNS3/make_p4sdwn/build_docker/dockergns3.sh que ejecuta todos estos comandos
+
 1º: INSTALAR DOCKER
 	sudo apt update
 	sudo apt install -y docker.io python3 python3-pip
