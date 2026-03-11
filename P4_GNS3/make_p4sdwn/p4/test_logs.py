@@ -452,7 +452,9 @@ def modifyFlowRule(sw, prog, tunnel_id, src_eth_addr, dst_eth_addr, new_srcport,
 
     for rule in rules_to_modify:
         try:
-            sw.ModifyTableEntry(rule)
+            #sw.ModifyTableEntry(rule) Si funciona con deletewrite, habra que ver con modify
+            sw.DeleteTableEntry(rule)
+            sw.WriteTableEntry(rule)
             logger.debug(f"Regla modificada (handover) en {sw.name}")
         except grpc.RpcError as e:
             code = e.code()
