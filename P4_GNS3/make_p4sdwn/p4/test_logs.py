@@ -646,6 +646,16 @@ def processPacket(message, prog):
             logger.info(f"║ [LEARN] {sw.name}: MAC {pkt.src} vinculada a puerto {src_port}")
             tabla_actual[pkt.src] = src_port
         
+        did_handover=false
+        # Si el handover se realiza con un tunel que no estaba registrado, puede q haya error, tendria que mirarlo
+        old_port = tabla_actual[pkt.src]
+        if old_port >= 10 and src_port >= 10 and (old_port // 10) % 10 != (src_port // 10) % 10:
+            # Me esta viniendo un packet de la misma mac desde otro lado (handover)
+            logger.info(f"║ [HANDOVER] {sw.name}: MAC {pkt.src} cambió de puerto {old_port} a {src_port} (2º dígito: {(old_port // 10) % 10} → {(src_port // 10) % 10})")
+            for tunel in mac_tunnel[sw.name][pkt.src]:
+                modifyFlowRule(sw, prog, tunel, pkt.src, pkt.dst, src_port, dst_port)
+                tabla_actual[pkt.src] = modificar_puerto(src_port, tunel)
+            did_handover=true
         
         if pkt.dst in tabla_actual:
             dst_port = tabla_actual[pkt.dst]
@@ -653,17 +663,8 @@ def processPacket(message, prog):
             # Registrar el tunnel_id para esta MAC
             mac_tunnel[sw.name].setdefault(pkt.src, set()).add(tunnel_id)
             mac_tunnel[sw.name].setdefault(pkt.dst, set()).add(tunnel_id)
-
-            old_port = tabla_actual[pkt.src]
-
-            if old_port >= 10 and src_port >= 10 and (old_port // 10) % 10 != (src_port // 10) % 10:
-                # Me esta viniendo un packet de la misma mac desde otro lado (handover)
-                logger.info(f"║ [HANDOVER] {sw.name}: MAC {pkt.src} cambió de puerto {old_port} a {src_port} (2º dígito: {(old_port // 10) % 10} → {(src_port // 10) % 10})")
-                for tunel in mac_tunnel[sw.name][pkt.src]:
-                    modifyFlowRule(sw, prog, tunel, pkt.src, pkt.dst, src_port, dst_port)
-                    tabla_actual[pkt.src] = modificar_puerto(src_port, tunel)
                 
-            else:
+            if not did_handover:
                 logger.info(f"║ [FLOW] Instalando regla: {pkt.src} -> {pkt.dst} (Port {dst_port} en {tunnel_id})")
                 addFlowRule(sw, pkt.src, pkt.dst, src_port, dst_port, tunnel_id, prog)
             
