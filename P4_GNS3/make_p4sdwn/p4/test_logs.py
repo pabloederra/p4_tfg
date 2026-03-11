@@ -68,7 +68,7 @@ notif_db = {}
 # to solve this problem more effectively.
 
 lookup_table = {}
-mac_tunnel = {}
+flow_peers = {}  # flow_peers[sw_name][mac] = set of (tunnel_id, peer_mac)
 
 class CustomFormatter(logging.Formatter):
     # Colores base para los niveles de log
@@ -646,23 +646,24 @@ def processPacket(message, prog):
             logger.info(f"║ [LEARN] {sw.name}: MAC {pkt.src} vinculada a puerto {src_port}")
             tabla_actual[pkt.src] = src_port
         
-        did_handover=false
-        # Si el handover se realiza con un tunel que no estaba registrado, puede q haya error, tendria que mirarlo
+        did_handover=False
         old_port = tabla_actual[pkt.src]
         if old_port >= 10 and src_port >= 10 and (old_port // 10) % 10 != (src_port // 10) % 10:
             # Me esta viniendo un packet de la misma mac desde otro lado (handover)
             logger.info(f"║ [HANDOVER] {sw.name}: MAC {pkt.src} cambió de puerto {old_port} a {src_port} (2º dígito: {(old_port // 10) % 10} → {(src_port // 10) % 10})")
-            for tunel in mac_tunnel[sw.name][pkt.src]:
-                modifyFlowRule(sw, prog, tunel, pkt.src, pkt.dst, src_port, dst_port)
+            # Usamos flow_peers para saber con qué peers tiene reglas esta MAC
+            for tunel, peer_mac in flow_peers.get(sw.name, {}).get(pkt.src, set()).copy():
+                peer_port = tabla_actual.get(peer_mac, src_port)  # fallback si el peer tampoco se conoce
+                modifyFlowRule(sw, prog, tunel, pkt.src, peer_mac, src_port, peer_port)
                 tabla_actual[pkt.src] = modificar_puerto(src_port, tunel)
-            did_handover=true
+            did_handover=True
         
         if pkt.dst in tabla_actual:
             dst_port = tabla_actual[pkt.dst]
             tunnel_id = pktinfo['metadata']['key_tunnel']
-            # Registrar el tunnel_id para esta MAC
-            mac_tunnel[sw.name].setdefault(pkt.src, set()).add(tunnel_id)
-            mac_tunnel[sw.name].setdefault(pkt.dst, set()).add(tunnel_id)
+            # Registrar peers para poder hacer handover sin conocer pkt.dst
+            flow_peers.setdefault(sw.name, {}).setdefault(pkt.src, set()).add((tunnel_id, pkt.dst))
+            flow_peers.setdefault(sw.name, {}).setdefault(pkt.dst, set()).add((tunnel_id, pkt.src))
                 
             if not did_handover:
                 logger.info(f"║ [FLOW] Instalando regla: {pkt.src} -> {pkt.dst} (Port {dst_port} en {tunnel_id})")
@@ -783,16 +784,23 @@ def idle_worker(sw, prog):
 
                 logger.info(f"[IDLE] Eliminada regla por timeout en {sw.name}: tunnel={tunnel_id}, {src_mac} <-> {dst_mac}")
 
-                # Limpiar el tunnel de mac_tunnel para ambas MACs
+                # Limpiar flow_peers para ambas MACs
+                if sw.name in flow_peers:
+                    if src_mac in flow_peers[sw.name]:
+                        flow_peers[sw.name][src_mac].discard((tunnel_id, dst_mac))
+                        if not flow_peers[sw.name][src_mac]:
+                            del flow_peers[sw.name][src_mac]
+                    if dst_mac in flow_peers[sw.name]:
+                        flow_peers[sw.name][dst_mac].discard((tunnel_id, src_mac))
+                        if not flow_peers[sw.name][dst_mac]:
+                            del flow_peers[sw.name][dst_mac]
+
+                # Si la MAC ya no tiene reglas en flow_peers, eliminarla de lookup_table
                 for mac in (src_mac, dst_mac):
-                    if sw.name in mac_tunnel and mac in mac_tunnel[sw.name]:
-                        mac_tunnel[sw.name][mac].discard(tunnel_id)
-                        if not mac_tunnel[sw.name][mac]:
-                            # No quedan más túneles para esta MAC: eliminar la MAC
-                            del mac_tunnel[sw.name][mac]
-                            if sw.name in lookup_table and mac in lookup_table[sw.name]:
-                                del lookup_table[sw.name][mac]
-                                logger.info(f"[IDLE] MAC {mac} eliminada de lookup_table en {sw.name} (sin túneles restantes)")
+                    if sw.name in flow_peers and mac not in flow_peers[sw.name]:
+                        if sw.name in lookup_table and mac in lookup_table[sw.name]:
+                            del lookup_table[sw.name][mac]
+                            logger.info(f"[IDLE] MAC {mac} eliminada de lookup_table en {sw.name} (sin reglas restantes)")
             else:
                 logger.debug(f"[IDLE] Notificación duplicada ignorada en {sw.name}")
 
@@ -896,7 +904,6 @@ def main(switches_config):
             # Guardar conexión y tabla de lookup
             switch_connections[sw["name"]] = conn
             lookup_table[sw["name"]] = {}
-            mac_tunnel[sw["name"]] = {}
 
             # Master arbitration
             conn.MasterArbitrationUpdate()
