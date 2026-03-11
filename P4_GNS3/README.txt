@@ -42,6 +42,11 @@ Una vez arrancamos los equipos en GNS3, se ejecuta:
 	cd p4
 	python3 micontrolador.py / test_logs.py (el que sea)
 
+5º CAMBIAR IMAGENES DOCKER
+
+Paras GNS3 y miras que no haya ningun contenedor corriendo. Vueleves a hacer el build de las imagenes que quieras
+cambiar y luego limpias las imagenes <none> con el comando: docker image prune.
+
 
 TIPS MARÍA:
 
