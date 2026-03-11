@@ -315,6 +315,7 @@ control MyIngress(inout headers_t hdr,
             flow_unknown;
             forwarding;
         }
+        support_timeout = true;
         default_action = flow_unknown();
         size = 10;
     }

@@ -33,6 +33,7 @@ from p4runtime_lib.switch import ShutdownAllSwitchConnections
 import p4runtime_sh.p4runtime as shp4rt
 
 NSEC_PER_SEC = 1000 * 1000 * 1000
+IDLE_TIMEOUT_NS = 3 * NSEC_PER_SEC
 LOG_LEVEL = logging.INFO
 
 global_data = {}
@@ -48,6 +49,14 @@ global_data['macs']['mach3'] = "08:00:00:00:03:33"
 global_data['macs']['mach4'] = "08:00:00:00:04:44"
 global_data['macs']['mach5'] = "08:00:00:00:05:55"
 global_data['macs']['mach6'] = "08:00:00:00:06:66"
+global_data['tunnel_ports'] = {
+    "s1": { 1001: [121],        1003: [123]        },  # toward s2
+    "s2": { 1001: [111, 131],   1003: [113, 133]   },  # toward s1, s3
+    "s3": { 1001: [121, 141],   1003: [123, 143]   },  # toward s2, s4
+    "s4": { 1001: [131, 151],   1003: [133, 153]   },  # toward s3, s5
+    "s5": { 1001: [141],        1003: [143]        },  # toward s4
+}
+
 
 
 global_data["timeout"] = 1000000
@@ -59,7 +68,7 @@ notif_db = {}
 # to solve this problem more effectively.
 
 lookup_table = {}
-tabla_id = {}
+mac_tunnel = {}
 
 class CustomFormatter(logging.Formatter):
     # Colores base para los niveles de log
@@ -362,7 +371,8 @@ def addFlowRule( ingress_sw, src_eth_addr, dst_eth_addr, srcport, dstport, tunne
         action_name="MyIngress.forwarding",
         action_params={
             "port":           dport
-        }
+        },
+        idle_timeout_ns=IDLE_TIMEOUT_NS
         )
 
     table_entry2 = global_data['p4info_helper'][prog].buildTableEntry(
@@ -375,7 +385,8 @@ def addFlowRule( ingress_sw, src_eth_addr, dst_eth_addr, srcport, dstport, tunne
         action_name="MyIngress.forwarding",
         action_params={
             "port":           sport
-        }
+        },
+        idle_timeout_ns=IDLE_TIMEOUT_NS
         )
     
     rules_to_write = [table_entry, table_entry2]
@@ -397,6 +408,108 @@ def addFlowRule( ingress_sw, src_eth_addr, dst_eth_addr, srcport, dstport, tunne
             else:
                 printGrpcError(e)
     
+
+def modifyFlowRule(sw, prog, tunnel_id, src_eth_addr, dst_eth_addr, new_srcport, new_dstport):
+    """
+    Modifica las reglas existentes para actualizar los puertos tras un handover.
+    new_srcport y new_dstport ya tienen el segundo dígito actualizado.
+    """
+
+    sport = modificar_puerto(new_srcport, tunnel_id)
+    dport = modificar_puerto(new_dstport, tunnel_id)
+
+    # Regla src -> dst: el paquete sale por dport
+    table_entry = global_data['p4info_helper'][prog].buildTableEntry(
+        table_name="MyIngress.switch_id",
+        match_fields={
+            "meta.key_tunnel":      tunnel_id,
+            "hdr.ethernet.srcAddr": src_eth_addr,
+            "hdr.ethernet.dstAddr": dst_eth_addr
+        },
+        action_name="MyIngress.forwarding",
+        action_params={
+            "port":           dport
+        },
+        idle_timeout_ns=IDLE_TIMEOUT_NS
+    )
+
+    # Regla dst -> src: el paquete sale por sport
+    table_entry2 = global_data['p4info_helper'][prog].buildTableEntry(
+        table_name="MyIngress.switch_id",
+        match_fields={
+            "meta.key_tunnel":      tunnel_id,
+            "hdr.ethernet.srcAddr": dst_eth_addr,
+            "hdr.ethernet.dstAddr": src_eth_addr
+        },
+        action_name="MyIngress.forwarding",
+        action_params={
+            "port":           sport
+        },
+        idle_timeout_ns=IDLE_TIMEOUT_NS
+    )
+
+    rules_to_modify = [table_entry, table_entry2]
+
+    for rule in rules_to_modify:
+        try:
+            sw.ModifyTableEntry(rule)
+            logger.debug(f"Regla modificada (handover) en {sw.name}")
+        except grpc.RpcError as e:
+            code = e.code()
+
+            if code == grpc.StatusCode.UNKNOWN:
+                logger.warning(f"Regla no encontrada para modificar en {sw.name}, ignorando")
+                logger.debug(f"gRPC code: {e.code()}")
+                logger.debug(f"gRPC details: {e.details()}")
+            else:
+                printGrpcError(e)
+
+def createFlowRuleFromNotif(idle_notif, prog):
+    """Construye un table_entry a partir de una idle notification para poder eliminarlo."""
+    te = idle_notif.table_entry[0]
+    tunnel_id  = int.from_bytes(te.match[0].exact.value, byteorder='big')
+    src_mac    = int.from_bytes(te.match[1].exact.value, byteorder='big')
+    dst_mac    = int.from_bytes(te.match[2].exact.value, byteorder='big')
+
+    table_entry = global_data['p4info_helper'][prog].buildTableEntry(
+        table_name="MyIngress.switch_id",
+        match_fields={
+            "meta.key_tunnel":      tunnel_id,
+            "hdr.ethernet.srcAddr": src_mac,
+            "hdr.ethernet.dstAddr": dst_mac
+        }
+    )
+    return table_entry
+
+def addNotification(sw_name, flow_rule):
+    """Añade una notificación a la base de datos de notificaciones."""
+    notification = {
+        "timestamp": datetime.now(),
+        "flow_rule": flow_rule,
+    }
+    notif_db[sw_name].append(notification)
+
+def checkFlowRule(sw_name, flow_rule):
+    """Comprueba si una regla ya está en la DB de notificaciones (para evitar duplicados)."""
+    if sw_name not in notif_db:
+        return False
+    for notif in notif_db[sw_name]:
+        if notif["flow_rule"] == flow_rule:
+            return True
+    return False
+
+def isExpired(timestamp, timeout):
+    return datetime.now() - timestamp > timedelta(seconds=timeout)
+
+def cleanExpiredNotification(sw_name, timeout=5):
+    """Elimina las notificaciones caducadas."""
+    if sw_name not in notif_db:
+        return False
+    notif_db[sw_name] = [
+        notif for notif in notif_db[sw_name]
+        if not isExpired(notif["timestamp"], timeout)
+    ]
+    return True
 
 # ctrl + / para comentar, descomentar todo
 def packetOutMetadataList(opcode, reserved1, operand0):
@@ -531,14 +644,28 @@ def processPacket(message, prog):
         
         if pkt.src not in tabla_actual:
             logger.info(f"║ [LEARN] {sw.name}: MAC {pkt.src} vinculada a puerto {src_port}")
-            lookup_table[sw.name][pkt.src] = src_port
+            tabla_actual[pkt.src] = src_port
         
         
         if pkt.dst in tabla_actual:
             dst_port = tabla_actual[pkt.dst]
             tunnel_id = pktinfo['metadata']['key_tunnel']
-            logger.info(f"║ [FLOW] Instalando regla: {pkt.src} -> {pkt.dst} (Port {dst_port} en {tunnel_id})")
-            addFlowRule(sw, pkt.src, pkt.dst, src_port, dst_port, tunnel_id, prog)
+            # Registrar el tunnel_id para esta MAC
+            mac_tunnel[sw.name].setdefault(pkt.src, set()).add(tunnel_id)
+            mac_tunnel[sw.name].setdefault(pkt.dst, set()).add(tunnel_id)
+
+            old_port = tabla_actual[pkt.src]
+
+            if old_port >= 10 and src_port >= 10 and (old_port // 10) % 10 != (src_port // 10) % 10:
+                # Me esta viniendo un packet de la misma mac desde otro lado (handover)
+                logger.info(f"║ [HANDOVER] {sw.name}: MAC {pkt.src} cambió de puerto {old_port} a {src_port} (2º dígito: {(old_port // 10) % 10} → {(src_port // 10) % 10})")
+                for tunel in mac_tunnel[sw.name][pkt.src]:
+                    modifyFlowRule(sw, prog, tunel, pkt.src, pkt.dst, src_port, dst_port)
+                    tabla_actual[pkt.src] = modificar_puerto(src_port, tunel)
+                
+            else:
+                logger.info(f"║ [FLOW] Instalando regla: {pkt.src} -> {pkt.dst} (Port {dst_port} en {tunnel_id})")
+                addFlowRule(sw, pkt.src, pkt.dst, src_port, dst_port, tunnel_id, prog)
             
             # Packet Out
             metadatas = packetOutMetadataList(
@@ -628,6 +755,55 @@ def digest_worker(sw, prog):
 
         sw.DigestAck(digest_msg.digest_id, digest_msg.list_id)
 
+
+def idle_worker(sw, prog):
+    """Hilo que escucha las idle timeout notifications del switch y elimina las reglas caducadas."""
+    while True:
+        try:
+            idle_notif = sw.IdleTimeoutNotification()
+            # Si no existe la base de datos de notificaciones, la crea; si existe, la limpia
+            if sw.name not in notif_db:
+                notif_db[sw.name] = []
+            else:
+                cleanExpiredNotification(sw.name, 10)
+
+            table_entry = createFlowRuleFromNotif(idle_notif, prog)
+
+            # Si la regla no está en la base de datos, la elimina
+            if not checkFlowRule(sw.name, table_entry):
+                addNotification(sw.name, table_entry) # Añadir table_entry a la base de datos para no eliminarlo de nuevo
+                sw.DeleteTableEntry(table_entry) # Borrar table_entry por timeout
+                # Lo pongo aqui por si saltase error en el delete
+                # Extraer tunnel_id y MACs de la notificación para limpiar mac_tunnel y lookup_table
+                te = idle_notif.table_entry[0]
+                tunnel_id = int.from_bytes(te.match[0].exact.value, byteorder='big')
+                src_mac   = intToMac(int.from_bytes(te.match[1].exact.value, byteorder='big'))
+                dst_mac   = intToMac(int.from_bytes(te.match[2].exact.value, byteorder='big'))
+
+                logger.info(f"[IDLE] Eliminada regla por timeout en {sw.name}: tunnel={tunnel_id}, {src_mac} <-> {dst_mac}")
+
+                # Limpiar el tunnel de mac_tunnel para ambas MACs
+                for mac in (src_mac, dst_mac):
+                    if sw.name in mac_tunnel and mac in mac_tunnel[sw.name]:
+                        mac_tunnel[sw.name][mac].discard(tunnel_id)
+                        if not mac_tunnel[sw.name][mac]:
+                            # No quedan más túneles para esta MAC: eliminar la MAC
+                            del mac_tunnel[sw.name][mac]
+                            if sw.name in lookup_table and mac in lookup_table[sw.name]:
+                                del lookup_table[sw.name][mac]
+                                logger.info(f"[IDLE] MAC {mac} eliminada de lookup_table en {sw.name} (sin túneles restantes)")
+            else:
+                logger.debug(f"[IDLE] Notificación duplicada ignorada en {sw.name}")
+
+        except grpc.RpcError as e:
+            logger.error(f"[gRPC Error idle_worker {sw.name}]")
+            printGrpcError(e)
+            time.sleep(1)
+
+        except Exception as e:
+            logger.error(f"[Unexpected Error idle_worker {sw.name}]: {e}")
+            traceback.print_exc()
+            time.sleep(1)
 
 
 def addMarkedRule(sw, eth_addr, srcport, tunnel_id, prog):
@@ -719,7 +895,7 @@ def main(switches_config):
             # Guardar conexión y tabla de lookup
             switch_connections[sw["name"]] = conn
             lookup_table[sw["name"]] = {}
-            tabla_id[sw["name"]] = set()
+            mac_tunnel[sw["name"]] = {}
 
             # Master arbitration
             conn.MasterArbitrationUpdate()
@@ -827,10 +1003,19 @@ def main(switches_config):
                 daemon=True
             )
 
+            t3 = threading.Thread(
+                target=idle_worker,
+                args=(sw_conn, prog),
+                name=f"T_Idle-{sw_name}",
+                daemon=True
+            )
+
             t1.start()
             t2.start()
+            t3.start()
             threads.append(t1)
             threads.append(t2)
+            threads.append(t3)
 
         logger.debug("Controller running (thread-based)...")
 

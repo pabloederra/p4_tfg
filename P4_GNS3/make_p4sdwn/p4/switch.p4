@@ -271,32 +271,6 @@ control MyIngress(inout headers_t hdr,
         size = 65536;
     }
 
-    // table downlink {
-    //     key = {
-    //         hdr.ethernet.dstAddr : exact;
-    //     }
-    //     actions = {
-    //         drop_packet;
-    //         flow_unknown;
-    //         marking;
-    //     }
-    //     default_action = flow_unknown();
-    //     size = 65536;
-    // }
-
-    // table uplink {
-    //     key = {
-    //         hdr.ethernet.srcAddr : exact;
-    //     }
-    //     actions = {
-    //         drop_packet;
-    //         flow_unknown;
-    //         marking;
-    //     }
-    //     default_action = flow_unknown();
-    //     size = 65536;
-    // }
-
     table switch_id {
         key = {
             meta.key_tunnel: exact;
@@ -307,6 +281,7 @@ control MyIngress(inout headers_t hdr,
             flow_unknown;
             forwarding;
         }
+        support_timeout = true;
         default_action = flow_unknown();
         size = 10;
     }
