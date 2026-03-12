@@ -33,7 +33,7 @@ from p4runtime_lib.switch import ShutdownAllSwitchConnections
 import p4runtime_sh.p4runtime as shp4rt
 
 NSEC_PER_SEC = 1000 * 1000 * 1000
-IDLE_TIMEOUT_NS = 1000 * NSEC_PER_SEC
+IDLE_TIMEOUT_NS = 10 * NSEC_PER_SEC
 LOG_LEVEL = logging.INFO
 
 global_data = {}
