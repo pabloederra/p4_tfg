@@ -34,7 +34,7 @@ import p4runtime_sh.p4runtime as shp4rt
 
 NSEC_PER_SEC = 1000 * 1000 * 1000
 IDLE_TIMEOUT_NS = 1000 * NSEC_PER_SEC
-LOG_LEVEL = logging.DEBUG
+LOG_LEVEL = logging.INFO
 
 global_data = {}
 
@@ -653,7 +653,6 @@ def processPacket(message, prog):
             
             old_loc = 0 if old_port < 10 else (old_port // 10) % 10
             new_loc = 0 if src_port < 10 else (src_port // 10) % 10
-            logger.info(f"║ [YO YA ESTUVE EN ESTOS JUEGOS] MAC {pkt.src} me llega desde puerto {src_port} y antes me llegaba desde {old_port}")
             if old_loc != new_loc:
                 # Me esta viniendo un packet de la misma mac desde otro lado (handover)
                 # Actualizamos la tabla general para que el nuevo puerto quede registrado
@@ -666,7 +665,6 @@ def processPacket(message, prog):
                     modifyFlowRule(sw, prog, tunel, pkt.src, peer_mac, src_port, peer_port)
                     # Si hay túnel, refinamos el puerto en la tabla (por si difiere el último dígito)
                     logger.info(f"║ [HANDOVER] MAC {pkt.src} del túnel {tunel} al puerto {modificar_puerto(src_port, tunel) }")
-                    tabla_actual[pkt.src] = modificar_puerto(src_port, tunel)
                 did_handover=True
         
         if pkt.dst in tabla_actual:
