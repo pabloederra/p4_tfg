@@ -34,7 +34,7 @@ import p4runtime_sh.p4runtime as shp4rt
 
 NSEC_PER_SEC = 1000 * 1000 * 1000
 IDLE_TIMEOUT_NS = 1000 * NSEC_PER_SEC
-LOG_LEVEL = logging.INFO
+LOG_LEVEL = logging.DEBUG
 
 global_data = {}
 
@@ -643,30 +643,31 @@ def processPacket(message, prog):
     if reason_name == 'FLOW_UNKNOWN':
         tabla_actual = lookup_table.get(sw.name, {})
         src_port = pktinfo["metadata"]['input_port']
-        
+        did_handover=False
+
         if pkt.src not in tabla_actual:
             logger.info(f"║ [LEARN] {sw.name}: MAC {pkt.src} vinculada a puerto {src_port}")
             tabla_actual[pkt.src] = src_port
-        
-        did_handover=False
-        old_port = tabla_actual[pkt.src]
-        
-        old_loc = 0 if old_port < 10 else (old_port // 10) % 10
-        new_loc = 0 if src_port < 10 else (src_port // 10) % 10
-        
-        if old_loc != new_loc:
-            # Me esta viniendo un packet de la misma mac desde otro lado (handover)
-            # Actualizamos la tabla general para que el nuevo puerto quede registrado
-            tabla_actual[pkt.src] = src_port
+        else:
+            old_port = tabla_actual[pkt.src]
             
-            # Usamos flow_peers para saber con qué peers tiene reglas esta MAC
-            for tunel, peer_mac in flow_peers.get(sw.name, {}).get(pkt.src, set()).copy():
-                peer_port = tabla_actual.get(peer_mac, src_port)  # fallback si el peer tampoco se conoce
-                modifyFlowRule(sw, prog, tunel, pkt.src, peer_mac, src_port, peer_port)
-                # Si hay túnel, refinamos el puerto en la tabla (por si difiere el último dígito)
-                logger.info(f"║ [HANDOVER] MAC {pkt.src} del túnel {tunel} al puerto {modificar_puerto(src_port, tunel) }")
-                tabla_actual[pkt.src] = modificar_puerto(src_port, tunel)
-            did_handover=True
+            old_loc = 0 if old_port < 10 else (old_port // 10) % 10
+            new_loc = 0 if src_port < 10 else (src_port // 10) % 10
+            logger.info(f"║ [YO YA ESTUVE EN ESTOS JUEGOS] MAC {pkt.src} me llega desde puerto {src_port} y antes me llegaba desde {old_port}")
+            if old_loc != new_loc:
+                # Me esta viniendo un packet de la misma mac desde otro lado (handover)
+                # Actualizamos la tabla general para que el nuevo puerto quede registrado
+                tabla_actual[pkt.src] = src_port
+                
+                # Usamos flow_peers para saber con qué peers tiene reglas esta MAC
+                logger.debug(f"║ [DEBUG] flow_peers para MAC {pkt.src} en {sw.name}: {flow_peers.get(sw.name, {}).get(pkt.src, set())}")
+                for tunel, peer_mac in flow_peers.get(sw.name, {}).get(pkt.src, set()).copy():
+                    peer_port = tabla_actual.get(peer_mac, src_port)  # fallback si el peer tampoco se conoce
+                    modifyFlowRule(sw, prog, tunel, pkt.src, peer_mac, src_port, peer_port)
+                    # Si hay túnel, refinamos el puerto en la tabla (por si difiere el último dígito)
+                    logger.info(f"║ [HANDOVER] MAC {pkt.src} del túnel {tunel} al puerto {modificar_puerto(src_port, tunel) }")
+                    tabla_actual[pkt.src] = modificar_puerto(src_port, tunel)
+                did_handover=True
         
         if pkt.dst in tabla_actual:
             dst_port = tabla_actual[pkt.dst]
