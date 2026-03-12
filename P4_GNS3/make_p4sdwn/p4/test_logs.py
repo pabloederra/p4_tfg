@@ -650,13 +650,22 @@ def processPacket(message, prog):
         
         did_handover=False
         old_port = tabla_actual[pkt.src]
-        if old_port >= 10 and src_port >= 10 and (old_port // 10) % 10 != (src_port // 10) % 10:
+        
+        old_loc = 0 if old_port < 10 else (old_port // 10) % 10
+        new_loc = 0 if src_port < 10 else (src_port // 10) % 10
+        
+        if old_loc != new_loc:
             # Me esta viniendo un packet de la misma mac desde otro lado (handover)
-            logger.info(f"║ [HANDOVER] {sw.name}: MAC {pkt.src} cambió de puerto {old_port} a {src_port} (2º dígito: {(old_port // 10) % 10} → {(src_port // 10) % 10})")
+            logger.info(f"║ [HANDOVER] {sw.name}: MAC {pkt.src} cambió de puerto {old_port} a {src_port} (Loc: {old_loc} → {new_loc})")
+            
+            # Actualizamos la tabla general para que el nuevo puerto quede registrado
+            tabla_actual[pkt.src] = src_port
+            
             # Usamos flow_peers para saber con qué peers tiene reglas esta MAC
             for tunel, peer_mac in flow_peers.get(sw.name, {}).get(pkt.src, set()).copy():
                 peer_port = tabla_actual.get(peer_mac, src_port)  # fallback si el peer tampoco se conoce
                 modifyFlowRule(sw, prog, tunel, pkt.src, peer_mac, src_port, peer_port)
+                # Si hay túnel, refinamos el puerto en la tabla (por si difiere el último dígito)
                 tabla_actual[pkt.src] = modificar_puerto(src_port, tunel)
             did_handover=True
         
