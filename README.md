@@ -237,6 +237,10 @@ Recomendaciones:
 
 ---
 
+# 13. Líneas futuras
+
+Poner un único puerto de salida, un único puerto de entrada y generar una cabecera propia que tenga el marcado del túnel a través de nuestra red. Intentar cambiar el tunel_id y puertos para ponerlo en hexadecimal en lugar de decimal para poder ver si hacer reglas con lpm o mask en los match fields.
+
 # Autor
 
 Proyecto desarrollado por **Pablo Ederra** como parte de un **Trabajo Fin de Grado (TFG)** relacionado con **redes programables y P4**.

@@ -675,7 +675,7 @@ def processPacket(message, prog):
             flow_peers.setdefault(sw.name, {}).setdefault(pkt.dst, set()).add((tunnel_id, pkt.src))
                 
             if not did_handover:
-                logger.info(f"║ [FLOW] Instalando regla: {pkt.src} -> {pkt.dst} (Port {modificar_puerto(dst_port, tunnel_id)} en {tunnel_id})")
+                logger.info(f"║ [FLOW] Instalando regla: {pkt.src} <-> {pkt.dst} (Port {modificar_puerto(src_port, tunnel_id)} <-> {modificar_puerto(dst_port, tunnel_id)} en {tunnel_id})")
                 addFlowRule(sw, pkt.src, pkt.dst, src_port, dst_port, tunnel_id, prog)
             
             # Packet Out
@@ -791,7 +791,7 @@ def idle_worker(sw, prog):
                 src_mac   = intToMac(int.from_bytes(te.match[1].exact.value, byteorder='big'))
                 dst_mac   = intToMac(int.from_bytes(te.match[2].exact.value, byteorder='big'))
 
-                logger.info(f"[IDLE] Eliminada regla por timeout en {sw.name}: tunnel={tunnel_id}, {src_mac} <-> {dst_mac}")
+                logger.info(f"[IDLE] Eliminada regla por timeout en {sw.name}: tunnel={tunnel_id}, {src_mac} --> {dst_mac}")
 
                 # Limpiar flow_peers para ambas MACs
                 if sw.name in flow_peers:
@@ -799,17 +799,18 @@ def idle_worker(sw, prog):
                         flow_peers[sw.name][src_mac].discard((tunnel_id, dst_mac))
                         if not flow_peers[sw.name][src_mac]:
                             del flow_peers[sw.name][src_mac]
-                    if dst_mac in flow_peers[sw.name]:
-                        flow_peers[sw.name][dst_mac].discard((tunnel_id, src_mac))
-                        if not flow_peers[sw.name][dst_mac]:
-                            del flow_peers[sw.name][dst_mac]
+                    # Si lo hago bidireccional habría q descomentar esto y borrar las dos reglas
+                    # if dst_mac in flow_peers[sw.name]:
+                    #     flow_peers[sw.name][dst_mac].discard((tunnel_id, src_mac))
+                    #     if not flow_peers[sw.name][dst_mac]:
+                    #         del flow_peers[sw.name][dst_mac]
 
                 # Si la MAC ya no tiene reglas en flow_peers, eliminarla de lookup_table
-                for mac in (src_mac, dst_mac):
-                    if sw.name in flow_peers and mac not in flow_peers[sw.name]:
-                        if sw.name in lookup_table and mac in lookup_table[sw.name]:
-                            del lookup_table[sw.name][mac]
-                            logger.info(f"[IDLE] MAC {mac} eliminada de lookup_table en {sw.name} (sin reglas restantes)")
+                # for mac in (src_mac, dst_mac):
+                #     if sw.name in flow_peers and mac not in flow_peers[sw.name]:
+                #         if sw.name in lookup_table and mac in lookup_table[sw.name]:
+                #             del lookup_table[sw.name][mac]
+                #             logger.info(f"[IDLE] MAC {mac} eliminada de lookup_table en {sw.name} (sin reglas restantes)")
             else:
                 logger.debug(f"[IDLE] Notificación duplicada ignorada en {sw.name}")
 
