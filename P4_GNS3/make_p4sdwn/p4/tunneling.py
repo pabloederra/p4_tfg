@@ -32,28 +32,14 @@ import p4runtime_sh.p4runtime as shp4rt
 
 NSEC_PER_SEC = 1000 * 1000 * 1000
 IDLE_TIMEOUT_NS = 10 * NSEC_PER_SEC
-LOG_LEVEL = logging.INFO
+LOG_LEVEL = logging.DEBUG
 
 global_data = {}
 
 global_data['CPU_PORT'] = 510
 global_data['CPU_PORT_CLONE_SESSION_ID'] = 67
-global_data['NUM_PORTS'] = 2
-global_data['index'] = 0
 global_data['macs'] = {}
-global_data['macs']['mach1'] = "08:00:00:00:01:11"
 global_data['macs']['mach2'] = "08:00:00:00:02:22"
-global_data['macs']['mach3'] = "08:00:00:00:03:33"
-global_data['macs']['mach4'] = "08:00:00:00:04:44"
-global_data['macs']['mach5'] = "08:00:00:00:05:55"
-global_data['macs']['mach6'] = "08:00:00:00:06:66"
-global_data['tunnel_ports'] = {
-    "s1": { 1001: [121],        1003: [123]        },  # toward s2
-    "s2": { 1001: [111, 131],   1003: [113, 133]   },  # toward s1, s3
-    "s3": { 1001: [121, 141],   1003: [123, 143]   },  # toward s2, s4
-    "s4": { 1001: [131, 151],   1003: [133, 153]   },  # toward s3, s5
-    "s5": { 1001: [141],        1003: [143]        },  # toward s4
-}
 
 
 

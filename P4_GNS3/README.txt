@@ -45,7 +45,8 @@ Una vez arrancamos los equipos en GNS3, se ejecuta:
 5º CAMBIAR IMAGENES DOCKER
 
 Paras GNS3 y miras que no haya ningun contenedor corriendo. Vueleves a hacer el build de las imagenes que quieras
-cambiar y luego limpias las imagenes <none> con el comando: docker image prune.
+cambiar y luego limpias las imagenes <none> con el comando: docker image prune. (Con eso no termina de funcnionar
+del todo así que creo que hay que borrar el nodo en gns3 y volver a ponerlo).
 
 
 TIPS MARÍA:

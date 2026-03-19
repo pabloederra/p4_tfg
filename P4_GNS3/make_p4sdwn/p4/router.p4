@@ -10,10 +10,6 @@ typedef bit<9>  PortId_t;
 typedef bit<48> macAddr_t;
 typedef bit<32> ip4Addr_t;
 
-const macAddr_t BROADCAST_ADDR = 0xffffffffffff;
-const macAddr_t router5 = 0x080000000555;
-const macAddr_t router6 = 0x080000000666;
-
 typedef bit<16> PortIdToController_t;
 
 const int CPU_PORT_CLONE_SESSION_ID = 67;
