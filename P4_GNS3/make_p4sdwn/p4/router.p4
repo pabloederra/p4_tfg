@@ -28,9 +28,6 @@ const bit<8> GRE = 47;
 
 const int FL_PACKET_IN = 1;
 
-const bit<32> NUMBER_OF_HOSTS = 7; //Pongo 3 pq pilla el ultimo digito de la IP [0, 1, 2] (son 3)
-const int DIGEST_UNKNOWN = 33;
-
 #define CPU_PORT 510
 
 /*************************************************************************
@@ -71,30 +68,9 @@ header ipv4_h {
     ip4Addr_t dstAddr;
 }
 
-// header gre_h {
-//     bit<2>  reserved0;
-//     bit<1>  key_flag;
-//     bit<13> reserved1;
-//     bit<16> protocol_type;
-//     bit<32> key;
-// }
-
-// Note on the names of the controller_header header types:
-
-// packet_out and packet_in are named here from the perspective of the
-// controller, and that is how these messages are named in the
-// P4Runtime API specification as well.
-
-// Thus packet_out is a packet sent out of the controller to the
-// switch, which becomes a packet received by the switch on port
-// CPU_PORT.
-
-// A packet sent by the switch to port CPU_PORT becomes a PacketIn
-// message to the controller.
-
-// When running with simple_switch_grpc, you must provide the
-// following command line option to enable the ability for the
-// software switch to receive and send such messages: --cpu-port 510
+header mytunnel_h {
+    bit<8>  key_tunnel;
+}
 
 enum bit<8> ControllerOpcode_t {
     NO_OP                    = 0,
@@ -113,11 +89,11 @@ enum bit<6> dscp_t {
     TCP = 8,
     UDP = 12
 }
+
 // The packet_in header should contain three fields: input_port,
 //punt_reason, and opcode. The packet_out header should include: opcode, reserved1, and operand0 (which represents the egress port in this case). 
 @controller_header("packet_out")
 header packet_out_header_h {
-    /* TODO: Add packet-out fields */
     ControllerOpcode_t   opcode;
     bit<8>               reserved1;
     bit<32>              operand0;
@@ -130,17 +106,9 @@ header packet_in_header_h {
     PortIdToController_t input_port;
     ControllerOpcode_t   opcode;
     PuntReason_t         punt_reason;
-    bit<16>              key_tunnel;
 }
 
-// Definir la estructura
-struct digest_t {
-    bit<8>               input_port;
-    //PuntReason_t         punt_reason;     Por ahora tampoco es tan necesario porq solo hay una razon
-    bit<16>               key_tunnel;
-    macAddr_t            srcMacAddr;
-    macAddr_t            dstMacAddr;
-}
+
 
 struct metadata_t {
     @field_list(FL_PACKET_IN)
@@ -151,10 +119,6 @@ struct metadata_t {
     ControllerOpcode_t   opcode;
 
     PortId_t             input_port;
-    bit<8>               inport;
-
-    @field_list(FL_PACKET_IN)
-    bit<16>              key_tunnel;
 }
 
 struct headers_t {
@@ -163,6 +127,7 @@ struct headers_t {
     ethernet_h ethernet;
     arp_h      arp;
     ipv4_h     ipv4;
+    mytunnel_h mytunnel;
 }
 
 /*************************************************************************
@@ -180,8 +145,13 @@ parser MyParser(packet_in packet,
     state check_for_cpu_port {
         transition select (standard_metadata.ingress_port) {
             CPU_PORT: parse_controller_packet_out_header;
-            default: parse_ethernet;
+            1 .. 10: parse_ethernet;
+            default: parse_tunnel_header;
         }
+    }
+    state parse_tunnel_header {
+        packet.extract(hdr.mytunnel);
+        transition parse_ethernet;
     }
     state parse_controller_packet_out_header {
         packet.extract(hdr.packet_out);
@@ -216,7 +186,6 @@ control MyIngress(inout headers_t hdr,
                   inout metadata_t meta,
                   inout standard_metadata_t standard_metadata){
 
-    counter(NUMBER_OF_HOSTS, CounterType.packets_and_bytes) ingressPktOutCounter;
 
     action send_to_controller_with_details(
         PuntReason_t       punt_reason,
@@ -239,49 +208,21 @@ control MyIngress(inout headers_t hdr,
     action drop_packet() {
         mark_to_drop(standard_metadata);
     }
-    action digesting () {
-        meta.inport = (bit<8>) standard_metadata.ingress_port;
-        digest<digest_t>(DIGEST_UNKNOWN, { 
-            meta.inport,
-            meta.key_tunnel,
-            hdr.ethernet.srcAddr, 
-            hdr.ethernet.dstAddr,
-        });
-    }
+
     action flooding (bit<8> mcast) {
         standard_metadata.mcast_grp = (bit<16>) mcast;
     }
     action forwarding(egressSpec_t port) {
         standard_metadata.egress_spec = port;
-        digesting();
     }
     action flow_unknown () {
         send_copy_to_controller(PuntReason_t.FLOW_UNKNOWN,
             ControllerOpcode_t.NO_OP);
-        digesting();
         drop_packet();
     }
-    action marking (bit<16> key) 
-    {
-        meta.key_tunnel = key;
-    }
 
-    table marked_ip {
+    table mac_forwarding {
         key = {
-            hdr.ipv4.protocol    : exact;
-            hdr.ethernet.dstAddr : exact;
-            standard_metadata.ingress_port : exact;
-        }
-        actions = {
-            marking;
-        }
-        default_action = marking(0x3e9);
-        size = 65536;
-    }
-
-    table switch_id {
-        key = {
-            meta.key_tunnel: exact;
             hdr.ethernet.srcAddr : exact;
             hdr.ethernet.dstAddr : exact;
         }
@@ -294,8 +235,6 @@ control MyIngress(inout headers_t hdr,
         size = 10;
     }
 
-   
-
     apply {
         if (standard_metadata.parser_error != error.NoError) {
             drop_packet();
@@ -304,7 +243,6 @@ control MyIngress(inout headers_t hdr,
 
         if (hdr.packet_out.isValid()) {
             // Process packet from controller
-            ingressPktOutCounter.count((bit<32>)hdr.ipv4.dstAddr[5:0]);
             switch (hdr.packet_out.opcode) {
                 ControllerOpcode_t.SEND_TO_PORT_IN_OPERAND0: {
                     standard_metadata.egress_spec = (PortId_t) hdr.packet_out.operand0;
@@ -323,13 +261,7 @@ control MyIngress(inout headers_t hdr,
                 }
             }
         }else if (hdr.ethernet.isValid()){
-            if(hdr.ipv4.isValid()){
-                marked_ip.apply();
-            }
-            else{
-                marking(0x3e9);
-            }
-            switch_id.apply();
+            mac_forwarding.apply();
         }
     }
 }
@@ -341,8 +273,6 @@ control MyIngress(inout headers_t hdr,
 control MyEgress(inout headers_t hdr,
                  inout metadata_t meta,
                  inout standard_metadata_t standard_metadata){
-
-    counter(NUMBER_OF_HOSTS, CounterType.packets_and_bytes) egressPktInCounter;
 
     action drop_packet() {
         mark_to_drop(standard_metadata);
@@ -356,10 +286,42 @@ control MyEgress(inout headers_t hdr,
         hdr.packet_in.input_port = (PortIdToController_t) ingress_port;
         hdr.packet_in.punt_reason = punt_reason;
         hdr.packet_in.opcode = ControllerOpcode_t.NO_OP;
-        hdr.packet_in.key_tunnel = meta.key_tunnel;
-        egressPktInCounter.count((bit<32>)hdr.ipv4.dstAddr[5:0]);
     }
 
+    action marking_tunnel (
+        bit<8> key_tunnel)
+    {
+        hdr.mytunnel.setValid();
+        hdr.mytunnel.key_tunnel = key_tunnel;
+        switch (hdr.ipv4.protocol) {
+            ICMP: {
+                hdr.ipv4.dscp = dscp_t.ICMP;
+            }
+            IGMP: {
+                hdr.ipv4.dscp = dscp_t.IGMP;
+            }
+            TCP: {
+                hdr.ipv4.dscp = dscp_t.TCP;
+            }
+            UDP: {
+                hdr.ipv4.dscp = dscp_t.UDP;
+            }
+            default: {
+                hdr.ipv4.dscp = 0;
+            }
+        }
+    }
+
+    table tunneling {
+        key = {
+            hdr.ipv4.protocol : exact;
+        }
+        actions = {
+            marking_tunnel;
+        }
+        default_action = marking_tunnel(0xe9);
+        size = 10;
+    }
 
     apply {
         if (standard_metadata.egress_port == standard_metadata.ingress_port
@@ -370,26 +332,20 @@ control MyEgress(inout headers_t hdr,
 
         if (standard_metadata.egress_port == CPU_PORT) {
             prepend_packet_in_hdr(meta.punt_reason, meta.ingress_port);
-        } else if (hdr.ipv4.isValid()){ // Lo marco siempre (por ahora)
-            switch (hdr.ipv4.protocol) {
-                ICMP: {
-                    hdr.ipv4.dscp = dscp_t.ICMP;
-                }
-                IGMP: {
-                    hdr.ipv4.dscp = dscp_t.IGMP;
-                }
-                TCP: {
-                    hdr.ipv4.dscp = dscp_t.TCP;
-                }
-                UDP: {
-                    hdr.ipv4.dscp = dscp_t.UDP;
-                }
-                default: {
-                    hdr.ipv4.dscp = 0;
-                }
+        }
+        else if (hdr.mytunnel.isValid() && standard_metadata.egress_port <= 10){
+            hdr.mytunnel.setInvalid();
+        }
+        else if (!hdr.mytunnel.isValid() && standard_metadata.egress_port > 10){
+            if(hdr.ipv4.isValid()){
+                tunneling.apply(); // Lo hago en tabla por si queremos meter otros match fields y para poder controlarlo desde el controller
+            }
+            else{
+                hdr.mytunnel.setValid();
+                hdr.mytunnel.key_tunnel = 0xe9;
             }
         }
-        else{}
+        else{ }
     }
 }
 
@@ -425,6 +381,7 @@ control MyComputeChecksum(inout headers_t hdr, inout metadata_t meta) {
 control MyDeparser(packet_out packet, in headers_t hdr) {
     apply {
         packet.emit(hdr.packet_in);
+        packet.emit(hdr.mytunnel);
         packet.emit(hdr.ethernet);
         packet.emit(hdr.ipv4);
     }

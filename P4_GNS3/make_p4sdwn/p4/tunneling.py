@@ -6,8 +6,6 @@ import sys
 import threading
 import traceback
 import time
-import ipaddress
-import pprint
 import json
 
 import logging
@@ -217,14 +215,6 @@ def intToMac(n):
 
     return(mac_str.lower())
 
-def flowCacheEntryToDebugStr(table_entry, include_action=False):
-    # TODO: The match fields are hardcoded to specific indices to retrieve specific parameters, such as hdr.ipv4.srcAddr and its value.
-    src_ip = intToIpv4(int.from_bytes(table_entry.match[1].exact.value, byteorder='big'))
-    dst_ip = intToIpv4(int.from_bytes(table_entry.match[2].exact.value, byteorder='big'))
-    proto = int.from_bytes(table_entry.match[0].exact.value, byteorder='big')
-    return ("(SA=%s, DA=%s, proto=%d)"
-            "" % (src_ip, dst_ip, proto))
-
 def decodePacketInMetadata(pktin_info, packet):
     pktin_field_to_val = {}
     for md in packet.metadata:                                  # mira cada campo de la cabecera packet in
@@ -237,34 +227,6 @@ def decodePacketInMetadata(pktin_info, packet):
            'payload': packet.payload}
     logger.debug("decodePacketInMetadata: ret=%s" % (ret))
     return ret
-
-def decodeDigestList(digest_info, digest_list_msg):
-    """
-    digest_info: Lista con los nombres de los campos en orden (ej: ['ingress_port', 'src_mac'])
-    digest_list_msg: El mensaje gRPC que recibiste (notif['payload'])
-    """
-    decoded_entries = []
-    
-    # 1. Un DigestList contiene MUCHAS entradas (data)
-    for data_item in digest_list_msg.data:
-        entry_dict = {}
-        
-        # 2. Cada entrada es un struct con miembros ordenados
-        # digest_info debe tener los nombres en el mismo orden que el struct P4
-        members = data_item.struct.members
-        
-        for i, member in enumerate(members):
-            field_name = digest_info[i]['name'] # Obtenemos nombre por posición
-            
-            # El valor suele venir en 'bitstring' para datos simples
-            val_int = int.from_bytes(member.bitstring, byteorder='big')
-            
-            entry_dict[field_name] = val_int
-            
-        decoded_entries.append(entry_dict)
-        
-    print(f"decodeDigestList: decoded {len(decoded_entries)} entries")
-    return decoded_entries
 
 def serializableEnumDict(p4info_data, name):
     type_info = p4info_data.type_info   # type info es donde se guardan los enums y structs y demas dentro de p4info
@@ -338,33 +300,15 @@ def writeCloneSession(sw, clone_session_id, replicas, prog):
     # Escribe esta regla en la tabla del Motor de Replicación.
     sw.WritePREEntry(clone_entry)
 
-def modificar_puerto(puerto, tunnel_id):
-        # Si el puerto es 1, se queda exactamente igual
-        if puerto < 10:
-            return puerto
-        
-        
-        # Si no es 1, le quitamos el último dígito ([:-1]) y le pegamos el del túnel
-        puerto_str = str(puerto)
-        tunel_str=str(tunnel_id)
-        nuevo_puerto_str = puerto_str[:-1] + tunel_str[-1]
-        
-        return int(nuevo_puerto_str) # Lo devolvemos como número entero
-
-def addFlowRule( ingress_sw, src_eth_addr, dst_eth_addr, srcport, dstport, tunnel_id, prog):
+def addFlowRule( ingress_sw, src_eth_addr, dst_eth_addr, sport, dport, prog):
     """
     Install flow rule in flow cache table
 
     """
 
-    # Aplicamos la lógica a ambos puertos
-    sport = modificar_puerto(srcport, tunnel_id)
-    dport = modificar_puerto(dstport, tunnel_id)
-
     table_entry = global_data['p4info_helper'][prog].buildTableEntry(
-        table_name="MyIngress.switch_id",
+        table_name="MyIngress.mac_forwarding",
         match_fields={
-            "meta.key_tunnel":      tunnel_id,
             "hdr.ethernet.srcAddr": src_eth_addr,
             "hdr.ethernet.dstAddr": dst_eth_addr
         },
@@ -376,9 +320,8 @@ def addFlowRule( ingress_sw, src_eth_addr, dst_eth_addr, srcport, dstport, tunne
         )
 
     table_entry2 = global_data['p4info_helper'][prog].buildTableEntry(
-        table_name="MyIngress.switch_id",
+        table_name="MyIngress.mac_forwarding",
         match_fields={
-            "meta.key_tunnel":      tunnel_id,
             "hdr.ethernet.srcAddr": dst_eth_addr,
             "hdr.ethernet.dstAddr": src_eth_addr
         },
@@ -396,12 +339,7 @@ def addFlowRule( ingress_sw, src_eth_addr, dst_eth_addr, srcport, dstport, tunne
             ingress_sw.WriteTableEntry(rule)
             logger.debug(f"Instalando regla: unidireccional")
         except grpc.RpcError as e:
-            code = e.code()
-            details = e.details() or ""
-
-            if (
-                code == grpc.StatusCode.UNKNOWN
-            ):
+            if e.code() == grpc.StatusCode.UNKNOWN:
                 logger.warning(f"Regla duplicada ignorada en {ingress_sw.name}")
                 logger.debug(f"gRPC code: {e.code()}")
                 logger.debug(f"gRPC details: {e.details()}")
@@ -409,20 +347,16 @@ def addFlowRule( ingress_sw, src_eth_addr, dst_eth_addr, srcport, dstport, tunne
                 printGrpcError(e)
     
 
-def modifyFlowRule(sw, prog, tunnel_id, src_eth_addr, dst_eth_addr, new_srcport, new_dstport):
+def modifyFlowRule(sw, prog, src_eth_addr, dst_eth_addr, sport, dport):
     """
     Modifica las reglas existentes para actualizar los puertos tras un handover.
     new_srcport y new_dstport ya tienen el segundo dígito actualizado.
     """
 
-    sport = modificar_puerto(new_srcport, tunnel_id)
-    dport = modificar_puerto(new_dstport, tunnel_id)
-
     # Regla src -> dst: el paquete sale por dport
     table_entry = global_data['p4info_helper'][prog].buildTableEntry(
-        table_name="MyIngress.switch_id",
+        table_name="MyIngress.mac_forwarding",
         match_fields={
-            "meta.key_tunnel":      tunnel_id,
             "hdr.ethernet.srcAddr": src_eth_addr,
             "hdr.ethernet.dstAddr": dst_eth_addr
         },
@@ -435,9 +369,8 @@ def modifyFlowRule(sw, prog, tunnel_id, src_eth_addr, dst_eth_addr, new_srcport,
 
     # Regla dst -> src: el paquete sale por sport
     table_entry2 = global_data['p4info_helper'][prog].buildTableEntry(
-        table_name="MyIngress.switch_id",
+        table_name="MyIngress.mac_forwarding",
         match_fields={
-            "meta.key_tunnel":      tunnel_id,
             "hdr.ethernet.srcAddr": dst_eth_addr,
             "hdr.ethernet.dstAddr": src_eth_addr
         },
@@ -457,9 +390,7 @@ def modifyFlowRule(sw, prog, tunnel_id, src_eth_addr, dst_eth_addr, new_srcport,
             sw.WriteTableEntry(rule)
             logger.debug(f"Regla modificada (handover) en {sw.name}")
         except grpc.RpcError as e:
-            code = e.code()
-
-            if code == grpc.StatusCode.UNKNOWN:
+            if e.code() == grpc.StatusCode.UNKNOWN:
                 logger.warning(f"Regla no encontrada para modificar en {sw.name}, ignorando")
                 logger.debug(f"gRPC code: {e.code()}")
                 logger.debug(f"gRPC details: {e.details()}")
@@ -469,14 +400,12 @@ def modifyFlowRule(sw, prog, tunnel_id, src_eth_addr, dst_eth_addr, new_srcport,
 def createFlowRuleFromNotif(idle_notif, prog):
     """Construye un table_entry a partir de una idle notification para poder eliminarlo."""
     te = idle_notif.table_entry[0]
-    tunnel_id  = int.from_bytes(te.match[0].exact.value, byteorder='big')
-    src_mac    = int.from_bytes(te.match[1].exact.value, byteorder='big')
-    dst_mac    = int.from_bytes(te.match[2].exact.value, byteorder='big')
+    src_mac    = int.from_bytes(te.match[0].exact.value, byteorder='big')
+    dst_mac    = int.from_bytes(te.match[1].exact.value, byteorder='big')
 
     table_entry = global_data['p4info_helper'][prog].buildTableEntry(
-        table_name="MyIngress.switch_id",
+        table_name="MyIngress.mac_forwarding",
         match_fields={
-            "meta.key_tunnel":      tunnel_id,
             "hdr.ethernet.srcAddr": src_mac,
             "hdr.ethernet.dstAddr": dst_mac
         }
@@ -575,43 +504,11 @@ def readTableRules(p4info_helper, sw):
             
             logger.debug('-----')
 
-def printCounter(p4info_helper, sw, counter_name, index):
-    """
-    Reads the specified counter at the given index from the switch. In our
-    program, the index is derived from the first 6 bits of the IP destination address.
-    If the index is 0, it will return all values from the counter.
-
-    :param p4info_helper: the P4Info helper
-    :param sw:  the switch connection
-    :param counter_name: the name of the counter from the P4 program
-    :param index: the counter index (in our case, first 6 bits of the IP)
-    """
-    try:
-        for response in sw.ReadCounters(p4info_helper.get_counters_id(counter_name), index):
-            for entity in response.entities:
-                counter = entity.counter_entry
-                logger.debug("%s %s %d: %d packets (%d bytes)" % (
-                    sw.name, counter_name, index,
-                    counter.data.packet_count, counter.data.byte_count
-                ))
-    except grpc.RpcError as e:
-            logger.error(f"[gRPC Error in printCounter for {sw.name}]")
-            printGrpcError(e)
-
-            if e.code() == grpc.StatusCode.UNKNOWN:
-                logger.error(f"Unknown gRPC error from {sw.name}. Retrying...")
-                time.sleep(2)
-
-    except Exception as e:
-           logger.error(f"[Unexpected Error in printCounter for {sw.name}]: {e}")
-           traceback.print_exc()
-           time.sleep(2)
-
 def broadcasting(sw, input_port, payload, src_eth, prog):
 
     mcast=10
     if sw.name == 's3':
-        if input_port in [121, 123]:
+        if input_port==120:
             mcast = 20
         elif input_port == 1 and src_eth == global_data['macs']["mach2"]:
             mcast = 20
@@ -651,37 +548,35 @@ def processPacket(message, prog):
         else:
             old_port = tabla_actual[pkt.src]
             
-            old_loc = 0 if old_port < 10 else (old_port // 10) % 10
-            new_loc = 0 if src_port < 10 else (src_port // 10) % 10
-            if old_loc != new_loc:
+            if old_port != src_port:
                 # Me esta viniendo un packet de la misma mac desde otro lado (handover)
                 # Actualizamos la tabla general para que el nuevo puerto quede registrado
                 tabla_actual[pkt.src] = src_port
                 
                 # Usamos flow_peers para saber con qué peers tiene reglas esta MAC
                 logger.debug(f"║ [DEBUG] flow_peers para MAC {pkt.src} en {sw.name}: {flow_peers.get(sw.name, {}).get(pkt.src, set())}")
-                for tunel, peer_mac in flow_peers.get(sw.name, {}).get(pkt.src, set()).copy():
+                for peer_mac in flow_peers.get(sw.name, {}).get(pkt.src, set()).copy():
                     peer_port = tabla_actual.get(peer_mac, src_port)  # fallback si el peer tampoco se conoce
-                    modifyFlowRule(sw, prog, tunel, pkt.src, peer_mac, src_port, peer_port)
+                    modifyFlowRule(sw, prog, pkt.src, peer_mac, src_port, peer_port)
                     # Si hay túnel, refinamos el puerto en la tabla (por si difiere el último dígito)
-                    logger.info(f"║ [HANDOVER] MAC {pkt.src} del túnel {tunel} al puerto {modificar_puerto(src_port, tunel) }")
+                    logger.info(f"║ [HANDOVER] MAC {pkt.src} del puerto {old_port} al puerto {src_port}")
                 did_handover=True
         
         if pkt.dst in tabla_actual:
             dst_port = tabla_actual[pkt.dst]
             tunnel_id = pktinfo['metadata']['key_tunnel']
             # Registrar peers para poder hacer handover sin conocer pkt.dst
-            flow_peers.setdefault(sw.name, {}).setdefault(pkt.src, set()).add((tunnel_id, pkt.dst))
-            flow_peers.setdefault(sw.name, {}).setdefault(pkt.dst, set()).add((tunnel_id, pkt.src))
+            flow_peers.setdefault(sw.name, {}).setdefault(pkt.src, set()).add(pkt.dst)
+            flow_peers.setdefault(sw.name, {}).setdefault(pkt.dst, set()).add(pkt.src)
                 
             if not did_handover:
-                logger.info(f"║ [FLOW] Instalando regla: {pkt.src} <-> {pkt.dst} (Port {modificar_puerto(src_port, tunnel_id)} <-> {modificar_puerto(dst_port, tunnel_id)} en {tunnel_id})")
-                addFlowRule(sw, pkt.src, pkt.dst, src_port, dst_port, tunnel_id, prog)
+                logger.info(f"║ [FLOW] Instalando regla: {pkt.src} <-> {pkt.dst} (Port {src_port} <-> {dst_port})")
+                addFlowRule(sw, pkt.src, pkt.dst, src_port, dst_port, prog)
             
             # Packet Out
             metadatas = packetOutMetadataList(
                         global_data['controller_opcode_name2int'][prog]['SEND_TO_PORT_IN_OPERAND0'],
-                        0, modificar_puerto(dst_port, tunnel_id))
+                        0, dst_port)
             sendPacketOut(sw, payload, metadatas)
         else:
             if pkt.dst == "ff:ff:ff:ff:ff:ff":
@@ -700,7 +595,7 @@ def processPacket(message, prog):
     
     logger.info(f"╚{'═' * WIDTH}")
     if LOG_LEVEL ==  logging.DEBUG:
-        readTableRules
+        readTableRules(p4info_helper, sw)
 
 
 def printGrpcError(e):
@@ -730,44 +625,6 @@ def packet_worker(sw, prog):
             time.sleep(1)
 
 
-def digest_worker(sw, prog):
-    while True:
-        try:
-            digest_msg = sw.DigestIn()
-            message = {"type": "digest", "sw": sw, "payload": digest_msg}
-
-            logger.info(f"--- Recibido Digest de {sw.name} con {len(digest_msg.data)} entradas ---")
-            if digest_msg.digest_id == global_data["id_digest_unknown"]:
-                digest_field_names = [
-                    {'name': 'ingress_port'},
-                    {'name': 'key_tunnel'}, 
-                    {'name': 'src_mac'}, 
-                    {'name': 'dst_mac'}
-                ]
-
-                # Uso:
-                decoded_data = decodeDigestList(digest_field_names, message["payload"])
-                for entry in decoded_data:
-                    srcport = entry['ingress_port']
-                    src_mac = entry['src_mac']
-                    dst_mac = entry['dst_mac']
-                    key_tunnel = entry['key_tunnel']
-
-                    logger.info(f"DIGEST: {src_mac} -> {dst_mac} con {key_tunnel} desde port{srcport}")
-            sw.DigestAck(digest_msg.digest_id, digest_msg.list_id)
-        except grpc.RpcError as e:
-            logger.error(f"[gRPC Error digest_worker {sw.name}]")
-            printGrpcError(e)
-            time.sleep(1)
-
-        except Exception as e:
-            logger.error(f"[Unexpected Error digest_worker {sw.name}]: {e}")
-            traceback.print_exc()
-            time.sleep(1)
-
-        
-
-
 def idle_worker(sw, prog):
     """Hilo que escucha las idle timeout notifications del switch y elimina las reglas caducadas."""
     while True:
@@ -788,30 +645,17 @@ def idle_worker(sw, prog):
                 # Lo pongo aqui por si saltase error en el delete
                 # Extraer tunnel_id y MACs de la notificación para limpiar mac_tunnel y lookup_table
                 te = idle_notif.table_entry[0]
-                tunnel_id = int.from_bytes(te.match[0].exact.value, byteorder='big')
                 src_mac   = intToMac(int.from_bytes(te.match[1].exact.value, byteorder='big'))
                 dst_mac   = intToMac(int.from_bytes(te.match[2].exact.value, byteorder='big'))
 
-                logger.info(f"[IDLE] Eliminada regla por timeout en {sw.name}: tunnel={tunnel_id}, {src_mac} --> {dst_mac}")
+                logger.info(f"[IDLE] Eliminada regla por timeout en {sw.name}: {src_mac} --> {dst_mac}")
 
                 # Limpiar flow_peers para ambas MACs
                 if sw.name in flow_peers:
                     if src_mac in flow_peers[sw.name]:
-                        flow_peers[sw.name][src_mac].discard((tunnel_id, dst_mac))
+                        flow_peers[sw.name][src_mac].discard(dst_mac)
                         if not flow_peers[sw.name][src_mac]:
                             del flow_peers[sw.name][src_mac]
-                    # Si lo hago bidireccional habría q descomentar esto y borrar las dos reglas
-                    # if dst_mac in flow_peers[sw.name]:
-                    #     flow_peers[sw.name][dst_mac].discard((tunnel_id, src_mac))
-                    #     if not flow_peers[sw.name][dst_mac]:
-                    #         del flow_peers[sw.name][dst_mac]
-
-                # Si la MAC ya no tiene reglas en flow_peers, eliminarla de lookup_table
-                # for mac in (src_mac, dst_mac):
-                #     if sw.name in flow_peers and mac not in flow_peers[sw.name]:
-                #         if sw.name in lookup_table and mac in lookup_table[sw.name]:
-                #             del lookup_table[sw.name][mac]
-                #             logger.info(f"[IDLE] MAC {mac} eliminada de lookup_table en {sw.name} (sin reglas restantes)")
             else:
                 logger.debug(f"[IDLE] Notificación duplicada ignorada en {sw.name}")
 
@@ -826,46 +670,30 @@ def idle_worker(sw, prog):
             time.sleep(1)
 
 
-def addMarkedRule(sw, eth_addr, srcport, tunnel_id, prog):
+def addMarkedRule(sw, tunnel_id, protocol, prog):
 
     helper = global_data['p4info_helper'][prog]
 
    # 1. Buscamos la tabla iterando directamente sobre el p4info
     table_info = None
     for t in helper.p4info.tables:
-        if t.preamble.name == "MyIngress.marked_ip":
+        if t.preamble.name == "MyEgress.tunneling":
             table_info = t
             break
             
     # Si la tabla no existe en el P4 de este switch (ej. un switch tonto), salimos
     if table_info is None:
-        logger.warning(f"El switch {sw.name} ({prog}) NO tiene la tabla 'MyIngress.marked_ip'")
-        return
-
-    # Iteramos sobre los match_fields para ver cuáles están definidos en el P4
-    eth_match_field = None
-    for match_field in table_info.match_fields:
-        if "dstAddr" in match_field.name:
-            eth_match_field = "hdr.ethernet.dstAddr"
-            break
-        elif "srcAddr" in match_field.name:
-            eth_match_field = "hdr.ethernet.srcAddr"
-            break
-    
-    if eth_match_field == None:
-        logger.warning(f"No hay ningun eth_atch_field en {sw.name}")
+        logger.warning(f"El switch {sw.name} ({prog}) NO tiene la tabla 'MyEgress.tunneling'")
         return
 
     table_entry = global_data['p4info_helper'][prog].buildTableEntry(
-        table_name="MyIngress.marked_ip",
+        table_name="MyEgress.tunneling",
         match_fields={
-            "hdr.ipv4.protocol"    : 17,
-            eth_match_field : eth_addr,
-            "standard_metadata.ingress_port" : srcport
+            "hdr.ipv4.protocol"    : protocol
         },
-        action_name="MyIngress.marking",
+        action_name="MyEgress.marking_tunnel",
         action_params={
-            "key":           tunnel_id
+            "key_tunnel":           tunnel_id
         }
     )
     sw.WriteTableEntry(table_entry)
@@ -887,15 +715,12 @@ def main(switches_config):
 
         nuevo_switch = {
             "name": sw_name,
-            #"address": f"127.0.0.1:5005{sw_name[1:]}",
             "address": f"{conf['ip']}:9559",
-            #"device_id": int(sw_name[1:]) - 1
             "device_id": 0
         }
         switches_info.append(nuevo_switch)
 
     global_data ['p4info_helper'] = helpers
-    p4info_helper = global_data ['p4info_helper']
     global_data ['prog_switches'] = switches_config
 
     try:
@@ -920,24 +745,10 @@ def main(switches_config):
             conn.MasterArbitrationUpdate()
             # Instalar el P4 program
             conn.SetForwardingPipelineConfig(
-                p4info=p4info_helper[prog].p4info,
+                p4info=helpers[prog].p4info,
                 bmv2_json_file_path=switches_config[sw['name']]['bmv2_json']
             )
             logger.info(f"Installed P4 {switches_config[sw['name']]['program_name']} using SetForwardingPipelineConfig on {sw['name']}")
-
-            try:
-                # Max list size 100 evita el error UNKNOWN en UDP flood
-                # global_data["id_mac_learning"] = p4info_helper[prog].get_digests_id("mac_learning_digest_t")
-                # conn.EnableDigest(global_data["id_mac_learning"], max_timeout_ns=global_data["timeout"], max_list_size=1)
-
-                global_data["id_digest_unknown"] = p4info_helper[prog].get_digests_id("digest_t")
-                conn.EnableDigest(global_data["id_digest_unknown"], max_timeout_ns=global_data["timeout"], max_list_size=1)
-                logger.info(f"{'═' * 60}")
-                logger.info(f"Digest habilitado en {sw['name']}")
-                logger.info(f"{'═' * 60}")
-            except Exception as e:
-                logger.error(f"Advertencia: No se pudo habilitar digest en {sw['name']}: {e}")
-            # -----------------------------------------------------------
 
         global_data['p4info_obj_map'] = {}
         global_data['cpm_packetin_id2data'] = {}
@@ -946,7 +757,7 @@ def main(switches_config):
         global_data['controller_opcode_name2int'] = {}
         global_data['controller_opcode_int2name'] = {}
 
-        for prog, p4_helper in p4info_helper.items():
+        for prog, p4_helper in helpers.items():
             # Configurar global_data (solo se hace una vez)
             global_data['p4info_obj_map'][prog] = makeP4infoObjMap(p4_helper.p4info)
             global_data['cpm_packetin_id2data'][prog] = \
@@ -961,14 +772,14 @@ def main(switches_config):
         # 1. Defines tus datos de configuración (el "qué")
         # Esto mapea el nombre del switch a una lista de sus grupos multicast.
         mcast_configs = {
-            's1': [{'mgid': 10, 'ports': [1, 121]}],
-            's2': [{'mgid': 10, 'ports': [1, 111, 131]}],
+            's1': [{'mgid': 10, 'ports': [1, 120]}],
+            's2': [{'mgid': 10, 'ports': [1, 110, 130]}],
             's3': [
-                {'mgid': 10, 'ports': [1, 141]},
-                {'mgid': 20, 'ports': [1, 121]}
+                {'mgid': 10, 'ports': [1, 140]},
+                {'mgid': 20, 'ports': [1, 120]}
             ],
-            's4': [{'mgid': 10, 'ports': [1, 151, 131]}],
-            's5': [{'mgid': 10, 'ports': [1, 141]}]
+            's4': [{'mgid': 10, 'ports': [1, 150, 130]}],
+            's5': [{'mgid': 10, 'ports': [1, 140]}]
         }
         # Configurar sesiones de clone y aprovecho y croe grupos multicast para broadcast
         replicas = [{"egress_port": global_data['CPU_PORT'], "instance": 1}]
@@ -979,7 +790,7 @@ def main(switches_config):
 
                 switch_mcast_rules = mcast_configs.get(sw.name, [])
 
-                helper = global_data['p4info_helper'][prog]
+                helper = helpers[prog]
 
                 for rule in switch_mcast_rules:
                     replics = [{'egress_port': p, 'instance': 1} for p in rule['ports']]
@@ -990,19 +801,23 @@ def main(switches_config):
                 logger.warning(f"Clone session {global_data['CPU_PORT_CLONE_SESSION_ID']} assumed initialized already")
 
         
-        list_ports=[1, 113, 123, 133, 143, 153]
-        # 2. Haces el bucle iterando sobre esa lista (no es lo más óptimo pero bueno)
+        # Definir el mapeo de Protocolo IPv4 -> ID de túnel
+        protocol_to_tunnel = {
+            1:  0x1, # ICMP
+            6:  0xf0, # TCP
+            17: 0xf  # UDP
+        }
+        
         for sw in switch_connections.values():
-            for mac in global_data['macs'].values():
-                for port in list_ports:
-                    addMarkedRule(
-                        sw=sw,
-                        eth_addr=mac,
-                        srcport=port,
-                        tunnel_id=0x3eb,
-                        prog=switches_config[sw.name]['program_name']
-                    )
-                    logger.debug(f"Regla instalada en {sw.name} para la MAC {mac}")
+            prog = switches_config[sw.name]['program_name']
+            for proto, tun_id in protocol_to_tunnel.items():
+                addMarkedRule(
+                    sw=sw,
+                    tunnel_id=tun_id,
+                    protocol=proto,
+                    prog=prog
+                )
+                logger.debug(f"Regla de túnel instalada en {sw.name}: Protocolo {proto} -> Tunnel {tun_id}")
 
         threads = []
         for sw_name, sw_conn in switch_connections.items():
@@ -1016,13 +831,6 @@ def main(switches_config):
             )
 
             t2 = threading.Thread(
-                target=digest_worker,
-                args=(sw_conn, prog),
-                name=f"T_Digest-{sw_name}", # NOMBRE DEL HILO
-                daemon=True
-            )
-
-            t3 = threading.Thread(
                 target=idle_worker,
                 args=(sw_conn, prog),
                 name=f"T_Idle-{sw_name}",
@@ -1031,10 +839,8 @@ def main(switches_config):
 
             t1.start()
             t2.start()
-            t3.start()
             threads.append(t1)
             threads.append(t2)
-            threads.append(t3)
 
         logger.debug("Controller running (thread-based)...")
 
