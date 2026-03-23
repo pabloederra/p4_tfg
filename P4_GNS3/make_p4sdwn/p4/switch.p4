@@ -302,7 +302,6 @@ control MyEgress(inout headers_t hdr,
             marking_tunnel;
         }
         default_action = marking_tunnel(0xe9, 0);
-        size = 10;
         const entries = {
             ICMP : marking_tunnel(0xe1, dscp_t.ICMP);
             IGMP : marking_tunnel(0xe3, dscp_t.IGMP);

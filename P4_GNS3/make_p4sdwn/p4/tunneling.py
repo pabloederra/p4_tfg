@@ -494,7 +494,7 @@ def broadcasting(sw, input_port, payload, src_eth, prog):
 
     mcast=10
     if sw.name == 's3':
-        if input_port==120:
+        if input_port==121:
             mcast = 20
         elif input_port == 1 and src_eth == global_data['macs']["mach2"]:
             mcast = 20
@@ -581,7 +581,7 @@ def processPacket(message, prog):
     
     logger.info(f"╚{'═' * WIDTH}")
     if LOG_LEVEL ==  logging.DEBUG:
-        readTableRules(p4info_helper, sw)
+        readTableRules(global_data ['p4info_helper'][prog], sw)
 
 
 def printGrpcError(e):
@@ -758,14 +758,14 @@ def main(switches_config):
         # 1. Defines tus datos de configuración (el "qué")
         # Esto mapea el nombre del switch a una lista de sus grupos multicast.
         mcast_configs = {
-            's1': [{'mgid': 10, 'ports': [1, 120]}],
-            's2': [{'mgid': 10, 'ports': [1, 110, 130]}],
+            's1': [{'mgid': 10, 'ports': [1, 121]}],
+            's2': [{'mgid': 10, 'ports': [1, 111, 131]}],
             's3': [
-                {'mgid': 10, 'ports': [1, 140]},
-                {'mgid': 20, 'ports': [1, 120]}
+                {'mgid': 10, 'ports': [1, 141]},
+                {'mgid': 20, 'ports': [1, 121]}
             ],
-            's4': [{'mgid': 10, 'ports': [1, 150, 130]}],
-            's5': [{'mgid': 10, 'ports': [1, 140]}]
+            's4': [{'mgid': 10, 'ports': [1, 151, 131]}],
+            's5': [{'mgid': 10, 'ports': [1, 141]}]
         }
         # Configurar sesiones de clone y aprovecho y croe grupos multicast para broadcast
         replicas = [{"egress_port": global_data['CPU_PORT'], "instance": 1}]
