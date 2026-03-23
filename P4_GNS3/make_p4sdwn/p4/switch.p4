@@ -318,6 +318,9 @@ control MyEgress(inout headers_t hdr,
         }
 
         if (standard_metadata.egress_port == CPU_PORT) {
+            if(hdr.mytunnel.isValid()){
+                hdr.mytunnel.setInvalid();
+            }   
             prepend_packet_in_hdr(meta.punt_reason, meta.ingress_port);
         }
         else if (hdr.mytunnel.isValid() && standard_metadata.egress_port <= 10){

@@ -550,7 +550,6 @@ def processPacket(message, prog):
         
         if pkt.dst in tabla_actual:
             dst_port = tabla_actual[pkt.dst]
-            tunnel_id = pktinfo['metadata']['key_tunnel']
             # Registrar peers para poder hacer handover sin conocer pkt.dst
             flow_peers.setdefault(sw.name, {}).setdefault(pkt.src, set()).add(pkt.dst)
             flow_peers.setdefault(sw.name, {}).setdefault(pkt.dst, set()).add(pkt.src)
