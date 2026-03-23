@@ -656,33 +656,33 @@ def idle_worker(sw, prog):
             time.sleep(1)
 
 
-def addMarkedRule(sw, tunnel_id, protocol, prog):
+# def addMarkedRule(sw, tunnel_id, protocol, prog):
 
-    helper = global_data['p4info_helper'][prog]
+#     helper = global_data['p4info_helper'][prog]
 
-   # 1. Buscamos la tabla iterando directamente sobre el p4info
-    table_info = None
-    for t in helper.p4info.tables:
-        if t.preamble.name == "MyEgress.tunneling":
-            table_info = t
-            break
+#    # 1. Buscamos la tabla iterando directamente sobre el p4info
+#     table_info = None
+#     for t in helper.p4info.tables:
+#         if t.preamble.name == "MyEgress.tunneling":
+#             table_info = t
+#             break
             
-    # Si la tabla no existe en el P4 de este switch (ej. un switch tonto), salimos
-    if table_info is None:
-        logger.warning(f"El switch {sw.name} ({prog}) NO tiene la tabla 'MyEgress.tunneling'")
-        return
+#     # Si la tabla no existe en el P4 de este switch (ej. un switch tonto), salimos
+#     if table_info is None:
+#         logger.warning(f"El switch {sw.name} ({prog}) NO tiene la tabla 'MyEgress.tunneling'")
+#         return
 
-    table_entry = global_data['p4info_helper'][prog].buildTableEntry(
-        table_name="MyEgress.tunneling",
-        match_fields={
-            "hdr.ipv4.protocol"    : protocol
-        },
-        action_name="MyEgress.marking_tunnel",
-        action_params={
-            "key_tunnel":           tunnel_id
-        }
-    )
-    sw.WriteTableEntry(table_entry)
+#     table_entry = global_data['p4info_helper'][prog].buildTableEntry(
+#         table_name="MyEgress.tunneling",
+#         match_fields={
+#             "hdr.ipv4.protocol"    : protocol
+#         },
+#         action_name="MyEgress.marking_tunnel",
+#         action_params={
+#             "key_tunnel":           tunnel_id
+#         }
+#     )
+#     sw.WriteTableEntry(table_entry)
 
 
 def main(switches_config):
@@ -787,23 +787,23 @@ def main(switches_config):
                 logger.warning(f"Clone session {global_data['CPU_PORT_CLONE_SESSION_ID']} assumed initialized already")
 
         
-        # Definir el mapeo de Protocolo IPv4 -> ID de túnel
-        protocol_to_tunnel = {
-            1:  0x1, # ICMP
-            6:  0xf0, # TCP
-            17: 0xf  # UDP
-        }
+        # # Definir el mapeo de Protocolo IPv4 -> ID de túnel
+        # protocol_to_tunnel = {
+        #     1:  0x1, # ICMP
+        #     6:  0xf0, # TCP
+        #     17: 0xf  # UDP
+        # }
         
-        for sw in switch_connections.values():
-            prog = switches_config[sw.name]['program_name']
-            for proto, tun_id in protocol_to_tunnel.items():
-                addMarkedRule(
-                    sw=sw,
-                    tunnel_id=tun_id,
-                    protocol=proto,
-                    prog=prog
-                )
-                logger.debug(f"Regla de túnel instalada en {sw.name}: Protocolo {proto} -> Tunnel {tun_id}")
+        # for sw in switch_connections.values():
+        #     prog = switches_config[sw.name]['program_name']
+        #     for proto, tun_id in protocol_to_tunnel.items():
+        #         addMarkedRule(
+        #             sw=sw,
+        #             tunnel_id=tun_id,
+        #             protocol=proto,
+        #             prog=prog
+        #         )
+        #         logger.debug(f"Regla de túnel instalada en {sw.name}: Protocolo {proto} -> Tunnel {tun_id}")
 
         threads = []
         for sw_name, sw_conn in switch_connections.items():
@@ -812,7 +812,7 @@ def main(switches_config):
             t1 = threading.Thread(
                 target=packet_worker,
                 args=(sw_conn, prog),
-                name=f"Thread-{sw_name}", # NOMBRE DEL HILO
+                name=f"Thread-{sw_name}",
                 daemon=True
             )
 

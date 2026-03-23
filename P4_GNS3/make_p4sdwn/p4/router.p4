@@ -285,27 +285,12 @@ control MyEgress(inout headers_t hdr,
     }
 
     action marking_tunnel (
-        bit<8> key_tunnel)
+        bit<8> key_tunnel,
+        bit<6> dscp_val)
     {
         hdr.mytunnel.setValid();
         hdr.mytunnel.key_tunnel = key_tunnel;
-        switch (hdr.ipv4.protocol) {
-            ICMP: {
-                hdr.ipv4.dscp = dscp_t.ICMP;
-            }
-            IGMP: {
-                hdr.ipv4.dscp = dscp_t.IGMP;
-            }
-            TCP: {
-                hdr.ipv4.dscp = dscp_t.TCP;
-            }
-            UDP: {
-                hdr.ipv4.dscp = dscp_t.UDP;
-            }
-            default: {
-                hdr.ipv4.dscp = 0;
-            }
-        }
+        hdr.ipv4.dscp = dscp_val;
     }
 
     table tunneling {
@@ -315,8 +300,14 @@ control MyEgress(inout headers_t hdr,
         actions = {
             marking_tunnel;
         }
-        default_action = marking_tunnel(0xe9);
+        default_action = marking_tunnel(0xe9, 0);
         size = 10;
+        const entries = {
+            ICMP : marking_tunnel(0xe1, dscp_t.ICMP);
+            IGMP : marking_tunnel(0xe3, dscp_t.IGMP);
+            TCP  : marking_tunnel(0xe5, dscp_t.TCP);
+            UDP  : marking_tunnel(0xe7, dscp_t.UDP);
+        }
     }
 
     apply {
