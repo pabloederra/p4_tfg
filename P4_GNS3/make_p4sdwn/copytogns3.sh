@@ -17,7 +17,7 @@ P4_FILES=(
     "p4/switch.p4"
     "p4/router.p4"
     "p4/Makefile"
-    "p4/micontrolador.py"
+    "p4/tunneling.py"
     "p4/test_logs.py"
     "p4/debug_cli.sh"
     "p4/swtopo.json"
