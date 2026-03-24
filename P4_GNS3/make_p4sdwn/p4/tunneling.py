@@ -32,7 +32,7 @@ import p4runtime_sh.p4runtime as shp4rt
 
 NSEC_PER_SEC = 1000 * 1000 * 1000
 IDLE_TIMEOUT_NS = 10 * NSEC_PER_SEC
-LOG_LEVEL = logging.DEBUG
+LOG_LEVEL = logging.INFO
 
 global_data = {}
 
@@ -630,8 +630,8 @@ def idle_worker(sw, prog):
                 # Lo pongo aqui por si saltase error en el delete
                 # Extraer tunnel_id y MACs de la notificación para limpiar mac_tunnel y lookup_table
                 te = idle_notif.table_entry[0]
-                src_mac   = intToMac(int.from_bytes(te.match[1].exact.value, byteorder='big'))
-                dst_mac   = intToMac(int.from_bytes(te.match[2].exact.value, byteorder='big'))
+                src_mac   = intToMac(int.from_bytes(te.match[0].exact.value, byteorder='big'))
+                dst_mac   = intToMac(int.from_bytes(te.match[1].exact.value, byteorder='big'))
 
                 logger.info(f"[IDLE] Eliminada regla por timeout en {sw.name}: {src_mac} --> {dst_mac}")
 
