@@ -1,246 +1,84 @@
 # p4_tfg
 
-Repositorio del proyecto **TFG basado en P4 y redes programables**.
+Este proyecto corresponde al desarrollo de un **Trabajo Fin de Grado (TFG) basado en P4 y redes programables**.
 
-Este repositorio contiene diferentes pruebas y configuraciones relacionadas con:
+El objetivo principal es el diseño, despliegue y validación de diferentes escenarios de red y protocolos utilizando planos de datos programables. En este espacio se centralizan las pruebas, topologías y configuraciones relacionadas con:
 
-- P4
-- Mininet
-- GNS3
-- Protocolos de red (ARP, GRE, DSCP)
-- Implementaciones de routers y switches programables
+- Lenguaje de programación P4
+- Emulación de redes con Mininet
+- Integración en entornos virtuales con GNS3
+- Implementación de protocolos de red (ARP, GRE, DSCP)
+- Desarrollo de lógica personalizada para routers y switches programables
 
 ---
 
-# Requisitos
+# Requisitos del Entorno
 
-Antes de trabajar con el repositorio necesitas instalar:
+Para trabajar con los archivos de este proyecto, se requiere el siguiente software y herramientas de desarrollo:
 
-- **Git**
+## Software de Emulación y Redes
+- **Mininet:** Entorno de emulación para desplegar los switches virtuales P4 (BMv2).
+- **GNS3:** Plataforma de simulación para integrar los escenarios P4 con otros elementos de red virtuales.
+- **Compilador P4 (p4c):** Necesario para compilar el código fuente P4 en JSON ejecutable por el software switch.
+
+## Entorno de Desarrollo (IDE)
 - **Visual Studio Code**
-- Extensión **Git** (ya viene integrada en VSCode)
 
-Opcional pero recomendado:
-
-- Extensión **GitLens**
-- Extensión **Python**
-- Extensión **P4 Language Support**
+### Extensiones recomendadas para VSCode:
+- **P4 Language Support:** Para el coloreado de sintaxis y autocompletado de código P4.
+- **Python:** Esencial para ejecutar y editar los scripts de control y generación de tráfico.
 
 ---
 
-# 1. Descargar el repositorio con Git
+# Configuración y Uso en Visual Studio Code
 
-Primero copia la URL del repositorio desde GitHub:
+Para trabajar en el proyecto de forma local:
 
-```
+1. Asegúrate de tener la carpeta del proyecto (`p4_tfg`) descargada en tu equipo.
+2. Abre **Visual Studio Code**.
+3. En el menú superior, selecciona **File → Open Folder...** (Archivo → Abrir carpeta).
+4. Selecciona la carpeta raíz `p4_tfg`.
 
-https://github.com/pabloederra/p4_tfg.git
-
-````
-
-Luego abre una terminal y ejecuta:
-
-```bash
-git clone https://github.com/pabloederra/p4_tfg.git
-````
-
-Esto descargará el repositorio en tu ordenador.
-
-Se creará una carpeta llamada:
-
-```
-p4_tfg
-```
+Desde el entorno podrás modificar tanto la lógica de los planos de datos (`.p4`) como las topologías asociadas.
 
 ---
 
-# 2. Abrir el proyecto en Visual Studio Code
+# Estructura del Proyecto
 
-Una vez descargado el repositorio:
+El proyecto se compone de varios módulos independientes que representan la evolución y los distintos experimentos del TFG:
 
-```bash
-cd p4_tfg
-code .
-```
-
-Esto abrirá el proyecto completo en **Visual Studio Code**.
-
-También puedes hacerlo manualmente:
-
-1. Abrir **Visual Studio Code**
-2. Seleccionar **File → Open Folder**
-3. Elegir la carpeta `p4_tfg`
-
----
-
-# 3. Flujo básico de trabajo con Git
-
-El flujo normal de trabajo es:
 
 ```
-Editar → Añadir → Commit → Push
-```
 
----
-
-# 4. Ver el estado del repositorio
-
-Para ver qué archivos han cambiado:
-
-```bash
-git status
-```
-
-Git mostrará:
-
-* archivos modificados
-* archivos nuevos
-* archivos preparados para commit
-
----
-
-# 5. Añadir archivos al commit
-
-Para añadir un archivo concreto:
-
-```bash
-git add archivo.py
-```
-
-Para añadir todos los cambios:
-
-```bash
-git add .
-```
-
----
-
-# 6. Crear un commit
-
-Un **commit** guarda un punto de control en el repositorio.
-
-```bash
-git commit -m "Descripción de los cambios"
-```
-
-Ejemplo:
-
-```bash
-git commit -m "Añadido soporte GRE"
-```
-
----
-
-# 7. Subir cambios a GitHub
-
-Después del commit, sube los cambios al repositorio remoto:
-
-```bash
-git push
-```
-
-Esto enviará los cambios a GitHub.
-
----
-
-# 8. Actualizar el repositorio local
-
-Si hay cambios nuevos en GitHub puedes descargarlos con:
-
-```bash
-git pull
-```
-
-Esto sincroniza tu copia local con el repositorio remoto.
-
----
-
-# 9. Uso de Git dentro de Visual Studio Code
-
-Visual Studio Code tiene integración directa con Git.
-
-Pasos:
-
-1. Abrir el panel **Source Control** (icono de ramas)
-2. Ver los archivos modificados
-3. Pulsar **+** para hacer `stage`
-4. Escribir mensaje de commit
-5. Pulsar **Commit**
-6. Pulsar **Push**
-
-Esto realiza los mismos comandos:
-
-```
-git add
-git commit
-git push
-```
-
----
-
-# 10. Crear ramas (branch)
-
-Las ramas permiten trabajar en nuevas funcionalidades sin romper el código principal.
-
-Crear una rama:
-
-```bash
-git checkout -b nueva_funcionalidad
-```
-
-Cambiar de rama:
-
-```bash
-git checkout nombre_rama
-```
-
-Ver todas las ramas:
-
-```bash
-git branch
-```
-
----
-
-# 11. Estructura del repositorio
-
-El proyecto contiene varios módulos de pruebas con P4:
-
-```
 p4_tfg
 │
-├── 2hosts_2switch (primer escenario que hice)
-├── ARP          (implementacion de ARP)
-├── DSCP         (marcado en DSCP)
-├── GRE          (escenario con GRE)
-├── router       (deadend sin terminar)
-├── digestion    (intento de digest que tiene retraso NO SE POR QUE)
-├── pre_gns3     (como el de gns3 pero creo que no tan bien)
-├── gns3         (entorno de mininet para dejar preparado para gns3)
-├── P4_GNS3      (el último que se va modificando en gns3)
-├── utils        (porque en switch.py hay que meter el digest)
-└── p4include
+├── 2hosts_2switch   # Escenario inicial de pruebas con dos hosts y dos switches.
+├── ARP              # Implementación de la resolución y manejo del protocolo ARP.
+├── DSCP             # Pruebas de clasificación y marcado de paquetes usando DSCP.
+├── GRE              # Despliegue de un escenario de red con encapsulación de túneles GRE.
+├── router           # Prototipo inicial de enrutamiento (en desarrollo).
+├── digestion        # Experimentación con el mecanismo de "Digest" (analizando latencias de control).
+├── pre_gns3         # Configuración previa de topología orientada a la migración.
+├── gns3             # Entorno de Mininet preparado específicamente para la integración con GNS3.
+├── P4_GNS3          # Entorno principal activo y actualizado en GNS3.
+├── utils            # Scripts auxiliares y herramientas de soporte (incluye lógica de digests para switch.py).
+└── p4include        # Cabeceras y archivos de inclusión estándar de P4.
+
 ```
 
-Cada carpeta contiene diferentes configuraciones y experimentos relacionados con redes programables.
+Cada carpeta contiene sus propios archivos de definición P4, scripts de control en Python y archivos de configuración topológica.
 
 ---
 
-# 12. Buenas prácticas con Git
+# Líneas Futuras de Desarrollo
 
-Recomendaciones:
-
-* Hacer commits pequeños y frecuentes
-* Escribir mensajes claros en los commits
-* Hacer `git pull` antes de empezar a trabajar
-* No subir archivos innecesarios
+- **Optimización de Cabeceras:** Consolidar un único puerto de entrada y un único puerto de salida, diseñando una cabecera propia y personalizada que encapsule el marcado del túnel a través de la infraestructura de red programable.
+- **Formateo de Reglas:** Evaluar la transición de identificadores de túnel (`tunel_id`) y puertos de formato decimal a hexadecimal, con el fin de optimizar y validar la creación de reglas de coincidencia avanzada (`lpm` o `mask`) en las tablas del plano de datos.
 
 ---
-
-# 13. Líneas futuras
-
-Poner un único puerto de salida, un único puerto de entrada y generar una cabecera propia que tenga el marcado del túnel a través de nuestra red. Intentar cambiar el tunel_id y puertos para ponerlo en hexadecimal en lugar de decimal para poder ver si hacer reglas con lpm o mask en los match fields.
 
 # Autor
 
 Proyecto desarrollado por **Pablo Ederra** como parte de un **Trabajo Fin de Grado (TFG)** relacionado con **redes programables y P4**.
+
+```
