@@ -70,15 +70,6 @@ Cada carpeta contiene sus propios archivos de definición P4, scripts de control
 
 ---
 
-# Líneas Futuras de Desarrollo
-
-- **Optimización de Cabeceras:** Consolidar un único puerto de entrada y un único puerto de salida, diseñando una cabecera propia y personalizada que encapsule el marcado del túnel a través de la infraestructura de red programable.
-- **Formateo de Reglas:** Evaluar la transición de identificadores de túnel (`tunel_id`) y puertos de formato decimal a hexadecimal, con el fin de optimizar y validar la creación de reglas de coincidencia avanzada (`lpm` o `mask`) en las tablas del plano de datos.
-
----
-
 # Autor
 
 Proyecto desarrollado por **Pablo Ederra** como parte de un **Trabajo Fin de Grado (TFG)** relacionado con **redes programables y P4**.
-
-```
